@@ -1,0 +1,19 @@
+body {
+  background-color: var(--a-bg-subtle);
+}
+.main {
+  max-width: none;
+}
+
+.container {
+  padding: 0;
+  min-height: 600px;
+  max-width: 912px;
+  margin: 0 auto;
+}
+
+@media (max-width: 648px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}

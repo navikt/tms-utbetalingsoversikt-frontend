@@ -1,0 +1,24 @@
+---
+import KattIBoks from "../../img/KattIBoks";
+import { text } from "../../language/text";
+import Layout from "../../layouts/Layout.astro";
+import { BodyLong, Heading } from "@navikt/ds-react";
+import { baseUrl } from "../../utils/server/urls";
+import type { Language } from "../../language/language";
+import styles from "../../styles/error.module.css";
+
+const language = Astro.currentLocale as Language;
+---
+
+<Layout title="Utkast">
+  <div class={styles.container}>
+    <Heading size={"xlarge"}>{text.errorHeading[language]}</Heading>
+    <KattIBoks alt={text.errorKitten[language]} />
+    <BodyLong>
+      <strong>{text.errorText[language]}</strong>
+    </BodyLong>
+    <BodyLong>
+      {text.errorHelp[language]} <a href={baseUrl}>{text.minSide[language]}</a>
+    </BodyLong>
+  </div>
+</Layout>
