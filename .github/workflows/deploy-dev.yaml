@@ -1,0 +1,65 @@
+name: "Deploy dev"
+on: workflow_dispatch
+
+permissions:
+  contents: "read"
+  id-token: "write"
+  packages: "write"
+
+jobs:
+  build:
+    name: "build"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "actions/checkout@v3"
+      - uses: "actions/setup-node@v3"
+        with:
+          node-version: 20
+          registry-url: "https://npm.pkg.github.com"
+          cache: "npm"
+
+      - name: "Install dependencies"
+        run: "npm ci"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+
+      - name: "Build application"
+        run: "npm run build"
+        env:
+          ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
+
+      - name: "Upload to cdn"
+        uses: nais/deploy/actions/cdn-upload/v2@master
+        with:
+          team: min-side
+          source: ./dist/client/_astro
+          destination: 'tms-utkast-frontend'
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+
+      - name: "Build and push"
+        uses: nais/docker-build-push@main
+        id: docker-build-push
+        with:
+          team: min-side
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+
+    outputs:
+      image: ${{ steps.docker-build-push.outputs.image }}
+
+  deploy-dev:
+    runs-on: "ubuntu-latest"
+    needs: "build"
+    strategy:
+      matrix:
+        cluster: [ dev-gcp ]
+    steps:
+      - uses: "actions/checkout@v3"
+      - name: "Deploy to dev"
+        uses: "nais/deploy/actions/deploy@v2"
+        env:
+          CLUSTER: ${{ matrix.cluster }}
+          RESOURCE: nais/${{ matrix.cluster }}/nais.yaml
+          VAR: image=${{ needs.build.outputs.image }},version=${{ github.sha }}
