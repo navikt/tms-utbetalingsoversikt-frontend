@@ -37,7 +37,7 @@ jobs:
         with:
           team: min-side
           source: ./dist/client/_astro
-          destination: 'tms-utkast-frontend'
+          destination: 'tms-utbetalingsoversikt-frontend'
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
