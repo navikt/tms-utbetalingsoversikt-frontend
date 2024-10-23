@@ -1,0 +1,14 @@
+.contentContainer {
+  display: none;
+  margin-top: 1rem;
+}
+
+.pageTitle {
+  margin-top: 16px;
+}
+
+@media print {
+  .contentContainer {
+    display: unset;
+  }
+}

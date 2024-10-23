@@ -1,55 +1,49 @@
 import { Hono } from "hono";
-import { HTTPException } from 'hono/http-exception';
+import { HTTPException } from "hono/http-exception";
 import { serve } from "@hono/node-server";
 import { cors } from "hono/cors";
+import identNavn from "./mockData/identNavn.json";
+import alleUtbetalinger from "./mockData/alleUtbetalinger.json";
+import authentication from "./mockData/autentication.json";
+import betaltUtbetalingDetalje from "./mockData/betaltUtbetalingDetalje.json";
+import kommendeUtbetalingDetalje from "./mockData/kommendeUtbetalingDetaljer.json";
+import { json } from "stream/consumers";
 
 const api = new Hono();
 
-api.use("/*", cors({
-  origin: "http://localhost:4321",
-  credentials: true,
-}));
+api.use(
+  "/*",
+  cors({
+    origin: "http://localhost:4321",
+    credentials: true,
+  })
+);
 
-api.get('/utkast/v2/utkast/error', (c) => {
-  throw new HTTPException(502, { message: 'Custom error message' });
+api.get("/status", (c) => {
+  return c.json(authentication);
 });
 
-api.get('/utkast/v2/utkast', (c) => {
-  return c.json([
-    {
-      utkastId: "12467899999",
-      tittel: "Søknad om dagpenger, permittert",
-      link: "https://www.intern.dev.nav.no/minside/",
-      opprettet: "2020-03-23T08:53:24.636Z",
-      sistEndret: null,
-      metrics: {
-        skjemakode: "2233/8",
-        skjemanavn: "Dagpenger søknadskjema",
-      },
-    },
-    {
-      utkastId: "124677777777",
-      tittel: "Søknad om foreldre- og svangerskapspenger",
-      link: "https://www.intern.dev.nav.no/minside/",
-      opprettet: "2020-03-13T08:53:24.636Z",
-      sistEndret: "2020-03-14T08:53:24.636Z",
-      metrics: null,
-    },
-    {
-      utkastId: "124679",
-      tittel: "Søknad om dagpenger, permittert",
-      link: "https://www.intern.dev.nav.no/minside/",
-      opprettet: "2020-10-13T08:53:24.636Z",
-      sistEndret: null,
-    },
-    {
-      utkastId: "124610",
-      tittel: "Søknad om foreldre- og svangerskapspenger",
-      link: "https://www.intern.dev.nav.no/minside/",
-      opprettet: "2023-03-13T08:53:24.636Z",
-      sistEndret: "2023-03-14T08:53:24.636Z",
-    },
-  ]);
+api.get("/api/utbetalinger/alle", (c) => {
+  const fom = c.req.queries("fom");
+  const tom = c.req.queries("tom");
+
+  return c.json(alleUtbetalinger);
+});
+
+api.get("/api/utbetalinger/ut-*", (c) => {
+  return c.json(betaltUtbetalingDetalje);
+});
+
+api.get("/api/utbetalinger/ko-*", (c) => {
+  return c.json(kommendeUtbetalingDetalje);
+});
+
+api.get("/utbetalinger", (c) => {
+  return c.json(betaltUtbetalingDetalje);
+});
+
+api.get("/tms-min-side-proxy/navn", (c) => {
+  return c.json(identNavn);
 });
 
 serve(api);

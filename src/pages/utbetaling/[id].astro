@@ -1,0 +1,11 @@
+---
+import Layout from '@src/layouts/Layout.astro'
+import UtbetalingDetaljeSide from '@src/components/pages/utbetalingDetaljeSide/UtbetalingDetaljeSide'
+
+const { id } = Astro.params
+
+---
+
+<Layout>
+    <UtbetalingDetaljeSide utbetalingsId={id as string} client:only/>
+</Layout>

@@ -1,0 +1,36 @@
+{
+  "kontonummer": "xxxx6543",
+  "ytelse": "Arbeidsavklaringspenger",
+  "erUtbetalt": false,
+  "ytelsePeriode": {
+    "fom": "2023-08-21",
+    "tom": "2023-08-31"
+  },
+  "ytelseDato": "2023-09-07",
+  "underytelse": [
+    {
+      "beskrivelse": "AAP",
+      "sats": 2052,
+      "antall": 4,
+      "beløp": 8208,
+      "satstype":""
+    },
+    {
+      "beskrivelse": "Testytelse",
+      "sats": 0,
+      "antall": 0,
+      "beløp": 1005,
+      "satstype":""
+    }
+  ],
+  "trekk": [
+    {
+      "type": "Skattetrekk",
+      "beløp": -4104
+    },
+    { "type": "Test-trekk", "beløp": -503 }
+  ],
+  "melding": "Sykepenger, arbeidstaker feriepenger",
+  "bruttoUtbetalt": 9213,
+  "nettoUtbetalt": 4104
+}
