@@ -1,7 +1,8 @@
 name: "Deploy dev"
-on: workflow_dispatch
-  -branches:
-    - "dev-*"
+on:
+  push:
+    branches:
+      - "dev-*"
 
 permissions:
   contents: "read"
