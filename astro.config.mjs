@@ -8,7 +8,8 @@ import node from "@astrojs/node";
 export default defineConfig({
   base: "/utbetalingsoversikt-ny",
   build: {
-    assetsPrefix: "https://cdn.nav.no/min-side/tms-utkast-frontend",
+    assetsPrefix:
+      "https://cdn.nav.no/min-side/tms-utbetalingsoversikt-frontend",
   },
   integrations: [
     react(),
