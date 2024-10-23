@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 0 0.5rem 0;
+  border-bottom: var(--custom-divider-line);
+}
+
+.bruttoElement{
+  margin-bottom: 1.5rem;
+}
+

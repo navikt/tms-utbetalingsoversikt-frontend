@@ -1,0 +1,41 @@
+#container {
+  display: none;
+}
+
+.pageTitle {
+  margin-top: 16px;
+}
+
+.periodeText {
+  margin-top: 1.75rem;
+}
+
+.periodeDate {
+  margin-bottom: 1rem;
+}
+
+.utbetalingListe {
+  list-style-type: none;
+  padding: 0;
+  border-bottom: var(--custom-divider-line);
+}
+
+.utbetalingElement {
+  padding: 0.5rem 0;
+  border-top: var(--custom-divider-line);
+}
+
+.utbetalingElementHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.utbetalingElementDato {
+  color: var(--a-grayalpha-600);
+}
+
+@media print {
+  #container {
+    display: unset;
+  }
+}

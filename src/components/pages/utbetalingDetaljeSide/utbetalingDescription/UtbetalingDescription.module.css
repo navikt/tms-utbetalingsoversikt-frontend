@@ -1,0 +1,16 @@
+.Heading {
+  margin-top: 2rem;
+}
+
+.BodyText{
+  padding: 0.5rem 0;
+  border-bottom: var(--custom-divider-line);
+  border-top: var(--custom-divider-line);
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .Heading {
+    margin-top: 2rem;
+  }
+}

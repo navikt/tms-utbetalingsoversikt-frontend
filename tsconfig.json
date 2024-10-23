@@ -5,12 +5,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@language/*": ["src/language/*"],
-      "@img/*": ["src/img/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@src/*": ["src/*"],
-      "@language-redirecter/*": ["src/components/language-redirecter/*"]
+      "@src/*": ["src/*"]
     }
-  },
+  }
 }

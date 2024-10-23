@@ -1,0 +1,25 @@
+.periodeFilterContainer{
+  margin-top:1.5rem;
+}
+
+.hideContent{
+  display: none;
+}
+
+.periodeFilterLabel{
+  padding-bottom: 0.75rem;
+}
+
+.pengestøtteChips {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .periodeFilterContainer{
+    margin-top: 2rem;
+  }
+
+  .hideContent{
+    display: block;
+  }
+}

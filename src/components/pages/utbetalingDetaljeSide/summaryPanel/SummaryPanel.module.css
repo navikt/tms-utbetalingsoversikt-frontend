@@ -1,0 +1,50 @@
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 1.25rem;
+  background: var(--a-surface-subtle);
+  padding: 32px 40px 28px 40px;
+  border-radius: 8px;
+}
+
+.kommendeUtbetalingWrapper{
+  background-color: var(--a-surface-success-subtle);
+}
+
+.beløpOgDatoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.printContent{
+  border-bottom: var(--custom-divider-line);
+  padding-bottom: 0.5rem;
+  margin-top: 2.25rem;
+}
+.printSummaryHeading{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 480px) {
+  .contentWrapper {
+    margin-top: 2rem;
+  }
+}
+
+.printContent{
+  margin-top: 2.25rem;
+  display: none;
+}
+
+@media print{
+  .contentWrapper{
+    display: none;
+  }
+  .printContent{
+    display: block;
+  }
+}

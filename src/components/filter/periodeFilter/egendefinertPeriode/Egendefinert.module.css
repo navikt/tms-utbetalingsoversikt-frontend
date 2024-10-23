@@ -1,0 +1,20 @@
+.datePicketInputs {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.invalidDateMessage{
+  margin-top: 1rem;
+}
+
+#oppdaterButton {
+  margin-top: 1rem;
+}
+@media (min-width: 480px) {
+  .datePicketInputs {
+    margin-top: 1.5rem;
+  }
+}
