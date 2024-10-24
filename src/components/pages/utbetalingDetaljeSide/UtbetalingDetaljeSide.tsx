@@ -12,12 +12,14 @@ import style from "./UtbetalingDetaljeSide.module.css";
 import SummaryPanel from "./summaryPanel/SummaryPanel";
 import UtbetalingCalculations from "./utbetalingCalculations/UtbetalingCalculations";
 import UtbetalingDescription from "./utbetalingDescription/UtbetalingDescription";
+import { initializeAmplitude } from "@src/utils/client/amplitude";
 
 interface props {
   utbetalingsId: string;
 }
 
 const UtbetalingDetaljeSide = ({ utbetalingsId }: props) => {
+  initializeAmplitude();
   const { data, isLoading, error } = useSWRImmutable(
     { path: enkelUtbetalingAPIUrl(utbetalingsId ? utbetalingsId : "") },
     fetcher,

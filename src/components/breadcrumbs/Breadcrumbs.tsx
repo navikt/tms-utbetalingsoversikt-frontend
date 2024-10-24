@@ -17,7 +17,7 @@ const Breadcrumbs = ({ showUtbetalinger }: { showUtbetalinger: boolean }) => (
         <Link
           className={style.link}
           onClick={() => logEvent("breadcrum", "utbetalinger")}
-          href="/utbetalingsoversikt"
+          href="/utbetalingsoversikt-ny"
         >
           Utbetalinger
         </Link>

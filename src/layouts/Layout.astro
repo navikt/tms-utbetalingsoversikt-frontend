@@ -5,6 +5,7 @@ import { text } from "../language/text";
 import { baseUrl } from "../utils/server/urls";
 import type { Language } from "../language/language";
 import styles from "./Layout.module.css";
+import "./index.css";
 
 const language = Astro.currentLocale as Language;
 
@@ -12,33 +13,6 @@ const Decorator = await fetchDecoratorReact({
   env: getEnvironment(),
   params: {
     context: "privatperson",
-    breadcrumbs: [
-        {
-            title: text.minSide[language],
-            url: baseUrl,
-        },
-        {
-            title: text.utkast[language],
-            url: baseUrl,
-        },
-    ],
-    availableLanguages : [
-      {
-        locale: "nb",
-        url: `${baseUrl}utkast/nb`,
-        handleInApp: false,
-      },
-      {
-        locale: "en",
-        url: `${baseUrl}utkast/en`,
-        handleInApp: false,
-      },
-      {
-        locale: "nn",
-        url: `${baseUrl}utkast/nn`,
-        handleInApp: false,
-      }
-    ]
   },
 });
 ---
@@ -50,15 +24,17 @@ const Decorator = await fetchDecoratorReact({
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Utkast</title>
+		<title>Utbetalinger</title>
     <link rel="preload" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" as="style" />
     <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" />
     <Decorator.Styles />
   </head>
-  <body class="main">
+  <body class="page-wrapper">
     <Decorator.Header />
-      <div class={styles.container}>
-        <slot />
+      <div class={styles.pageWrapper}>
+        <section class={styles.pageContainer}>
+          <slot />
+       </section>
       </div>
     <Decorator.Footer />
     <Decorator.Scripts />
