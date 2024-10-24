@@ -12,6 +12,20 @@ body {
   margin: 0 auto;
 }
 
+.pageWrapper {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 6.67rem;
+}
+
+.pageContainer {
+  flex-grow: 1;
+  max-width: 632px;
+  margin: 0 auto 0 auto;
+}
+
 @media (max-width: 648px) {
   .container {
     padding: 0 0.5rem;
