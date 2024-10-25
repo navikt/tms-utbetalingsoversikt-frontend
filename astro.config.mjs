@@ -28,12 +28,6 @@ export default defineConfig({
       },
     },
   ],
-  i18n: {
-    defaultLocale: "nb",
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
   output: "server",
   adapter: node({
     mode: "standalone",
