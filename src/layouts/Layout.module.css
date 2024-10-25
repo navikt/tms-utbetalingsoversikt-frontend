@@ -1,5 +1,5 @@
 body {
-  background-color: var(--a-bg-subtle);
+  background-color: var(--a-bg-default);
 }
 .main {
   max-width: none;
