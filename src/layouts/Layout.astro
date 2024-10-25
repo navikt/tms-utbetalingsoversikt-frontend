@@ -1,13 +1,9 @@
 ---
 import { fetchDecoratorReact } from "@navikt/nav-dekoratoren-moduler/ssr";
 import { getEnvironment } from "../utils/server/environment";
-import { text } from "../language/text";
-import { baseUrl } from "../utils/server/urls";
-import type { Language } from "../language/language";
 import styles from "./Layout.module.css";
 import "./index.css";
 
-const language = Astro.currentLocale as Language;
 
 const Decorator = await fetchDecoratorReact({
   env: getEnvironment(),
@@ -18,7 +14,7 @@ const Decorator = await fetchDecoratorReact({
 ---
 
 <!doctype html>
-<html lang={language}>
+<html lang="nb">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
