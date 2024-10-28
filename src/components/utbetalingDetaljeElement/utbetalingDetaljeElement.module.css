@@ -3,10 +3,9 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 0 0.5rem 0;
-  border-bottom: var(--custom-divider-line);
+  border-bottom: 1px solid var(--a-border-default);
 }
 
-.bruttoElement{
+.bruttoElement {
   margin-bottom: 1.5rem;
 }
-
