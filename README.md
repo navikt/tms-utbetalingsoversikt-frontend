@@ -1,6 +1,6 @@
-# tms-utkast-frontend
+# tms-utbetalingsoversikt-frontend
 
-Frontend for tilgang til liste med utkast
+Frontend for den innloggede utbetalingsoversikten for eksterne brukere.
 
 # Kom i gang
 
@@ -8,7 +8,7 @@ Frontend for tilgang til liste med utkast
 2. Bygg tms-utkast-frontend ved å kjøre npm run build
 3. Start hono mockserver med npm run mock
 4. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre npm run dev i et nytt terminalvindu
-4. Appen nås på http://localhost:4321/utkast
+5. Appen nås på http://localhost:4321/utbetalingsoversikt-ny
 
 # Henvendelser
 
