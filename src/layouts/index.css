@@ -1,3 +1,7 @@
+:root {
+  --custom-divider-line: 1px solid var(--a-border-divider);
+}
+
 @media print {
   :root {
     --custom-divider-line: 0.5px solid var(--a-border-default);
