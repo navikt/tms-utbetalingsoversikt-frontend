@@ -15,6 +15,7 @@
     "@astrojs/check": "0.5.3",
     "@astrojs/node": "7.0.0",
     "@astrojs/react": "3.0.10",
+    "@grafana/faro-web-sdk": "^1.11.0",
     "@nanostores/react": "github:nanostores/react",
     "@navikt/aksel-icons": "6.1.1",
     "@navikt/ds-react": "6.16.2",

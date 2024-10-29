@@ -28,6 +28,13 @@ const BASE_URL = {
   production: "https://www.nav.no/utbetalingsoversikt",
 };
 
+const TELEMETRY_URL = {
+  local: "http://localhost:3000/collect",
+  dev: "https://telemetry.ekstern.dev.nav.no/collect",
+  ansatt: "https://telemetry.ekstern.dev.nav.no/collect",
+  prod: "https://telemetry.nav.no/collect",
+};
+
 const MIN_SIDE_URL = {
   local: "http://localhost:3000/minside",
   ansatt: "https://www.ansatt.dev.nav.no/minside",
@@ -44,22 +51,16 @@ const UTBETALINGSOVERSIKT_API_URL = {
 
 const SATSERURL = {
   local: "http://localhost:3000/satser",
-  ansatt:
-    "https://www.ansatt.dev.nav.no/satser",
-  development:
-    "https://www.intern.dev.nav.no/satser",
-  production:
-    "https://www.nav.no/satser",
+  ansatt: "https://www.ansatt.dev.nav.no/satser",
+  development: "https://www.intern.dev.nav.no/satser",
+  production: "https://www.nav.no/satser",
 };
 
 const UTBETALINGSDATOER_URL = {
   local: "http://localhost:3000/utbetalignsdatoer",
-  ansatt:
-    "https://www.ansatt.dev.nav.no/utbetalingsdatoer",
-  development:
-    "https://www.intern.dev.nav.no/utbetalingsdatoer",
-  production:
-    "https://www.nav.no/utbetalingsdatoer",
+  ansatt: "https://www.ansatt.dev.nav.no/utbetalingsdatoer",
+  development: "https://www.intern.dev.nav.no/utbetalingsdatoer",
+  production: "https://www.nav.no/utbetalingsdatoer",
 };
 
 const ENDRE_KONTONUMMER_URL = {
@@ -71,12 +72,9 @@ const ENDRE_KONTONUMMER_URL = {
 
 const ENDRE_SKATTEKORT_URL = {
   local: "http://localhost:300/skattekort",
-  ansatt:
-    "https://www.ansatt.dev.nav.no/skattetrekk",
-  development:
-    "https://www.intern.dev.nav.no/skattetrekk",
-  production:
-    "https://www.nav.no/skattetrekk",
+  ansatt: "https://www.ansatt.dev.nav.no/skattetrekk",
+  development: "https://www.intern.dev.nav.no/skattetrekk",
+  production: "https://www.nav.no/skattetrekk",
 };
 
 const SOSIALHJELP_URL = {
@@ -141,6 +139,7 @@ export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const omUtbetalinger = OM_UTBETALINGER_URL[getEnvironment()];
 export const legacyUrl = LEGACY_URL[getEnvironment()];
 export const identNavnUrl = IDENT_NAVN_URL[getEnvironment()];
+export const telemetryUrl = TELEMETRY_URL[getEnvironment()];
 
 export const authAndRedirectUrl = () => {
   return getEnvironment() === "local"
