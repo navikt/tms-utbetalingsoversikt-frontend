@@ -15,7 +15,7 @@ export const initializeAmplitude = () => {
 
 export function logEvent(komponent: string, lenketekst?: string) {
   amplitude.getInstance().logEvent("navigere", {
-    app: "tms-utbetalingsoversikt-ny",
+    app: "tms-utbetalingsoversikt",
     komponent: komponent,
     lenketekst: lenketekst,
   });
