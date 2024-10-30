@@ -30,9 +30,9 @@ const BASE_URL = {
 
 const TELEMETRY_URL = {
   local: 'http://localhost:3000/collect',
-  dev: 'https://telemetry.ekstern.dev.nav.no/collect',
+  development: 'https://telemetry.ekstern.dev.nav.no/collect',
   ansatt: 'https://telemetry.ekstern.dev.nav.no/collect',
-  prod: 'https://telemetry.nav.no/collect',
+  production: 'https://telemetry.nav.no/collect',
 };
 
 const MIN_SIDE_URL = {
