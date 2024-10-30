@@ -1,8 +1,8 @@
-import { BodyShort, Detail } from "@navikt/ds-react";
-import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
-import style from "./UtbetaltPeriode.module.css";
-import type { UtbetalingerIPeriode } from "@src/types/types";
-import CustomHeading from "./customHeading/CustomHeading";
+import { BodyShort, Detail } from '@navikt/ds-react';
+import { formaterTallUtenDesimaler } from '@src/utils/client/utbetalingDetalje';
+import style from './UtbetaltPeriode.module.css';
+import type { UtbetalingerIPeriode } from '@src/types/types';
+import CustomHeading from './customHeading/CustomHeading';
 
 interface PropsType {
   data: UtbetalingerIPeriode;
@@ -46,7 +46,7 @@ const UtbetaltPeriode = ({ data, periode, isPrint }: PropsType) => {
             Netto utbetalt
           </TextFieldTypography>
           <TextFieldTypography weight="semibold">{`${formaterTallUtenDesimaler(
-            nettoUtbetalt
+            nettoUtbetalt,
           )} kr`}</TextFieldTypography>
         </li>
       </ul>

@@ -1,9 +1,9 @@
-import { BodyLong, Heading } from "@navikt/ds-react";
-import style from "./UtbetalingDescription.module.css";
+import { BodyLong, Heading } from '@navikt/ds-react';
+import style from './UtbetalingDescription.module.css';
 
 type props = {
   heading: string;
-  bodyText: string ;
+  bodyText: string;
 };
 
 const UtbetalingDescription = ({ heading, bodyText }: props) => {
@@ -17,4 +17,4 @@ const UtbetalingDescription = ({ heading, bodyText }: props) => {
   );
 };
 
-export default UtbetalingDescription
+export default UtbetalingDescription;

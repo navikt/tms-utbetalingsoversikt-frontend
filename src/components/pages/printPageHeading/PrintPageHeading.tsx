@@ -1,17 +1,17 @@
-import { Detail } from "@navikt/ds-react";
-import dayjs from "dayjs";
-import useSWRImmutable from "swr/immutable";
-import { identNavnUrl } from "@src/utils/client/urls";
-import styles from "./PrintPageHeading.module.css";
-import logo from "./nav-logo.png";
-import { fetcher } from "@src/api/api";
+import { Detail } from '@navikt/ds-react';
+import dayjs from 'dayjs';
+import useSWRImmutable from 'swr/immutable';
+import { identNavnUrl } from '@src/utils/client/urls';
+import styles from './PrintPageHeading.module.css';
+import logo from './nav-logo.png';
+import { fetcher } from '@src/api/api';
 
 const PrintPageHeading = () => {
   const { data: bruker } = useSWRImmutable(
     {
       path: identNavnUrl,
     },
-    fetcher
+    fetcher,
   );
   return (
     <div className={styles.contentContainer}>
@@ -21,7 +21,7 @@ const PrintPageHeading = () => {
       <Detail className={styles.fnr}>{bruker?.ident}</Detail>
       <Detail
         className={styles.utskriftsdato}
-      >{`Utskriftsdato: ${dayjs().format("DD.MM.YYYY")}`}</Detail>
+      >{`Utskriftsdato: ${dayjs().format('DD.MM.YYYY')}`}</Detail>
     </div>
   );
 };

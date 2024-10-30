@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { initializeFaro } from "@grafana/faro-web-sdk";
-import { telemetryUrl } from "@src/utils/client/urls.ts";
+import { useEffect } from 'react';
+import { initializeFaro } from '@grafana/faro-web-sdk';
+import { telemetryUrl } from '@src/utils/client/urls.ts';
 
 const telemetryConfig = {
   telemetryCollectorURL: telemetryUrl,
   app: {
-    name: "tms-min-side",
+    name: 'tms-min-side',
   },
 };
 

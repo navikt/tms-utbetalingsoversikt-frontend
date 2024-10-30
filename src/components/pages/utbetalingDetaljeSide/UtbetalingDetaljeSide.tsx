@@ -1,18 +1,18 @@
-import { Heading, Loader } from "@navikt/ds-react";
-import useSWRImmutable from "swr/immutable";
-import Breadcrumbs from "@src/components/breadcrumbs/Breadcrumbs";
-import ErrorPanel from "@src/components/errorPanel/ErrorPanel";
-import { logEvent } from "@src/utils/client/amplitude";
-import { enkelUtbetalingAPIUrl } from "@src/utils/client/urls";
-import { fetcher } from "@src/api/api";
-import PrintButton from "@src/components/prinButton/PrintButton";
-import { formatToDetailedDate } from "@src/utils/client/date";
-import PrintPageHeading from "../printPageHeading/PrintPageHeading";
-import style from "./UtbetalingDetaljeSide.module.css";
-import SummaryPanel from "./summaryPanel/SummaryPanel";
-import UtbetalingCalculations from "./utbetalingCalculations/UtbetalingCalculations";
-import UtbetalingDescription from "./utbetalingDescription/UtbetalingDescription";
-import { initializeAmplitude } from "@src/utils/client/amplitude";
+import { Heading, Loader } from '@navikt/ds-react';
+import useSWRImmutable from 'swr/immutable';
+import Breadcrumbs from '@src/components/breadcrumbs/Breadcrumbs';
+import ErrorPanel from '@src/components/errorPanel/ErrorPanel';
+import { logEvent } from '@src/utils/client/amplitude';
+import { enkelUtbetalingAPIUrl } from '@src/utils/client/urls';
+import { fetcher } from '@src/api/api';
+import PrintButton from '@src/components/prinButton/PrintButton';
+import { formatToDetailedDate } from '@src/utils/client/date';
+import PrintPageHeading from '../printPageHeading/PrintPageHeading';
+import style from './UtbetalingDetaljeSide.module.css';
+import SummaryPanel from './summaryPanel/SummaryPanel';
+import UtbetalingCalculations from './utbetalingCalculations/UtbetalingCalculations';
+import UtbetalingDescription from './utbetalingDescription/UtbetalingDescription';
+import { initializeAmplitude } from '@src/utils/client/amplitude';
 
 interface props {
   utbetalingsId: string;
@@ -21,12 +21,12 @@ interface props {
 const UtbetalingDetaljeSide = ({ utbetalingsId }: props) => {
   initializeAmplitude();
   const { data, isLoading, error } = useSWRImmutable(
-    { path: enkelUtbetalingAPIUrl(utbetalingsId ? utbetalingsId : "") },
+    { path: enkelUtbetalingAPIUrl(utbetalingsId ? utbetalingsId : '') },
     fetcher,
     {
       shouldRetryOnError: false,
-      onError: () => logEvent("fikk-feilmelding-detaljeside"),
-    }
+      onError: () => logEvent('fikk-feilmelding-detaljeside'),
+    },
   );
 
   if (isLoading) {
@@ -57,12 +57,12 @@ const UtbetalingDetaljeSide = ({ utbetalingsId }: props) => {
       <div className={style.detailsContainer}>
         {<UtbetalingCalculations data={data} />}
         {data?.melding && (
-          <UtbetalingDescription heading={"Melding"} bodyText={data.melding} />
+          <UtbetalingDescription heading={'Melding'} bodyText={data.melding} />
         )}
         <UtbetalingDescription
-          heading={"Periode"}
+          heading={'Periode'}
           bodyText={`${formatToDetailedDate(data.ytelsePeriode.fom)} - ${formatToDetailedDate(
-            data.ytelsePeriode.tom
+            data.ytelsePeriode.tom,
           )} til konto ${data.kontonummer}`}
         />
         <PrintButton />

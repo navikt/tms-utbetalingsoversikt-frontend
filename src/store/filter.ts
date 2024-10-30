@@ -1,11 +1,11 @@
-import { getDateThreemonthsBack } from "@src/utils/client/date";
-import { atom } from "nanostores";
+import { getDateThreemonthsBack } from '@src/utils/client/date';
+import { atom } from 'nanostores';
 
 export const showFilterAtom = atom<boolean>(false);
-export const selctedPeriodeAtom = atom<string>("Siste 3 måneder");
+export const selctedPeriodeAtom = atom<string>('Siste 3 måneder');
 export const ytelserFilterAtom = atom<SelectedYtelser>({});
 export const periodeFilterAtom = atom<{ fom: string; tom: string }>(
-  getDateThreemonthsBack()
+  getDateThreemonthsBack(),
 );
 
 export function toggleShowFilter() {

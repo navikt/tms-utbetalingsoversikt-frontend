@@ -1,5 +1,5 @@
-apiVersion: "nais.io/v1alpha1"
-kind: "Application"
+apiVersion: 'nais.io/v1alpha1'
+kind: 'Application'
 metadata:
   name: tms-utbetalingsoversikt-frontend
   namespace: min-side
@@ -13,7 +13,7 @@ spec:
       level: Level3
   tokenx:
     enabled: true
-  image: {{ image }}
+  image: { { image } }
   port: 3000
   liveness:
     path: /utbetalingsoversikt-ny/api/internal/isAlive
@@ -31,11 +31,11 @@ spec:
         - application: nav-dekoratoren
           namespace: personbruker
   ingresses:
-    - "https://www.intern.dev.nav.no/utbetalingsoversikt-ny"
-    - "https://www.ansatt.dev.nav.no/utbetalingsoversikt-ny"
+    - 'https://www.intern.dev.nav.no/utbetalingsoversikt-ny'
+    - 'https://www.ansatt.dev.nav.no/utbetalingsoversikt-ny'
   resources:
     limits:
       memory: 768Mi
     requests:
-      cpu: "20m"
+      cpu: '20m'
       memory: 128Mi

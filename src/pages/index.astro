@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import styles from "../styles/index.module.css";
-import Landingsside from '@src/components/pages/landingsside/Landingsside.tsx'
-import Observability from "@src/components/observability/Observability";
+import Layout from '../layouts/Layout.astro';
+import styles from '../styles/index.module.css';
+import Landingsside from '@src/components/pages/landingsside/Landingsside.tsx';
+import Observability from '@src/components/observability/Observability';
 ---
 
 <Layout title="Utbetalingsoversikt">
-    <div class={styles.headingWrapper}>
-        <Landingsside client:only="react" />
-    </div>
-    <Observability client:only="react" />
+  <div class={styles.headingWrapper}>
+    <Landingsside client:only="react" />
+  </div>
+  <Observability client:only="react" />
 </Layout>

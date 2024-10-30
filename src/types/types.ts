@@ -38,4 +38,4 @@ export type UtbetalingerResponse = {
   neste: UtbetalingType[];
   tidligere: UtbetalingGroupType[];
   utbetalingerIPeriode: UtbetalingerIPeriode;
-}
+};
