@@ -4,6 +4,12 @@ body {
 .main {
   max-width: none;
 }
+.html,
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
 
 .container {
   padding: 0;
