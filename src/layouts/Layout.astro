@@ -32,7 +32,9 @@ const Decorator = await fetchDecoratorReact({
           <slot />
        </section>
       </div>
-    <Decorator.Footer />
+    <span class={styles.footer}>
+      <Decorator.Footer />
+    </span>
     <Decorator.Scripts />
   </body>
 </html>
