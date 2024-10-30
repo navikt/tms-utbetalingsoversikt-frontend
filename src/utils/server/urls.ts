@@ -29,8 +29,8 @@ const BASE_URL: EnvUrl = {
 
 const NAV_NO_URL = {
   local: 'https://www.nav.no',
-  ansatt: 'https://www.nav.no',
-  development: 'https://www.nav.no',
+  ansatt: 'https://www.ansatt.dev.nav.no',
+  development: 'https://www.intern.dev.nav.no',
   production: 'https://www.nav.no',
 };
 
@@ -38,7 +38,7 @@ const ERROR_REPORTING_URL = {
   local:
     'https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
   ansatt:
-    'https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
+    'https://www.ansatt.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
   development:
     'https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
   production:
