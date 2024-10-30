@@ -27,5 +27,25 @@ const BASE_URL: EnvUrl = {
   production: 'https://www.nav.no/minside/',
 };
 
+const NAV_NO_URL = {
+  local: 'https://www.nav.no',
+  ansatt: 'https://www.nav.no',
+  development: 'https://www.nav.no',
+  production: 'https://www.nav.no',
+};
+
+const ERROR_REPORTING_URL = {
+  local:
+    'https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
+  ansatt:
+    'https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
+  development:
+    'https://www.intern.dev.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
+  production:
+    'https://www.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
+};
+
 export const utkastApiUrl = UTKAST_API_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];
+export const errorReportingUrl = ERROR_REPORTING_URL[getEnvironment()];
+export const navNoUrl = NAV_NO_URL[getEnvironment()];
