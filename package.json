@@ -26,6 +26,7 @@
     "amplitude-js": "^8.21.9",
     "astro": "4.15.4",
     "dayjs": "1.11.10",
+    "husky": "^9.1.6",
     "nanostore": "^1.2.1",
     "prettier-plugin-astro": "^0.14.1",
     "react": "18.2.0",
