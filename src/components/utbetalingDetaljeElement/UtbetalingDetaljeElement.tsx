@@ -1,6 +1,6 @@
-import { BodyShort } from "@navikt/ds-react";
-import style from "./utbetalingDetaljeElement.module.css";
-import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
+import { BodyShort } from '@navikt/ds-react';
+import style from './utbetalingDetaljeElement.module.css';
+import { formaterTallUtenDesimaler } from '@src/utils/client/utbetalingDetalje';
 
 interface DetaljeElementProps {
   label: string;
@@ -18,9 +18,9 @@ const DetaljeElement = ({
 
   return (
     <li key={label + beløp} className={containerClassName}>
-      <BodyShort weight={isSum ? "semibold" : "regular"}>{label}</BodyShort>
+      <BodyShort weight={isSum ? 'semibold' : 'regular'}>{label}</BodyShort>
       <BodyShort
-        weight={isSum ? "semibold" : "regular"}
+        weight={isSum ? 'semibold' : 'regular'}
       >{`${formaterTallUtenDesimaler(beløp)} kr`}</BodyShort>
     </li>
   );

@@ -1,3 +1,4 @@
-import type { APIContext } from "astro";
+import type { APIContext } from 'astro';
 
-export const isInternal = (context: APIContext) => context.request.url.includes("/internal");
+export const isInternal = (context: APIContext) =>
+  context.request.url.includes('/internal');

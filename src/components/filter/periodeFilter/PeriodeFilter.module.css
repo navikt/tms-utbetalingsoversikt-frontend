@@ -1,12 +1,12 @@
-.periodeFilterContainer{
-  margin-top:1.5rem;
+.periodeFilterContainer {
+  margin-top: 1.5rem;
 }
 
-.hideContent{
+.hideContent {
   display: none;
 }
 
-.periodeFilterLabel{
+.periodeFilterLabel {
   padding-bottom: 0.75rem;
 }
 
@@ -15,11 +15,11 @@
 }
 
 @media (min-width: 480px) {
-  .periodeFilterContainer{
+  .periodeFilterContainer {
     margin-top: 2rem;
   }
 
-  .hideContent{
+  .hideContent {
     display: block;
   }
 }

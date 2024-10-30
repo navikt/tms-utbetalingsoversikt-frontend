@@ -1,40 +1,44 @@
 ---
-import { fetchDecoratorReact } from "@navikt/nav-dekoratoren-moduler/ssr";
-import { getEnvironment } from "../utils/server/environment";
-import styles from "./Layout.module.css";
-import "./index.css";
-
+import { fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr';
+import { getEnvironment } from '../utils/server/environment';
+import styles from './Layout.module.css';
+import './index.css';
 
 const Decorator = await fetchDecoratorReact({
   env: getEnvironment(),
   params: {
-    context: "privatperson",
+    context: 'privatperson',
   },
 });
 ---
 
 <!doctype html>
 <html lang="nb">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Utbetalinger</title>
-    <link rel="preload" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" as="style" />
-    <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Utbetalinger</title>
+    <link
+      rel="preload"
+      href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"
+    />
     <Decorator.Styles />
   </head>
   <body class="page-wrapper">
     <Decorator.Header />
-      <div class={styles.pageWrapper}>
-        <section class={styles.pageContainer}>
-          <slot />
-       </section>
-      </div>
-    <span class={styles.footer}>
-      <Decorator.Footer />
-    </span>
+    <div class={styles.pageWrapper}>
+      <section class={styles.pageContainer}>
+        <slot />
+      </section>
+    </div>
+    <Decorator.Footer />
     <Decorator.Scripts />
   </body>
 </html>

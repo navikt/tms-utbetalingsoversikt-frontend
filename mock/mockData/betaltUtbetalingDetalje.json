@@ -13,15 +13,14 @@
       "sats": 2052,
       "antall": 4,
       "beløp": 8208,
-      "satstype":"***"
+      "satstype": "***"
     },
     {
       "beskrivelse": "Testytelse",
       "sats": 0,
       "antall": 0,
       "beløp": 1005,
-      "satstype":""
-
+      "satstype": ""
     }
   ],
   "trekk": [

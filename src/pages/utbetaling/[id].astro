@@ -1,13 +1,12 @@
 ---
-import Layout from '@src/layouts/Layout.astro'
-import UtbetalingDetaljeSide from '@src/components/pages/utbetalingDetaljeSide/UtbetalingDetaljeSide'
-import Observability from '@src/components/observability/Observability'
+import Layout from '@src/layouts/Layout.astro';
+import UtbetalingDetaljeSide from '@src/components/pages/utbetalingDetaljeSide/UtbetalingDetaljeSide';
+import Observability from '@src/components/observability/Observability';
 
-const { id } = Astro.params
-
+const { id } = Astro.params;
 ---
 
 <Layout>
-    <UtbetalingDetaljeSide utbetalingsId={id as string} client:only="react" />
-    <Observability client:only="react" />
+  <UtbetalingDetaljeSide utbetalingsId={id as string} client:only="react" />
+  <Observability client:only="react" />
 </Layout>

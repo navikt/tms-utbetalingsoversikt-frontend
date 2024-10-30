@@ -2,7 +2,6 @@
   margin-top: 1rem;
 }
 
-
 @media (min-width: 480px) {
   .showFilterButton {
     display: none;

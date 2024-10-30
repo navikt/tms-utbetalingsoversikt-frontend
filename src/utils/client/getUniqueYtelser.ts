@@ -1,4 +1,4 @@
-import type { Ytelse } from "@src/types/types";
+import type { Ytelse } from '@src/types/types';
 
 export type YtelserListFilter = { [key: string]: boolean };
 const getUniqueytelser = (ytelser: Ytelse[]): YtelserListFilter =>

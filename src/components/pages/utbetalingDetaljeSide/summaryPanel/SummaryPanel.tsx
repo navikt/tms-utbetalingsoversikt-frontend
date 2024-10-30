@@ -1,7 +1,7 @@
-import { BodyShort, Heading } from "@navikt/ds-react";
-import { formatToDetailedDate } from "@src/utils/client/date";
-import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
-import style from "./SummaryPanel.module.css";
+import { BodyShort, Heading } from '@navikt/ds-react';
+import { formatToDetailedDate } from '@src/utils/client/date';
+import { formaterTallUtenDesimaler } from '@src/utils/client/utbetalingDetalje';
+import style from './SummaryPanel.module.css';
 
 type props = {
   erUtbetalt: boolean;
@@ -17,8 +17,8 @@ const SummaryPanel = ({
   ytelse,
 }: props) => {
   const isUtbetaltText = erUtbetalt
-    ? "Utbetalt"
-    : "Forventet overføring til bank";
+    ? 'Utbetalt'
+    : 'Forventet overføring til bank';
   const sumInNok = `${formaterTallUtenDesimaler(nettoUtbetalt)} kr`;
 
   return (
@@ -30,7 +30,7 @@ const SummaryPanel = ({
           <BodyShort
             className={style.utbetaltDato}
           >{`${isUtbetaltText} ${formatToDetailedDate(
-            utbetalingsDato
+            utbetalingsDato,
           )}`}</BodyShort>
           <Heading
             className={style.belopUtbetaltHeader}
@@ -42,7 +42,7 @@ const SummaryPanel = ({
         </div>
       </div>
       <div className={style.printContent}>
-        <BodyShort weight={"semibold"} className={style.printSummaryHeading}>
+        <BodyShort weight={'semibold'} className={style.printSummaryHeading}>
           <span>{ytelse}</span>
           <span>{sumInNok}</span>
         </BodyShort>

@@ -32,12 +32,6 @@ body {
   margin: 0 auto 0 auto;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
 @media (max-width: 648px) {
   .container {
     padding: 0 0.5rem;

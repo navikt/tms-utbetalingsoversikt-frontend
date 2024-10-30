@@ -1,5 +1,5 @@
-apiVersion: "nais.io/v1alpha1"
-kind: "Application"
+apiVersion: 'nais.io/v1alpha1'
+kind: 'Application'
 metadata:
   name: tms-utbetalingsoversikt-frontend
   namespace: min-side
@@ -31,10 +31,10 @@ spec:
         - application: nav-dekoratoren
           namespace: personbruker
   ingresses:
-    - "https://www.nav.no/utbetalingsoversikt-ny"
+    - 'https://www.nav.no/utbetalingsoversikt-ny'
   resources:
     limits:
       memory: 768Mi
     requests:
-      cpu: "20m"
+      cpu: '20m'
       memory: 128Mi

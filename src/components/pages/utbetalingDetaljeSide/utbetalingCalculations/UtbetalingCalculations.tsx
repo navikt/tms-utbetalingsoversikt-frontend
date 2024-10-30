@@ -1,11 +1,11 @@
-import { Heading } from "@navikt/ds-react";
-import DetaljeElement from "@src/components/utbetalingDetaljeElement/UtbetalingDetaljeElement";
-import type { Trekk, UnderYtelseType } from "@src/types/types";
+import { Heading } from '@navikt/ds-react';
+import DetaljeElement from '@src/components/utbetalingDetaljeElement/UtbetalingDetaljeElement';
+import type { Trekk, UnderYtelseType } from '@src/types/types';
 import {
   isUtbetalingWithSats,
   satsDescription,
-} from "@src/utils/client/utbetalingDetalje";
-import style from "./UtbetalingCalculations.module.css";
+} from '@src/utils/client/utbetalingDetalje';
+import style from './UtbetalingCalculations.module.css';
 
 const UtbetalingCalculations = ({ data }: any) => {
   if (!data?.trekk) {
@@ -15,7 +15,7 @@ const UtbetalingCalculations = ({ data }: any) => {
   const hasUnderytelser = data.underytelse.length > 0;
   const showSats = isUtbetalingWithSats(data.ytelse);
   const showBrutto = hasTrekk && hasUnderytelser;
-  const sumUtbetaltLabel = hasUnderytelser ? "Netto utbetalt" : "Sum";
+  const sumUtbetaltLabel = hasUnderytelser ? 'Netto utbetalt' : 'Sum';
 
   return (
     <div className={style.container}>
@@ -31,7 +31,7 @@ const UtbetalingCalculations = ({ data }: any) => {
                 label={`${ytelse.beskrivelse} ${
                   showSats && ytelse.sats && ytelse.antall
                     ? satsDescription(ytelse)
-                    : ""
+                    : ''
                 }`}
                 beløp={ytelse.beløp}
               />
@@ -40,7 +40,7 @@ const UtbetalingCalculations = ({ data }: any) => {
         {showBrutto && (
           <DetaljeElement
             isSum={true}
-            label={"Brutto"}
+            label={'Brutto'}
             beløp={data.bruttoUtbetalt}
             className="bruttoElement"
           />

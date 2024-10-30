@@ -9,7 +9,7 @@
   border-radius: 8px;
 }
 
-.kommendeUtbetalingWrapper{
+.kommendeUtbetalingWrapper {
   background-color: var(--a-surface-success-subtle);
 }
 
@@ -19,12 +19,12 @@
   align-items: center;
 }
 
-.printContent{
+.printContent {
   border-bottom: var(--custom-divider-line);
   padding-bottom: 0.5rem;
   margin-top: 2.25rem;
 }
-.printSummaryHeading{
+.printSummaryHeading {
   display: flex;
   justify-content: space-between;
 }
@@ -35,16 +35,16 @@
   }
 }
 
-.printContent{
+.printContent {
   margin-top: 2.25rem;
   display: none;
 }
 
-@media print{
-  .contentWrapper{
+@media print {
+  .contentWrapper {
     display: none;
   }
-  .printContent{
+  .printContent {
     display: block;
   }
 }

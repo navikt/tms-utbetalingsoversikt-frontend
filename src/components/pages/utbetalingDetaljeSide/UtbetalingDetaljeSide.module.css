@@ -1,7 +1,7 @@
 .detailsContainer {
   padding: 0 0.5rem;
 }
-.feriepengerInfomelding{
+.feriepengerInfomelding {
   margin-top: 1.25rem;
 }
 
@@ -12,13 +12,13 @@
   .detailsContainer {
     padding: 0;
   }
-  .feriepengerInfomelding{
+  .feriepengerInfomelding {
     display: none;
   }
 }
 
-@media (min-width: 480px){
-  .feriepengerInfomelding{
+@media (min-width: 480px) {
+  .feriepengerInfomelding {
     margin-top: 2rem;
   }
 }
