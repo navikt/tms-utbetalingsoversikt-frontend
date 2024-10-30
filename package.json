@@ -9,7 +9,8 @@
     "mock": "tsx mock/server.ts",
     "preview": "astro preview",
     "astro": "astro",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "2.5.3",
