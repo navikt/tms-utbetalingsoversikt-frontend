@@ -9,7 +9,7 @@
     "mock": "tsx mock/server.ts",
     "preview": "astro preview",
     "astro": "astro",
-    "prettier": "prettier --write .",
+    "prettier": "prettier --write './src/**/*.{ts,tsx,astro}'",
     "prepare": "husky"
   },
   "dependencies": {
@@ -43,7 +43,7 @@
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
     "hono": "4.4.2",
-    "prettier": "^3.3.3",
+    "prettier": "3.3.3",
     "tsx": "4.7.1",
     "typescript": "5.3.3"
   }
