@@ -5,7 +5,7 @@ import { telemetryUrl } from '@src/utils/client/urls.ts';
 const telemetryConfig = {
   telemetryCollectorURL: telemetryUrl,
   app: {
-    name: 'tms-min-side',
+    name: 'tms-utbetalingsoversikt-frontend',
   },
 };
 
