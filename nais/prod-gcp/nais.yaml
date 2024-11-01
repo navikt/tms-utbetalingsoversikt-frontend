@@ -16,10 +16,10 @@ spec:
   image: {{ image }}
   port: 3000
   liveness:
-    path: /utbetalingsoversikt-ny/api/internal/isAlive
+    path: /utbetalingsoversikt/api/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /utbetalingsoversikt-ny/api/internal/isReady
+    path: /utbetalingsoversikt/api/internal/isReady
     initialDelay: 10
   replicas:
     min: 2
@@ -31,7 +31,7 @@ spec:
         - application: nav-dekoratoren
           namespace: personbruker
   ingresses:
-    - 'https://www.nav.no/utbetalingsoversikt-ny'
+    - 'https://www.nav.no/utbetalingsoversikt'
   resources:
     limits:
       memory: 768Mi
