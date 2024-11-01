@@ -31,7 +31,8 @@ spec:
         - application: nav-dekoratoren
           namespace: personbruker
   ingresses:
-    - 'https://www.nav.no/utbetalingsoversikt'
+    - 'https://www.nav.no/utbetalingsoversikt',
+    - "https://tjenester.nav.no/utbetalingsoversikt"
   resources:
     limits:
       memory: 768Mi
