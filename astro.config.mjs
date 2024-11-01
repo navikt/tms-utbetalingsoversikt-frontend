@@ -6,7 +6,7 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/utbetalingsoversikt-ny',
+  base: '/utbetalingsoversikt',
   build: {
     assetsPrefix:
       'https://cdn.nav.no/min-side/tms-utbetalingsoversikt-frontend',

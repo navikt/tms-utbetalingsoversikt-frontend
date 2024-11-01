@@ -21,7 +21,7 @@ const UtbetalingLinkPanel = ({
   return (
     <Link
       className={'navds-panel navds-link-panel ' + linkClassName}
-      href={`/utbetalingsoversikt-ny/utbetaling/${id}`}
+      href={`/utbetalingsoversikt/utbetaling/${id}`}
       onClick={() =>
         logEvent(
           'utbetaling-link-panel',

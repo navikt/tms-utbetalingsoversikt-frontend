@@ -8,7 +8,7 @@ Frontend for den innloggede utbetalingsoversikten for eksterne brukere.
 2. Bygg tms-utkast-frontend ved å kjøre npm run build
 3. Start hono mockserver med npm run mock
 4. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre npm run dev i et nytt terminalvindu
-5. Appen nås på http://localhost:4321/utbetalingsoversikt-ny
+5. Appen nås på http://localhost:4321/utbetalingsoversikt
 
 # Henvendelser
 
