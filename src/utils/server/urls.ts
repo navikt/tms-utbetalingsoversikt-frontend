@@ -45,7 +45,15 @@ const ERROR_REPORTING_URL = {
     'https://www.nav.no/person/kontakt-oss/nb/tilbakemeldinger/feil-og-mangler',
 };
 
+const PDL_API_URL = {
+  local: 'http://localhost:3000/api/navn',
+  development: 'http://intern.dev.nav.no/api/navn',
+  production: 'http://www.nav.no/api/navn',
+  ansatt: 'http://www.ansatt.dev.nav.no/api/navn',
+};
+
 export const utkastApiUrl = UTKAST_API_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];
 export const errorReportingUrl = ERROR_REPORTING_URL[getEnvironment()];
 export const navNoUrl = NAV_NO_URL[getEnvironment()];
+export const pdlApiUrl = PDL_API_URL[getEnvironment()];

@@ -39,3 +39,8 @@ export type UtbetalingerResponse = {
   tidligere: UtbetalingGroupType[];
   utbetalingerIPeriode: UtbetalingerIPeriode;
 };
+
+export type IdPortenPayload = {
+  ok: boolean;
+  pid: string;
+};
