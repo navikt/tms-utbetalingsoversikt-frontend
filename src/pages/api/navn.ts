@@ -12,7 +12,13 @@ export const GET: APIRoute = async (context) => {
   }
   const pid = parsedToken.pid;
   const token = await getOboToken(context.locals.token);
-  return new Response(JSON.stringify(fetchFromApi(token, pid)), {
+  console.log('pid: ' + pid);
+  console.log('token: ' + token);
+  const fetchedData = fetchFromApi(token, pid);
+  console.log('await fetchedData: ' + (await fetchedData));
+  console.log('fetchedData: ' + fetchedData);
+
+  return new Response(JSON.stringify(await fetchedData), {
     status: 200,
   });
 };

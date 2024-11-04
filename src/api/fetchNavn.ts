@@ -24,7 +24,7 @@ export const fetchFromApi = async (token: string, pid: string) => {
   });
 
   const data = await response.json();
-  console.log(data);
+  console.log('fetchFromApi:' + data);
   return {
     status: response.status,
     headers: response.headers,
