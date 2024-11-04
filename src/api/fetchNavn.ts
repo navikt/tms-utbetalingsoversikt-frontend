@@ -21,6 +21,9 @@ export const fetchFromApi = async (token: string, pid: string) => {
         ident: pid,
       },
     }),
+  }).catch((error) => {
+    console.error('Error fetching from API: ' + error);
+    throw new Error('Error fetching from API' + error);
   });
 
   const data = await response.json();
