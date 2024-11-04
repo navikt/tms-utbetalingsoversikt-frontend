@@ -7,7 +7,6 @@ import alleUtbetalinger from './mockData/alleUtbetalinger.json';
 import authentication from './mockData/autentication.json';
 import betaltUtbetalingDetalje from './mockData/betaltUtbetalingDetalje.json';
 import kommendeUtbetalingDetalje from './mockData/kommendeUtbetalingDetaljer.json';
-import { json } from 'stream/consumers';
 
 const api = new Hono();
 
@@ -32,6 +31,10 @@ api.get('/api/utbetalinger/alle', (c) => {
 
 api.get('/api/utbetalinger/ut-*', (c) => {
   return c.json(betaltUtbetalingDetalje);
+});
+
+api.post('/api/navn', (c) => {
+  return c.json(identNavn);
 });
 
 api.get('/api/utbetalinger/ko-*', (c) => {
