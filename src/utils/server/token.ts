@@ -1,7 +1,7 @@
 import { requestOboToken } from '@navikt/oasis';
 import { isLocal } from '@src/utils/server/environment.ts';
 
-const audience = `${process.env.NAIS_CLUSTER_NAME}:min-side:tms-utbetalingsoversikt-frontend`;
+const audience = `${process.env.NAIS_CLUSTER_NAME}:tms-utbetalingsoversikt-frontend`;
 
 export const getOboToken = async (token: string): Promise<string> => {
   const oboResult = await requestOboToken(token, audience);
