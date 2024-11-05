@@ -14,7 +14,7 @@ export const GET: APIRoute = async (context) => {
   const token = await getOboToken(context.locals.token);
   const fetchedData = await fetchNavn(token, pid);
 
-  return new Response(JSON.stringify(await fetchedData), {
+  return new Response(JSON.stringify(fetchedData), {
     status: 200,
   });
 };
