@@ -47,9 +47,9 @@ const ERROR_REPORTING_URL = {
 
 const PDL_API_URL = {
   local: 'http://localhost:3000/api/navn',
-  development: 'http://intern.dev.nav.no/api/navn',
-  production: 'http://www.nav.no/api/navn',
-  ansatt: 'http://www.ansatt.dev.nav.no/api/navn',
+  development: 'https://pdl-api.dev-fss-pub.nais.io/graphql',
+  production: 'https://pdl-api.prod-fss-pub.nais.io/graphql',
+  ansatt: 'https://pdl-api.dev-fss-pub.nais.io/graphql',
 };
 
 export const utkastApiUrl = UTKAST_API_URL[getEnvironment()];

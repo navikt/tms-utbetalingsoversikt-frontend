@@ -34,7 +34,19 @@ api.get('/api/utbetalinger/ut-*', (c) => {
 });
 
 api.post('/api/navn', (c) => {
-  return c.json(identNavn);
+  return c.json({
+    data: {
+      hentPerson: {
+        navn: [
+          {
+            fornavn: 'Ola',
+            mellomnavn: null,
+            etternavn: 'Normann',
+          },
+        ],
+      },
+    },
+  });
 });
 
 api.get('/api/utbetalinger/ko-*', (c) => {
