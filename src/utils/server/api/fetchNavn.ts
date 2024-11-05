@@ -1,6 +1,6 @@
 import { pdlApiUrl } from '@src/utils/server/urls.ts';
 
-export const fetchFromApi = async (token: string, pid: string) => {
+export const fetchNavn = async (token: string, pid: string) => {
   const response = await fetch(pdlApiUrl, {
     method: 'POST',
     headers: {
@@ -29,7 +29,7 @@ export const fetchFromApi = async (token: string, pid: string) => {
   });
 
   const data = await response.json();
-  console.log('fetchFromApi:' + data);
+
   return {
     status: response.status,
     headers: response.headers,

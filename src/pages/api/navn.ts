@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { parseIdportenToken } from '@navikt/oasis';
 import { getOboToken } from '@src/utils/server/token';
-import { fetchFromApi } from '@src/api/fetchNavn';
+import { fetchNavn } from '@src/utils/server/api/fetchNavn';
 
 export const GET: APIRoute = async (context) => {
   const parsedToken = parseIdportenToken(context.locals.token);
@@ -12,11 +12,7 @@ export const GET: APIRoute = async (context) => {
   }
   const pid = parsedToken.pid;
   const token = await getOboToken(context.locals.token);
-  console.log('pid: ' + pid);
-  console.log('token: ' + token);
-  const fetchedData = await fetchFromApi(token, pid);
-  //console.log('await fetchedData: ' + (await fetchedData));
-  //console.log('fetchedData: ' + fetchedData);
+  const fetchedData = await fetchNavn(token, pid);
 
   return new Response(JSON.stringify(await fetchedData), {
     status: 200,
