@@ -40,16 +40,32 @@ export type UtbetalingerResponse = {
   utbetalingerIPeriode: UtbetalingerIPeriode;
 };
 
-export type PDLNavn = {
-  data: {
-    hentPerson: {
-      navn: [
-        {
-          fornavn: string;
-          mellomnavn: string | null;
-          etternavn: string;
-        },
-      ];
+export type PDLType = {
+  status: number;
+  headers: Headers;
+  body: {
+    errors?: [
+      {
+        message: string;
+        locations: [{ line: number; column: number }];
+        path: [string];
+        extensions: {
+          id: string;
+          code: string;
+          classification: string;
+        };
+      },
+    ];
+    data: {
+      hentPerson: {
+        navn: [
+          {
+            fornavn: string;
+            mellomnavn: string | null;
+            etternavn: string;
+          },
+        ];
+      };
     };
   };
 };

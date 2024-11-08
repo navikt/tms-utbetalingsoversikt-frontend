@@ -113,7 +113,7 @@ const LEGACY_URL = {
 };
 
 const IDENT_NAVN_URL = {
-  local: 'http://localhost:3000/tms-min-side-proxy/navn',
+  local: 'http://localhost:4321/api/navn',
   ansatt: 'https://www.intern.dev.nav.no/tms-min-side-proxy/navn',
   development: 'https://www.intern.dev.nav.no/tms-min-side-proxy/navn',
   production: 'https://www.nav.no/tms-min-side-proxy/navn',

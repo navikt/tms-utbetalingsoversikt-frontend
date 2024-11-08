@@ -35,16 +35,42 @@ api.get('/api/utbetalinger/ut-*', (c) => {
 
 api.post('/api/navn', (c) => {
   return c.json({
-    data: {
-      hentPerson: {
-        navn: [
-          {
-            fornavn: 'Ola',
-            mellomnavn: null,
-            etternavn: 'Normann',
-          },
-        ],
+    status: 200,
+    headers: {},
+    body: {
+      data: {
+        hentPerson: {
+          navn: [
+            {
+              fornavn: 'Ola',
+              mellomnavn: null,
+              etternavn: 'Normann',
+            },
+          ],
+        },
       },
+    },
+  });
+});
+
+api.post('/api/navn/error', (c) => {
+  return c.json({
+    status: 200,
+    headers: {},
+    body: {
+      errors: [
+        {
+          message: 'Mangler behandlingsnummer',
+          locations: [{ line: 2, column: 3 }],
+          path: ['hentPerson'],
+          extensions: {
+            id: 'mangler_behandlingsnummer',
+            code: 'bad_request',
+            classification: 'ValidationError',
+          },
+        },
+      ],
+      data: { hentPerson: null },
     },
   });
 });
@@ -55,10 +81,6 @@ api.get('/api/utbetalinger/ko-*', (c) => {
 
 api.get('/utbetalinger', (c) => {
   return c.json(betaltUtbetalingDetalje);
-});
-
-api.get('/tms-min-side-proxy/navn', (c) => {
-  return c.json(identNavn);
 });
 
 serve(api);
