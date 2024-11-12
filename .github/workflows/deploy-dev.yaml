@@ -31,8 +31,8 @@ jobs:
           run: | 
             npm run mock
             npm run test
-          env:
-            ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
+          #env:
+          #  ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
 
       - name: 'Build application'
         run: 'npm run build'
