@@ -32,6 +32,9 @@ spec:
           namespace: personbruker
   ingresses:
     - 'https://www.nav.no/utbetalingsoversikt'
+    - "https://tjenester.nav.no/utbetalingsoversikt"
+    - 'https://www.intern.nav.no/utbetalingsoversikt'
+
   resources:
     limits:
       memory: 768Mi
