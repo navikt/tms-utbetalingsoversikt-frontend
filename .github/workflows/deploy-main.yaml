@@ -29,7 +29,8 @@ jobs:
 
       - name: 'run tests'
         run: |
-          npm run mock
+          npm run mock &
+          sleep 5
           npm run test
         env:
           ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
