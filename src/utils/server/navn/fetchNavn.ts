@@ -11,6 +11,7 @@ export const fetchNavn = async (
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
+      Behandlingsnummer: 'B481',
       Tema: 'GEN',
     },
     body: JSON.stringify({
