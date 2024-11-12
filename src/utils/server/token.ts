@@ -6,7 +6,6 @@ const audience = 'dev-fss:pdl:pdl-api';
 
 export const getOboToken = async (token: string): Promise<string> => {
   const oboResult = await requestOboToken(token, audience);
-
   if (isLocal) {
     return 'Fake token';
   }

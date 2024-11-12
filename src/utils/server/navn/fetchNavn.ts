@@ -1,8 +1,11 @@
 import type { PDLType } from '@src/types/types';
-import { pdlApiUrl } from '@src/utils/server/urls.ts';
 import { formatNavn } from './formatNavn.ts';
 
-export const fetchNavn = async (token: string, pid: string) => {
+export const fetchNavn = async (
+  token: string,
+  pid: string,
+  pdlApiUrl: string,
+) => {
   const pdlResponse: PDLType = await fetch(`${pdlApiUrl}`, {
     method: 'POST',
     headers: {

@@ -1,0 +1,19 @@
+{
+  "status": 200,
+  "headers": {},
+  "body": {
+    "errors": [
+      {
+        "message": "Mangler behandlingsnummer",
+        "locations": [{ "line": 2, "column": 3 }],
+        "path": ["hentPerson"],
+        "extensions": {
+          "id": "mangler_behandlingsnummer",
+          "code": "bad_request",
+          "classification": "ValidationError"
+        }
+      }
+    ],
+    "data": { "hentPerson": null }
+  }
+}

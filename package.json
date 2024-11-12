@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "test": "NODE_ENV=development vitest",
+    "test:e2e": "playwright test",
     "start": "astro dev",
     "build": "astro check && astro build",
     "mock": "tsx mock/server.ts",
@@ -40,6 +42,7 @@
   },
   "devDependencies": {
     "@hono/node-server": "1.11.2",
+    "@playwright/test": "^1.48.2",
     "@types/node": "20.2.5",
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",

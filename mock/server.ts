@@ -2,11 +2,11 @@ import { Hono } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import { serve } from '@hono/node-server';
 import { cors } from 'hono/cors';
-import identNavn from './mockData/identNavn.json';
 import alleUtbetalinger from './mockData/alleUtbetalinger.json';
-import authentication from './mockData/autentication.json';
 import betaltUtbetalingDetalje from './mockData/betaltUtbetalingDetalje.json';
 import kommendeUtbetalingDetalje from './mockData/kommendeUtbetalingDetaljer.json';
+import pdlNavnResponse from './mockData/pdlNavnResponse.json';
+import pdlErrorResponse from './mockData/pdlErrorResponse.json';
 
 const api = new Hono();
 
@@ -17,10 +17,6 @@ api.use(
     credentials: true,
   }),
 );
-
-api.get('/status', (c) => {
-  return c.json(authentication);
-});
 
 api.get('/api/utbetalinger/alle', (c) => {
   const fom = c.req.queries('fom');
@@ -34,45 +30,11 @@ api.get('/api/utbetalinger/ut-*', (c) => {
 });
 
 api.post('/api/navn', (c) => {
-  return c.json({
-    status: 200,
-    headers: {},
-    body: {
-      data: {
-        hentPerson: {
-          navn: [
-            {
-              fornavn: 'Ola',
-              mellomnavn: null,
-              etternavn: 'Normann',
-            },
-          ],
-        },
-      },
-    },
-  });
+  return c.json(pdlNavnResponse);
 });
 
 api.post('/api/navn/error', (c) => {
-  return c.json({
-    status: 200,
-    headers: {},
-    body: {
-      errors: [
-        {
-          message: 'Mangler behandlingsnummer',
-          locations: [{ line: 2, column: 3 }],
-          path: ['hentPerson'],
-          extensions: {
-            id: 'mangler_behandlingsnummer',
-            code: 'bad_request',
-            classification: 'ValidationError',
-          },
-        },
-      ],
-      data: { hentPerson: null },
-    },
-  });
+  return c.json(pdlErrorResponse);
 });
 
 api.get('/api/utbetalinger/ko-*', (c) => {
