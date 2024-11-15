@@ -114,9 +114,9 @@ const LEGACY_URL = {
 
 const IDENT_NAVN_URL = {
   local: 'http://localhost:4321/api/navn',
-  ansatt: 'https://www.intern.dev.nav.no/api/navn',
-  development: 'https://www.intern.dev.nav.no/api/navn',
-  production: 'https://www.nav.no/api/navn',
+  ansatt: 'https://www.intern.dev.nav.no/utbetalingsoversikt/api/navn',
+  development: 'https://www.intern.dev.nav.no/utbetalingsoversikt/api/navn',
+  production: 'https://www.nav.no/utbetalingsoversikt/api/navn',
 };
 
 export const utbetalingerAPIUrl = (period: string) =>
