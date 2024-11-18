@@ -39,3 +39,29 @@ export type UtbetalingerResponse = {
   tidligere: UtbetalingGroupType[];
   utbetalingerIPeriode: UtbetalingerIPeriode;
 };
+
+export type PDLType = {
+  errors?: [
+    {
+      message: string;
+      locations: [{ line: number; column: number }];
+      path: [string];
+      extensions: {
+        id: string;
+        code: string;
+        classification: string;
+      };
+    },
+  ];
+  data: {
+    hentPerson: {
+      navn: [
+        {
+          fornavn: string;
+          mellomnavn: string | null;
+          etternavn: string;
+        },
+      ];
+    } | null;
+  };
+};

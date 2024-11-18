@@ -3,12 +3,14 @@ import { loginUrl } from './urls';
 import { isInternal } from './utils';
 import { isLocal } from '@src/utils/server/urls.ts';
 import { getToken, validateToken } from '@navikt/oasis';
+import { localToken } from '@src/utils/server/token';
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const token = getToken(context.request.headers);
   const params = encodeURIComponent(context.url.search);
 
   if (isLocal) {
+    context.locals.token = await localToken({ pid: '12345678912' });
     return next();
   }
 

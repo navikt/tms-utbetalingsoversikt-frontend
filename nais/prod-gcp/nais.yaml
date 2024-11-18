@@ -26,6 +26,8 @@ spec:
     max: 4
   accessPolicy:
     outbound:
+      external:
+        - host: pdl-api.dev-fss-pub.nais.io
       rules:
         - application: tms-utbetalingsoversikt-api
         - application: nav-dekoratoren

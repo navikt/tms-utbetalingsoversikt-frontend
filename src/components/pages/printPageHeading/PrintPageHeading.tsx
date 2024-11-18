@@ -13,6 +13,7 @@ const PrintPageHeading = () => {
     },
     fetcher,
   );
+
   return (
     <div className={styles.contentContainer}>
       <img src={logo.src} width="90" alt="Logo" />
