@@ -30,14 +30,14 @@ export const fetchNavn = async (
     }),
   })
     .then((response) => {
-      console.log('Response from API: ' + JSON.stringify(pdlResponse));
+      console.log('Response from API: ' + JSON.stringify(response));
       return response.json();
     })
     .catch((error) => {
       console.error('Error fetching from API: ' + error);
       throw new Error('Error fetching from API' + error);
     });
-
+  console.log('Response from API: ' + JSON.stringify(pdlResponse));
   if (pdlResponse.body?.errors) {
     console.error(
       'Error fetching from API: ' + JSON.stringify(pdlResponse.body.errors),
