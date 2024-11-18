@@ -44,7 +44,7 @@ export const fetchNavn = async (
     );
     return { navn: null, ident: pid };
   }
-  if (pdlResponse.data.hentPerson !== null) {
+  if (pdlResponse.data.hentPerson) {
     const navn = formatNavn(pdlResponse.data.hentPerson.navn[0]);
     return {
       navn: navn,
