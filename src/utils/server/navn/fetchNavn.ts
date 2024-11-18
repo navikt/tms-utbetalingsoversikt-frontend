@@ -34,7 +34,6 @@ export const fetchNavn = async (
     })
     .catch((error) => {
       console.error('Error fetching from API: ' + error);
-      throw new Error('Error fetching from API' + error);
     });
 
   if (pdlResponse.errors) {
