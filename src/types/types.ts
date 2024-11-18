@@ -56,16 +56,16 @@ export type PDLType = {
         };
       },
     ];
-    data: {
-      hentPerson: {
-        navn: [
-          {
-            fornavn: string;
-            mellomnavn: string | null;
-            etternavn: string;
-          },
-        ];
-      };
+  };
+  data: {
+    hentPerson: {
+      navn: [
+        {
+          fornavn: string;
+          mellomnavn: string | null;
+          etternavn: string;
+        },
+      ];
     };
   };
 };

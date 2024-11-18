@@ -1,17 +1,13 @@
 {
-  "status": 200,
-  "headers": {},
-  "body": {
-    "data": {
-      "hentPerson": {
-        "navn": [
-          {
-            "fornavn": "Ola",
-            "mellomnavn": null,
-            "etternavn": "Normann"
-          }
-        ]
-      }
+  "data": {
+    "hentPerson": {
+      "navn": [
+        {
+          "fornavn": "Ola",
+          "mellomnavn": null,
+          "etternavn": "Normann"
+        }
+      ]
     }
   }
 }
