@@ -37,18 +37,19 @@ export const fetchNavn = async (
       console.error('Error fetching from API: ' + error);
       throw new Error('Error fetching from API' + error);
     });
-  console.log('Response from API: ' + JSON.stringify(pdlResponse));
-  if (pdlResponse.body?.errors) {
+
+  if (pdlResponse.errors) {
     console.error(
-      'Error fetching from API: ' + JSON.stringify(pdlResponse.body.errors),
+      'Error fetching from API: ' + JSON.stringify(pdlResponse.errors),
     );
     return { navn: null, ident: pid };
   }
-
-  const navn = formatNavn(pdlResponse.data.hentPerson.navn[0]);
-
-  return {
-    navn: navn,
-    ident: pid,
-  };
+  if (pdlResponse.data.hentPerson) {
+    const navn = formatNavn(pdlResponse.data.hentPerson.navn[0]);
+    return {
+      navn: navn,
+      ident: pid,
+    };
+  }
+  return { navn: null, ident: pid };
 };

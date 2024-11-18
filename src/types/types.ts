@@ -41,22 +41,18 @@ export type UtbetalingerResponse = {
 };
 
 export type PDLType = {
-  status: number;
-  headers: Headers;
-  body: {
-    errors?: [
-      {
-        message: string;
-        locations: [{ line: number; column: number }];
-        path: [string];
-        extensions: {
-          id: string;
-          code: string;
-          classification: string;
-        };
-      },
-    ];
-  };
+  errors?: [
+    {
+      message: string;
+      locations: [{ line: number; column: number }];
+      path: [string];
+      extensions: {
+        id: string;
+        code: string;
+        classification: string;
+      };
+    },
+  ];
   data: {
     hentPerson: {
       navn: [
@@ -66,6 +62,6 @@ export type PDLType = {
           etternavn: string;
         },
       ];
-    };
+    } | null;
   };
 };
