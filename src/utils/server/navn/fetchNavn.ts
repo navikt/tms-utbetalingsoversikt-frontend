@@ -11,7 +11,7 @@ export const fetchNavn = async (
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
-      //Behandlingsnummer: 'B328',
+      Behandlingsnummer: 'B328',
       Tema: 'GEN',
     },
     body: JSON.stringify({
@@ -30,7 +30,6 @@ export const fetchNavn = async (
     }),
   })
     .then((response) => {
-      console.log('Response from API: ' + JSON.stringify(response));
       return response.json();
     })
     .catch((error) => {
