@@ -30,7 +30,7 @@ export const fetchNavn = async (
     }),
   })
     .then((response) => {
-      console.log('Response from API: ' + JSON.stringify(response));
+      console.log('Response from API: ' + JSON.stringify(pdlResponse));
       return response.json();
     })
     .catch((error) => {
