@@ -30,6 +30,7 @@ export const fetchNavn = async (
     }),
   })
     .then((response) => {
+      console.log('Response from API: ' + JSON.stringify(response));
       return response.json();
     })
     .catch((error) => {
