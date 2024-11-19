@@ -1,0 +1,189 @@
+---
+import { BodyShort, BodyLong, Detail, Heading } from '@navikt/ds-react';
+import { enkelUtbetalingApiUrl, getUserInfoUrl } from '@src/utils/server/urls';
+import type { Trekk, UnderYtelseType, Utbetaling } from '@src/types/types';
+import utbetalingPageStyle from './UtbetalingDetaljeSide.module.css';
+import PrintButton from '@src/components/prinButton/PrintButton';
+
+// SummaryPanel
+import summaryPanelStyle from './summaryPanel/SummaryPanel.module.css';
+import { formaterTallUtenDesimaler } from '@src/utbetalingDetalje';
+import { formatToDetailedDate } from '@src/utils/client/date';
+
+// PrintPageHeading
+import logo from '../printPageHeading/nav-logo.png';
+import printPageHeadingStyle from '../printPageHeading/PrintPageHeading.module.css';
+import dayjs from 'dayjs';
+
+// UtbetalingCalculations
+import {
+  isUtbetalingWithSats,
+  satsDescription,
+} from '@src/utils/client/utbetalingDetalje';
+import utbetalingCalculationsStyle from './utbetalingCalculations/UtbetalingCalculations.module.css';
+
+// DetaljeElement
+import detaljeElementStyle from '../../utbetalingDetaljeElement/utbetalingDetaljeElement.module.css';
+
+// UtbetalingDescription
+import utbetalingDescriptionStyle from './utbetalingDescription/UtbetalingDescription.module.css';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const enkelUtbetalingResponse = await fetch(enkelUtbetalingApiUrl(id), {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    Authorization: `Bearer ${'oboToken'}`,
+  },
+});
+
+const brukerResponse = await fetch(getUserInfoUrl, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    Authorization: `Bearer ${'oboToken'}`,
+  },
+});
+
+const bruker = await brukerResponse.json();
+const enkelUtbetaling: Utbetaling = await enkelUtbetalingResponse.json();
+
+// SummaryPanel
+const isUtbetaltText = enkelUtbetaling.erUtbetalt
+  ? 'Utbetalt'
+  : 'Forventet overføring til bank';
+const sumInNok = `${formaterTallUtenDesimaler(enkelUtbetaling.nettoUtbetalt)} kr`;
+
+// UtbetalingCalculations
+const hasTrekk = enkelUtbetaling.trekk.length > 0;
+const hasUnderytelser = enkelUtbetaling.underytelse.length > 0;
+const showSats = isUtbetalingWithSats(enkelUtbetaling.ytelse);
+const showBrutto = hasTrekk && hasUnderytelser;
+const sumUtbetaltLabel = hasUnderytelser ? 'Netto utbetalt' : 'Sum';
+---
+
+<div class={printPageHeadingStyle.contentContainer}>
+  <img src={logo.src} width="90" alt="Logo" />
+  <Detail className={printPageHeadingStyle.pageTitle}
+    >UTBETALINGSOVERSIKT</Detail
+  >
+  <Detail className={printPageHeadingStyle.name}>{bruker?.navn}</Detail>
+  <Detail className={printPageHeadingStyle.fnr}>{bruker?.ident}</Detail>
+  <Detail className={printPageHeadingStyle.utskriftsdato}
+    >{`Utskriftsdato: ${dayjs().format('DD.MM.YYYY')}`}</Detail
+  >
+</div>
+<Heading level="1" size="xlarge">{enkelUtbetaling.ytelse}</Heading>
+<div
+  class={`${summaryPanelStyle.contentWrapper} ${!enkelUtbetaling.erUtbetalt && summaryPanelStyle.kommendeUtbetalingWrapper}`}
+>
+  <div class={summaryPanelStyle.beløpOgDatoContainer}>
+    <BodyShort className={summaryPanelStyle.utbetaltDato}
+      >{
+        `${isUtbetaltText} ${formatToDetailedDate(enkelUtbetaling.ytelseDato)}`
+      }</BodyShort
+    >
+    <Heading
+      className={summaryPanelStyle.belopUtbetaltHeader}
+      level="2"
+      size="xlarge"
+    >
+      {sumInNok}
+    </Heading>
+  </div>
+</div>
+<div class={summaryPanelStyle.printContent}>
+  <BodyShort
+    weight={'semibold'}
+    className={summaryPanelStyle.printSummaryHeading}
+  >
+    <span>{enkelUtbetaling.ytelse}</span>
+    <span>{sumInNok}</span>
+  </BodyShort>
+  <BodyShort className={summaryPanelStyle.BodyText}
+    >{
+      `${isUtbetaltText} ${formatToDetailedDate(enkelUtbetaling.ytelseDato)}`
+    }</BodyShort
+  >
+</div>
+<div class={utbetalingPageStyle.detailsContainer}>
+  <div class={utbetalingCalculationsStyle.container}>
+    <Heading
+      level="2"
+      size="xsmall"
+      className={utbetalingCalculationsStyle.detaljerHeading}
+    >
+      Detaljer
+    </Heading>
+    <ul class={utbetalingCalculationsStyle.calculationList}>
+      {
+        hasUnderytelser &&
+          enkelUtbetaling.underytelse.map((ytelse: UnderYtelseType) => {
+            return (
+              <li class={detaljeElementStyle.container}>
+                <BodyShort>
+                  {`${ytelse.beskrivelse} ${
+                    showSats && ytelse.sats && ytelse.antall
+                      ? satsDescription(ytelse)
+                      : ''
+                  }`}
+                </BodyShort>
+                <BodyShort>{`${formaterTallUtenDesimaler(ytelse.beløp)} kr`}</BodyShort>
+              </li>
+            );
+          })
+      }
+      {
+        showBrutto && (
+          <li
+            class={`${detaljeElementStyle.container} ${detaljeElementStyle.bruttoElement}`}
+          >
+            <BodyShort weight="semibold">Brutto</BodyShort>
+            <BodyShort weight="semibold">{`${formaterTallUtenDesimaler(enkelUtbetaling.bruttoUtbetalt)} kr`}</BodyShort>
+          </li>
+        )
+      }
+      {
+        hasTrekk &&
+          enkelUtbetaling.trekk.map((trekk: Trekk) => (
+            <li class={detaljeElementStyle.container}>
+              <BodyShort>{trekk.type}</BodyShort>
+              <BodyShort>{`${formaterTallUtenDesimaler(trekk.beløp)} kr`}</BodyShort>
+            </li>
+          ))
+      }
+      {
+        (
+          <li class={detaljeElementStyle.container}>
+            <BodyShort weight="semibold">{sumUtbetaltLabel}</BodyShort>
+            <BodyShort weight="semibold">{`${formaterTallUtenDesimaler(enkelUtbetaling.nettoUtbetalt)} kr`}</BodyShort>
+          </li>
+        )
+      }
+    </ul>
+  </div>
+  {
+    enkelUtbetaling.melding && (
+      <Heading level="2" size="xsmall" className={utbetalingDescriptionStyle.Heading}>
+        Melding
+      </Heading>
+      <BodyLong className={utbetalingDescriptionStyle.BodyText}>{enkelUtbetaling.melding}</BodyLong>
+    )
+  }
+    <span>
+      <Heading level="2" size="xsmall" className={utbetalingDescriptionStyle.Heading}>
+        Periode
+      </Heading>
+      <BodyLong className={utbetalingDescriptionStyle.BodyText}>{`${formatToDetailedDate(enkelUtbetaling.ytelsePeriode.fom)} - ${formatToDetailedDate(
+      enkelUtbetaling.ytelsePeriode.tom,
+    )} til konto ${enkelUtbetaling.kontonummer}`}</BodyLong>
+    </span>
+    <PrintButton client:only="react" />
+</div>
