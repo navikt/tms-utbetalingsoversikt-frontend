@@ -171,19 +171,35 @@ const sumUtbetaltLabel = hasUnderytelser ? 'Netto utbetalt' : 'Sum';
   </div>
   {
     enkelUtbetaling.melding && (
-      <Heading level="2" size="xsmall" className={utbetalingDescriptionStyle.Heading}>
-        Melding
-      </Heading>
-      <BodyLong className={utbetalingDescriptionStyle.BodyText}>{enkelUtbetaling.melding}</BodyLong>
+      <span>
+        <Heading
+          level="2"
+          size="xsmall"
+          className={utbetalingDescriptionStyle.Heading}
+        >
+          Melding
+        </Heading>
+        <BodyLong className={utbetalingDescriptionStyle.BodyText}>
+          {enkelUtbetaling.melding}
+        </BodyLong>
+      </span>
     )
   }
-    <span>
-      <Heading level="2" size="xsmall" className={utbetalingDescriptionStyle.Heading}>
-        Periode
-      </Heading>
-      <BodyLong className={utbetalingDescriptionStyle.BodyText}>{`${formatToDetailedDate(enkelUtbetaling.ytelsePeriode.fom)} - ${formatToDetailedDate(
-      enkelUtbetaling.ytelsePeriode.tom,
-    )} til konto ${enkelUtbetaling.kontonummer}`}</BodyLong>
-    </span>
-    <PrintButton client:only="react" />
+  <span>
+    <Heading
+      level="2"
+      size="xsmall"
+      className={utbetalingDescriptionStyle.Heading}
+    >
+      Periode
+    </Heading>
+    <BodyLong className={utbetalingDescriptionStyle.BodyText}
+      >{
+        `${formatToDetailedDate(enkelUtbetaling.ytelsePeriode.fom)} - ${formatToDetailedDate(
+          enkelUtbetaling.ytelsePeriode.tom,
+        )} til konto ${enkelUtbetaling.kontonummer}`
+      }</BodyLong
+    >
+  </span>
+  <PrintButton client:only="react" />
 </div>
