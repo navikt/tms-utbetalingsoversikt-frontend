@@ -4,6 +4,7 @@ import { enkelUtbetalingApiUrl, getUserInfoUrl } from '@src/utils/server/urls';
 import type { Trekk, UnderYtelseType, Utbetaling } from '@src/types/types';
 import utbetalingPageStyle from './UtbetalingDetaljeSide.module.css';
 import PrintButton from '@src/components/prinButton/PrintButton';
+import { getOboToken } from '@src/utils/server/token';
 
 // SummaryPanel
 import summaryPanelStyle from './summaryPanel/SummaryPanel.module.css';
@@ -34,12 +35,13 @@ interface Props {
 
 const { id } = Astro.props;
 
+const oboToken = await getOboToken(Astro.locals.token);
 const enkelUtbetalingResponse = await fetch(enkelUtbetalingApiUrl(id), {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    Authorization: `Bearer ${'oboToken'}`,
+    Authorization: `Bearer ${oboToken}`,
   },
 });
 
@@ -48,7 +50,7 @@ const brukerResponse = await fetch(getUserInfoUrl, {
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    Authorization: `Bearer ${'oboToken'}`,
+    Authorization: `Bearer ${oboToken}`,
   },
 });
 
