@@ -78,3 +78,8 @@ export type Utbetaling = {
   underytelse: UnderYtelseType[];
   trekk: Trekk[];
 };
+
+export type Bruker = {
+  navn: string | null;
+  ident: string | null;
+};

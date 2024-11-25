@@ -1,14 +1,11 @@
 import { expect, test } from 'vitest';
 import { fetchNavn } from './fetchNavn';
-import { getOboToken, localToken } from '../token';
-import { parseIdportenToken } from '@navikt/oasis';
 import { pdlApiUrl } from '../urls';
+import { localToken } from '../token';
 
 test('Fetch navn successfully', async () => {
   const JWTToken = await localToken({ pid: '12345678912' });
-  const parsedToken = parseIdportenToken(JWTToken);
-  const oboToken = await getOboToken(JWTToken);
-  const navn = await fetchNavn(oboToken, parsedToken.pid, pdlApiUrl);
+  const navn = await fetchNavn(JWTToken, pdlApiUrl);
 
   expect(navn).toEqual({
     navn: 'Ola Normann',
@@ -18,11 +15,8 @@ test('Fetch navn successfully', async () => {
 
 test('PDL response with error', async () => {
   const JWTToken = await localToken({ pid: '12345678912' });
-  const parsedToken = parseIdportenToken(JWTToken);
-  const oboToken = await getOboToken(JWTToken);
   const navn = await fetchNavn(
-    oboToken,
-    parsedToken.pid,
+    JWTToken,
     'http://localhost:3000/api/navn/error',
   );
 
