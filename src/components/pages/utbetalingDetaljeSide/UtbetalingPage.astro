@@ -47,8 +47,6 @@ const utbetalingsApiAudience =
   getEnvironment() === 'dev'
     ? 'dev-gcp:min-side:tms-utbetalingsoversikt-api'
     : 'prod-gcp:min-side:tms-utbetalingsoversikt-api';
-const pdlApiAudience =
-  getEnvironment() === 'dev' ? 'dev-fss:pdl:pdl-api' : 'prod-fss:pdl:pdl-api';
 
 const oboToken = await getOboToken(Astro.locals.token, utbetalingsApiAudience);
 

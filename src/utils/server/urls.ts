@@ -24,9 +24,9 @@ const MIN_SIDE_URL = {
 
 const UTBETALINGSOVERSIKT_API_URL = {
   local: 'http://localhost:3000/api',
-  ansatt: 'https://www.ansatt.dev.nav.no/tms-utbetalingsoversikt-api',
-  development: 'https://www.intern.dev.nav.no/tms-utbetalingsoversikt-api',
-  production: 'https://person.nav.no/tms-utbetalingsoversikt-api',
+  ansatt: 'http://tms-utbetalingsoversikt-api',
+  development: 'http://tms-utbetalingsoversikt-api',
+  production: 'http://tms-utbetalingsoversikt-api',
 };
 
 const UTKAST_API_URL = {
