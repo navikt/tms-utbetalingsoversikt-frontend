@@ -12,6 +12,7 @@ import PrintButton from '@src/components/prinButton/PrintButton';
 import { fetchNavn } from '@src/utils/server/navn/fetchNavn';
 import { pdlApiUrl } from '@src/utils/server/urls';
 import { getOboToken } from '@src/utils/server/token';
+import { getEnvironment } from '@src/utils/server/environment';
 
 // SummaryPanel
 import summaryPanelStyle from './summaryPanel/SummaryPanel.module.css';
@@ -42,7 +43,14 @@ interface Props {
 
 const { id } = Astro.props;
 
-const oboToken = await getOboToken(Astro.locals.token);
+const utbetalingsApiAudience =
+  getEnvironment() === 'dev'
+    ? 'dev-gcp:min-side:tms-utbetalingsoversikt-api'
+    : 'prod-gcp:min-side:tms-utbetalingsoversikt-api';
+const pdlApiAudience =
+  getEnvironment() === 'dev' ? 'dev-fss:pdl:pdl-api' : 'prod-fss:pdl:pdl-api';
+
+const oboToken = await getOboToken(Astro.locals.token, utbetalingsApiAudience);
 
 const enkelUtbetalingResponse = await fetch(enkelUtbetalingApiUrl(id), {
   method: 'GET',

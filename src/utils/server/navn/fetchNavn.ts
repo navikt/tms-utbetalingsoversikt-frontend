@@ -2,8 +2,11 @@ import type { PDLType, Bruker } from '@src/types/types';
 import { formatNavn } from './formatNavn.ts';
 import { parseIdportenToken } from '@navikt/oasis';
 import { getOboToken } from '../token.ts';
+import { getEnvironment } from '../environment.ts';
 
 export const fetchNavn = async (token: string, pdlApiUrl: string) => {
+  const pdlApiAudience =
+    getEnvironment() === 'dev' ? 'dev-fss:pdl:pdl-api' : 'prod-fss:pdl:pdl-api';
   const parsedToken = parseIdportenToken(token);
 
   if (!parsedToken.ok) {
@@ -12,7 +15,7 @@ export const fetchNavn = async (token: string, pdlApiUrl: string) => {
   }
 
   const pid = parsedToken.pid;
-  const oboToken = await getOboToken(token);
+  const oboToken = await getOboToken(token, pdlApiAudience);
   const pdlResponse: PDLType = await fetch(`${pdlApiUrl}`, {
     method: 'POST',
     headers: {
