@@ -59,6 +59,8 @@ const enkelUtbetalingResponse = await fetch(enkelUtbetalingApiUrl(id), {
   },
 });
 
+console.log(enkelUtbetalingApiUrl(id));
+
 const bruker: Bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
 const enkelUtbetaling: Utbetaling = await enkelUtbetalingResponse.json();
 
