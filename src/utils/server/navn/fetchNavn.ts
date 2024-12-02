@@ -36,13 +36,13 @@ export const fetchNavn = async (
       console.error('Error fetching from API: ' + error);
     });
 
-  if (pdlResponse.errors) {
+  if (pdlResponse?.errors) {
     console.error(
       'Error fetching from API: ' + JSON.stringify(pdlResponse.errors),
     );
     return { navn: null, ident: pid };
   }
-  if (pdlResponse.data.hentPerson) {
+  if (pdlResponse?.data.hentPerson) {
     const navn = formatNavn(pdlResponse.data.hentPerson.navn[0]);
     return {
       navn: navn,
