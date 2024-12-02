@@ -54,28 +54,32 @@ const Utbetalinger = () => {
 
   const hasTidligereUtbetalinger =
     utbetalinger && utbetalinger?.tidligere.length > 0;
-    hasTidligereUtbetalinger && setYtelseFilter(
+  hasTidligereUtbetalinger &&
+    setYtelseFilter(
       getUniqueYtelser(utbetalinger.utbetalingerIPeriode.ytelser),
     );
 
   const nullYtelser = utbetalinger?.tidligere.flatMap((utbetalingGroup) =>
-      utbetalingGroup.utbetalinger.map(
-          (utbetaling) => utbetaling.beløp === 0 && utbetaling.ytelse,
-      ),
+    utbetalingGroup.utbetalinger.map(
+      (utbetaling) => utbetaling.beløp === 0 && utbetaling.ytelse,
+    ),
   );
 
   const showInfoMelding: boolean = nullYtelser
-      ? nullYtelser.includes('Uføretrygd')
-      : false;
+    ? nullYtelser.includes('Uføretrygd')
+    : false;
 
   const infoMeldingTekst: string =
-      'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
+    'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
 
   return (
     <>
       {hasTidligereUtbetalinger && <YtelserFilter />}
       <Alert className={style.infoMelding} variant="info">
-          <BodyLong>Brukere som leverte meldekort i helgen, vil få utbetaling tirsdag 3. desember.</BodyLong>
+        <BodyLong>
+          Brukere som leverte meldekort i helgen, vil få utbetaling tirsdag 3.
+          desember.
+        </BodyLong>
       </Alert>
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
