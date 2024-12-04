@@ -75,12 +75,6 @@ const Utbetalinger = () => {
   return (
     <>
       {hasTidligereUtbetalinger && <YtelserFilter />}
-      <Alert className={style.infoMelding} variant="info">
-        <BodyLong>
-          De som leverte meldekort i helgen vil få utbetaling tirsdag 3.
-          desember
-        </BodyLong>
-      </Alert>
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
           <BodyLong>{infoMeldingTekst}</BodyLong>
