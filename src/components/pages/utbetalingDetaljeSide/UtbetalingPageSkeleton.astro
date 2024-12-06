@@ -1,0 +1,57 @@
+---
+import {
+  Skeleton,
+  VStack,
+  Heading,
+  BodyLong,
+  HStack,
+  Spacer,
+} from '@navikt/ds-react';
+import style from './UtbetalingPageSkeleton.module.css';
+---
+
+<VStack gap="6">
+  <Heading as={Skeleton} level="1" size="xlarge">Placeholder utbetaling</Heading
+  >
+  <span style={{ display: 'flex', justifyContent: 'center' }}>
+    <Skeleton variant="rectangle" width={100} height={100} />
+  </span>
+  <VStack gap="2">
+    <Heading as={Skeleton} level="2" size="large">Placeholder</Heading>
+    <HStack gap="3" wrap={false}>
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+      <Spacer />
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+    </HStack>
+    <span class={style.divider}></span>
+    <HStack gap="3" wrap={false}>
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+      <Spacer />
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+    </HStack>
+    <span class={style.divider}></span>
+    <HStack gap="3" wrap={false}>
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+      <Spacer />
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+    </HStack>
+    <span class={style.divider}></span>
+    <HStack gap="3" wrap={false}>
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+      <Spacer />
+      <BodyLong as={Skeleton}>Placeholder</BodyLong>
+    </HStack>
+    <span class={style.divider}></span>
+  </VStack>
+  <VStack gap="2">
+    <Heading as={Skeleton} level="2" size="large">Placeholder</Heading>
+    <BodyLong as={Skeleton}>Placeholder melding fra oss.</BodyLong>
+    <span style="{{ borderBottom: '1px solid var(--custom-divider-line)' }}"
+    ></span>
+  </VStack>
+</VStack>
+<VStack gap="2">
+  <Heading as={Skeleton} level="2" size="large">Placeholder</Heading>
+  <BodyLong as={Skeleton}>Placeholder melding fra oss.</BodyLong>
+</VStack>
+<Skeleton variant="rectangle" width={80} height={30} />
