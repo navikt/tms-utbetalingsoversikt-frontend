@@ -1,5 +1,7 @@
 .skrivUtButton {
   margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 @media (min-width: 480px) {

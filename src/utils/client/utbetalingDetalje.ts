@@ -2,15 +2,9 @@ import type { UnderYtelseType } from '@src/types/types';
 
 const utbetalingerMedSats = ['ARBEIDSAVKLARINGSPENGER', 'DAGPENGER'];
 
-export function isUtbetalingWithSats(type: string): boolean {
-  for (const ytelse of utbetalingerMedSats) {
-    if (ytelse.toUpperCase() === type.toUpperCase()) {
-      return true;
-    }
-  }
-
-  return false;
-}
+export const isUtbetalingWithSats = (ytelse: string): boolean => {
+  return utbetalingerMedSats.includes(ytelse.toUpperCase());
+};
 
 export function satsDescription(ytelse: UnderYtelseType): string {
   if (ytelse.satstype == 'Prosent') {

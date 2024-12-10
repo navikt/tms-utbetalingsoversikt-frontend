@@ -1,0 +1,23 @@
+---
+import { Detail } from '@navikt/ds-react';
+import dayjs from 'dayjs';
+import styles from './PrintPageHeading.module.css';
+import logo from './nav-logo.png';
+import type { Bruker } from '@src/types/types';
+
+interface Props {
+  bruker: Bruker;
+}
+
+const { bruker } = Astro.props;
+---
+
+<div class={styles.contentContainer}>
+  <img src={logo.src} width="90" alt="Logo" />
+  <Detail className={styles.pageTitle}>UTBETALINGSOVERSIKT</Detail>
+  <Detail className={styles.name}>{bruker?.navn}</Detail>
+  <Detail className={styles.fnr}>{bruker?.ident}</Detail>
+  <Detail className={styles.utskriftsdato}
+    >{`Utskriftsdato: ${dayjs().format('DD.MM.YYYY')}`}</Detail
+  >
+</div>
