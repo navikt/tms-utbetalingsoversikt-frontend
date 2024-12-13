@@ -3,9 +3,7 @@ import Layout from '@src/layouts/Layout.astro';
 import Breadcrumbs from '@src/components/breadcrumbs/Breadcrumbs.astro';
 import UtbetalingPage from '@src/components/pages/utbetalingDetaljeSide/UtbetalingPage.astro';
 import UtbetalingPageSkeleton from '@src/components/pages/utbetalingDetaljeSide/UtbetalingPageSkeleton.astro';
-
 import Observability from '@src/components/observability/Observability';
-import PrintButton from '@src/components/prinButton/PrintButton';
 
 const { id } = Astro.params;
 ---
@@ -17,6 +15,5 @@ const { id } = Astro.params;
       <UtbetalingPageSkeleton />
     </div>
   </UtbetalingPage>
-  <PrintButton client:only="react" />
   <Observability client:only="react" />
 </Layout>
