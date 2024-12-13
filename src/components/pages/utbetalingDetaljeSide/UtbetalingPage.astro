@@ -2,7 +2,7 @@
 import { Heading } from '@navikt/ds-react';
 import { enkelUtbetalingApiUrl, getUserInfoUrl } from '@src/utils/server/urls';
 import type { Utbetaling, Bruker } from '@src/types/types';
-import utbetalingPageStyle from './UtbetalingPage.module.css';
+import style from './UtbetalingPage.module.css';
 import { fetchNavn } from '@src/utils/server/navn/fetchNavn';
 import { pdlApiUrl } from '@src/utils/server/urls';
 import { getOboToken } from '@src/utils/server/token';
@@ -59,11 +59,11 @@ const bruker: Bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
   ) : (
     <>
       <PrintPageHeading bruker={bruker} />
-      <Heading level="1" size="xlarge">
+      <Heading level="1" size="xlarge" className={style.pageTitle}>
         {enkelUtbetaling.ytelse}
       </Heading>
       <SummaryPanel utbetaling={enkelUtbetaling} />
-      <div class={utbetalingPageStyle.detailsContainer}>
+      <div class={style.detailsContainer}>
         <UtbetalingCalculations utbetaling={enkelUtbetaling} />
         {enkelUtbetaling.melding && (
           <UtbetalingDescription
