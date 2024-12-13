@@ -29,12 +29,6 @@ const UTBETALINGSOVERSIKT_API_URL = {
   production: 'http://tms-utbetalingsoversikt-api/tms-utbetalingsoversikt-api',
 };
 
-const UTKAST_API_URL = {
-  local: 'http://localhost:3000/utkast/v2/utkast',
-  development: 'http://tms-utkast/v2/utkast',
-  production: 'http://tms-utkast/v2/utkast',
-};
-
 const BASE_URL: EnvUrl = {
   local: 'http://localhost:4321/minside',
   development: 'https://www.ansatt.dev.nav.no/minside/',
@@ -73,7 +67,6 @@ const GET_USER_INFO_URL = {
   ansatt: 'https://www.ansatt.dev.nav.no/utbetalingsoversikt/api/navn',
 };
 
-export const utkastApiUrl = UTKAST_API_URL[getEnvironment()];
 export const baseUrl = BASE_URL[getEnvironment()];
 export const errorReportingUrl = ERROR_REPORTING_URL[getEnvironment()];
 export const navNoUrl = NAV_NO_URL[getEnvironment()];
