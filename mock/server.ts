@@ -29,6 +29,10 @@ api.get('/api/utbetalinger/ut-*', (c) => {
   return c.json(betaltUtbetalingDetalje);
 });
 
+api.get('/api/utbetalinger/ssr/ut-*', (c) => {
+  return c.json(betaltUtbetalingDetalje);
+});
+
 api.post('/api/navn', (c) => {
   return c.json(pdlNavnResponse);
 });
@@ -38,6 +42,10 @@ api.post('/api/navn/error', (c) => {
 });
 
 api.get('/api/utbetalinger/ko-*', (c) => {
+  return c.json(kommendeUtbetalingDetalje);
+});
+
+api.get('/api/utbetalinger/ssr/ko-*', (c) => {
   return c.json(kommendeUtbetalingDetalje);
 });
 

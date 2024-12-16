@@ -1,0 +1,84 @@
+---
+import { Heading } from '@navikt/ds-react';
+import { enkelUtbetalingApiUrl, getUserInfoUrl } from '@src/utils/server/urls';
+import type { Utbetaling, Bruker } from '@src/types/types';
+import style from './UtbetalingPage.module.css';
+import { fetchNavn } from '@src/utils/server/navn/fetchNavn';
+import { pdlApiUrl } from '@src/utils/server/urls';
+import { getOboToken } from '@src/utils/server/token';
+import { getEnvironment } from '@src/utils/server/environment';
+import { formatToDetailedDate } from '@src/utils/client/date';
+import PrintPageHeading from '../printPageHeading/PrintPageHeading.astro';
+import SummaryPanel from './summaryPanel/SummaryPanel.astro';
+import UtbetalingCalculations from './utbetalingCalculations/UtbetalingCalculations.astro';
+import UtbetalingDescription from './utbetalingDescription/UtbetalingDescription.astro';
+import ErrorPanel from '@src/components/errorPanel/ErrorPanel.astro';
+import PrintButton from '@src/components/prinButton/PrintButton';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const utbetalingsApiAudience =
+  getEnvironment() === 'dev'
+    ? 'dev-gcp:min-side:tms-utbetalingsoversikt-api'
+    : 'prod-gcp:min-side:tms-utbetalingsoversikt-api';
+
+const oboToken = await getOboToken(Astro.locals.token, utbetalingsApiAudience);
+
+let utbetalingFetchError = false;
+
+const enkelUtbetaling: Utbetaling = await fetch(enkelUtbetalingApiUrl(id), {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    Authorization: `Bearer ${oboToken}`,
+  },
+})
+  .then((response) => {
+    if (!response.ok) {
+      console.error('Failed to fetch utbetaling');
+      utbetalingFetchError = true;
+    }
+    return response.json();
+  })
+  .catch((error) => {
+    console.error('Failed to fetch utbetaling', error);
+    utbetalingFetchError = true;
+  });
+
+const bruker: Bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
+---
+
+{
+  utbetalingFetchError ? (
+    <ErrorPanel isLandingsside={false} />
+  ) : (
+    <>
+      <PrintPageHeading bruker={bruker} />
+      <Heading level="1" size="xlarge" className={style.pageTitle}>
+        {enkelUtbetaling.ytelse}
+      </Heading>
+      <SummaryPanel utbetaling={enkelUtbetaling} />
+      <div class={style.detailsContainer}>
+        <UtbetalingCalculations utbetaling={enkelUtbetaling} />
+        {enkelUtbetaling.melding && (
+          <UtbetalingDescription
+            heading="Melding"
+            bodyText={enkelUtbetaling.melding}
+          />
+        )}
+        <UtbetalingDescription
+          heading={'Periode'}
+          bodyText={`${formatToDetailedDate(enkelUtbetaling.ytelsePeriode.fom)} - ${formatToDetailedDate(
+            enkelUtbetaling.ytelsePeriode.tom,
+          )} til konto ${enkelUtbetaling.kontonummer}`}
+        />
+      </div>
+      <PrintButton client:only="react" />
+    </>
+  )
+}

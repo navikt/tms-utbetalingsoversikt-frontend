@@ -1,0 +1,4 @@
+.divider {
+  border-bottom: var(--custom-divider-line);
+  padding-bottom: 0.75rem;
+}

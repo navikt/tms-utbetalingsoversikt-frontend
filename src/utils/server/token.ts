@@ -2,10 +2,10 @@ import { requestOboToken } from '@navikt/oasis';
 import { isLocal, getEnvironment } from '@src/utils/server/environment.ts';
 import { generateKeyPair, SignJWT } from 'jose';
 
-const audience =
-  getEnvironment() === 'dev' ? 'dev-fss:pdl:pdl-api' : 'prod-fss:pdl:pdl-api';
-
-export const getOboToken = async (token: string): Promise<string> => {
+export const getOboToken = async (
+  token: string,
+  audience: string,
+): Promise<string> => {
   const oboResult = await requestOboToken(token, audience);
   if (isLocal) {
     return 'Fake token';

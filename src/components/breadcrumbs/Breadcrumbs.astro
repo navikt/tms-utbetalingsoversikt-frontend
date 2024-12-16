@@ -1,0 +1,26 @@
+---
+import { minSideUrl } from '@src/utils/server/urls';
+import style from './Breadcrumbs.module.css';
+import { Link } from '@navikt/ds-react';
+
+interface Props {
+  includeUtbetalinger: boolean;
+}
+
+const includeUtbetalinger = Astro.props;
+---
+
+<div class={style.container}>
+  <a class={`${style.minSideLink} ${style.link}`} href={minSideUrl}>
+    Min side
+  </a>
+  {
+    includeUtbetalinger && (
+      <div class={style.linkWrapper}>
+        <Link className={style.link} href="/utbetalingsoversikt">
+          Utbetalinger
+        </Link>
+      </div>
+    )
+  }
+</div>

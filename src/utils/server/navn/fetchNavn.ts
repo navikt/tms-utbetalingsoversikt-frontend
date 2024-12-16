@@ -1,16 +1,26 @@
-import type { PDLType } from '@src/types/types';
+import type { PDLType, Bruker } from '@src/types/types';
 import { formatNavn } from './formatNavn.ts';
+import { parseIdportenToken } from '@navikt/oasis';
+import { getOboToken } from '../token.ts';
+import { getEnvironment } from '../environment.ts';
 
-export const fetchNavn = async (
-  token: string,
-  pid: string,
-  pdlApiUrl: string,
-) => {
+export const fetchNavn = async (token: string, pdlApiUrl: string) => {
+  const pdlApiAudience =
+    getEnvironment() === 'dev' ? 'dev-fss:pdl:pdl-api' : 'prod-fss:pdl:pdl-api';
+  const parsedToken = parseIdportenToken(token);
+
+  if (!parsedToken.ok) {
+    console.error('Could not parse token' + parsedToken.error);
+    return { navn: null, ident: null };
+  }
+
+  const pid = parsedToken.pid;
+  const oboToken = await getOboToken(token, pdlApiAudience);
   const pdlResponse: PDLType = await fetch(`${pdlApiUrl}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${oboToken}`,
       Behandlingsnummer: 'B481',
       Tema: 'GEN',
     },

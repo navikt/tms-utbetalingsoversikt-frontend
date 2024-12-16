@@ -65,3 +65,21 @@ export type PDLType = {
     } | null;
   };
 };
+
+export type Utbetaling = {
+  ytelse: string;
+  ytelseDato: string;
+  nettoUtbetalt: number;
+  bruttoUtbetalt: number;
+  erUtbetalt: boolean;
+  melding: string;
+  ytelsePeriode: { fom: string; tom: string };
+  kontonummer: string;
+  underytelse: UnderYtelseType[];
+  trekk: Trekk[];
+};
+
+export type Bruker = {
+  navn: string | null;
+  ident: string | null;
+};
