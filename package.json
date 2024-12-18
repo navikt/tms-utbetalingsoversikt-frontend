@@ -27,7 +27,7 @@
     "@navikt/oasis": "^3.4.0",
     "@testing-library/react": "^16.0.1",
     "amplitude-js": "^8.21.9",
-    "astro": "4.15.4",
+    "astro": "4.16.18",
     "dayjs": "1.11.10",
     "husky": "^9.1.6",
     "jose": "^5.9.6",
