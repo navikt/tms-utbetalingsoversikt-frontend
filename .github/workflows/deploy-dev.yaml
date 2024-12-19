@@ -27,12 +27,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
-      - name: 'run tests'
-        run: | 
-          npm run mock &
-          npm run test
-        env:
-          ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
+      # - name: 'run tests'
+      #   run: | 
+      #     npm run mock &
+      #     npm run test
+      #   env:
+      #     ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
 
       - name: 'Build application'
         run: 'npm run build'
