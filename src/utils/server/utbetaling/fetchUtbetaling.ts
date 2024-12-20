@@ -1,16 +1,12 @@
 import { enkelUtbetalingApiUrl } from '@src/utils/server/urls';
 import type { Utbetaling } from '@src/types/types';
-import { getEnvironment } from '@src/utils/server/environment';
 import { getOboToken } from '@src/utils/server/token';
 
 export const fetchUtbetaling = async (
   token: string,
   id: string,
 ): Promise<Utbetaling> => {
-  const utbetalingsApiAudience =
-    getEnvironment() === 'dev'
-      ? 'dev-gcp:min-side:tms-utbetalingsoversikt-api'
-      : 'prod-gcp:min-side:tms-utbetalingsoversikt-api';
+  const utbetalingsApiAudience = `${process.env.NAIS_CLUSTER_NAM}:min-side:tms-utbetalingsoversikt-api`;
 
   const oboToken = await getOboToken(token, utbetalingsApiAudience);
 
