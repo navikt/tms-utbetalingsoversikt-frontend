@@ -18,7 +18,7 @@ export const fetchUtbetaling = async (
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      sAccept: 'application/json',
+      Accept: 'application/json',
       Authorization: `Bearer ${oboToken}`,
     },
   });
