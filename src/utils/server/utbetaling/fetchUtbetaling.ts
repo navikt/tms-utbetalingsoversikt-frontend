@@ -6,7 +6,7 @@ export const fetchUtbetaling = async (
   token: string,
   id: string,
 ): Promise<Utbetaling> => {
-  const utbetalingsApiAudience = `${process.env.NAIS_CLUSTER_NAM}:min-side:tms-utbetalingsoversikt-api`;
+  const utbetalingsApiAudience = `${process.env.NAIS_CLUSTER_NAME}:min-side:tms-utbetalingsoversikt-api`;
 
   const oboToken = await getOboToken(token, utbetalingsApiAudience);
 
