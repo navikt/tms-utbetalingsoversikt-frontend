@@ -19,8 +19,8 @@ interface Props {
 
 const { id } = Astro.props;
 
-let enkelUtbetaling: Utbetaling;
-let utbetalingFetchError = false;
+let enkelUtbetaling: Utbetaling | null = null;
+let utbetalingFetchError: boolean = false;
 
 try {
   enkelUtbetaling = await fetchUtbetaling(Astro.locals.token, id);
@@ -33,9 +33,7 @@ const bruker: Bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
 ---
 
 {
-  utbetalingFetchError ? (
-    <ErrorPanel isLandingsside={false} />
-  ) : (
+  enkelUtbetaling && !utbetalingFetchError ? (
     <>
       <PrintPageHeading bruker={bruker} />
       <Heading level="1" size="xlarge" className={style.pageTitle}>
@@ -59,5 +57,7 @@ const bruker: Bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
       </div>
       <PrintButton client:only="react" />
     </>
+  ) : (
+    <ErrorPanel isLandingsside={false} />
   )
 }
