@@ -21,6 +21,9 @@ spec:
   readiness:
     path: /utbetalingsoversikt/api/internal/isReady
     initialDelay: 10
+  prometheus:
+    enabled: true
+    path: /utbetalingsoversikt/api/internal/metrics
   replicas:
     min: 2
     max: 4
