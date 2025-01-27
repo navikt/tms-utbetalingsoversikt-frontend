@@ -6,10 +6,8 @@ import RelatertInnhold from '@src/components/relatertInnhold/RelatertInnhold.tsx
 import Utbetalinger from '@src/components/utbetalinger/Utbetalinger.tsx';
 import style from './Landingsside.module.css';
 import PrintUtbetalinger from './printUtbetalinger/PrintUtbetalinger';
-import { initializeAmplitude } from '@src/utils/client/amplitude';
 
 function Landingsside() {
-  initializeAmplitude();
 
   return (
     <>
