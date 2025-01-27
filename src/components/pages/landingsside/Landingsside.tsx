@@ -8,7 +8,6 @@ import style from './Landingsside.module.css';
 import PrintUtbetalinger from './printUtbetalinger/PrintUtbetalinger';
 
 function Landingsside() {
-
   return (
     <>
       <div id={style.printHide}>
