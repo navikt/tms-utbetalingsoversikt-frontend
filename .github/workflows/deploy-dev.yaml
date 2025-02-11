@@ -67,9 +67,6 @@ jobs:
         cluster: [dev-gcp]
     steps:
       - uses: 'actions/checkout@v3'
-      - uses: 'actions/setup-node@v3'
-        with:
-          node-version: 22
       - name: 'Deploy to dev'
         uses: 'nais/deploy/actions/deploy@v2'
         env:
