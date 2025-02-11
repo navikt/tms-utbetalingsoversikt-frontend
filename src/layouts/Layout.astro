@@ -1,11 +1,11 @@
 ---
 import { fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr';
-import { getEnvironment } from '../utils/server/environment';
+import { getDecoratorEnvironment } from '../utils/server/environment';
 import styles from './Layout.module.css';
 import './index.css';
 
 const Decorator = await fetchDecoratorReact({
-  env: getEnvironment(),
+  env: getDecoratorEnvironment(),
   params: {
     context: 'privatperson',
   },
@@ -29,7 +29,7 @@ const Decorator = await fetchDecoratorReact({
       rel="stylesheet"
       href="https://cdn.nav.no/aksel/@navikt/ds-css/6.16.2/index.min.css"
     />
-    <Decorator.Styles />
+    <Decorator.HeadAssets />
   </head>
   <body class="page-wrapper">
     <Decorator.Header />
