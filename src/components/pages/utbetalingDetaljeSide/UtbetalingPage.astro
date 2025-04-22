@@ -12,6 +12,7 @@ import UtbetalingCalculations from './utbetalingCalculations/UtbetalingCalculati
 import UtbetalingDescription from './utbetalingDescription/UtbetalingDescription.astro';
 import ErrorPanel from '@src/components/errorPanel/ErrorPanel.astro';
 import PrintButton from '@src/components/prinButton/PrintButton';
+import pino from 'pino-http';
 
 interface Props {
   id: string;
@@ -21,11 +22,12 @@ const { id } = Astro.props;
 
 let enkelUtbetaling: Utbetaling | null = null;
 let utbetalingFetchError: boolean = false;
+const logger = pino().logger;
 
 try {
   enkelUtbetaling = await fetchUtbetaling(Astro.locals.token, id);
 } catch (error: any) {
-  console.error('Fetch failed.', error.message);
+  logger.error('Fetch failed.', error.message);
   utbetalingFetchError = true;
 }
 
