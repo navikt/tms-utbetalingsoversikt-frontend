@@ -76,7 +76,7 @@ const Utbetalinger = () => {
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
   const infoMeldingBarnetrygd: string =
-    "Fra 1. mai 2025 økte barnetrygd for barn 0-18 år til 1968 kroner. På grunn av en teknisk feil, vil noen kunne se en liste med utbetalinger på '0 kr' i tillegg til utbetalingen på 1968 kroner. Dette påvirker ikke utbetalingen din. Vi beklager feilen.";
+    'Fra 1. mai 2025 økte barnetrygd for barn 0-18 år til 1968 kroner. På grunn av en teknisk feil, vil noen kunne se en liste med utbetalinger på "0 kr" i tillegg til utbetalingen på 1968 kroner. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
 
   return (
     <>
