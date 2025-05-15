@@ -69,8 +69,14 @@ const Utbetalinger = () => {
     ? nullYtelser.includes('Uføretrygd')
     : false;
 
+  const showBarnetrygdMelding: boolean = nullYtelser
+    ? nullYtelser.includes('Barnetrygd')
+    : false;
+
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
+  const infoMeldingBarnetrygd: string =
+    "Fra 1. mai 2025 økte barnetrygd for barn 0-18 år til 1968 kroner. På grunn av en teknisk feil, vil noen kunne se en liste med utbetalinger på '0 kr' i tillegg til utbetalingen på 1968 kroner. Dette påvirker ikke utbetalingen din. Vi beklager feilen.";
 
   return (
     <>
@@ -78,6 +84,11 @@ const Utbetalinger = () => {
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
           <BodyLong>{infoMeldingTekst}</BodyLong>
+        </Alert>
+      )}
+      {showBarnetrygdMelding && (
+        <Alert className={style.infoMelding} variant="info">
+          <BodyLong>{infoMeldingBarnetrygd}</BodyLong>
         </Alert>
       )}
       {showKommendeUtbetalinger && (
