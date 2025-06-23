@@ -65,9 +65,20 @@ const Utbetalinger = () => {
     ),
   );
 
+  const hasAAPOrDagpenger = utbetalinger?.tidligere.some((utbetalingGroup) =>
+    utbetalingGroup.utbetalinger.some(
+      (utbetaling) =>
+        utbetaling.ytelse === 'Dagpenger' ||
+        utbetaling.ytelse === 'Arbeidsavklaringspenger',
+    ),
+  );
+
   const showInfoMelding: boolean = nullYtelser
     ? nullYtelser.includes('Uføretrygd')
     : false;
+
+  const AAPAndDagpengerInfo: string =
+    'Hvis du sendte meldekort i helgen, vil utbetalingen komme litt senere enn normalt. Du skal likevel ha pengene på konto innen 3 virkedager.';
 
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
@@ -78,6 +89,11 @@ const Utbetalinger = () => {
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
           <BodyLong>{infoMeldingTekst}</BodyLong>
+        </Alert>
+      )}
+      {hasAAPOrDagpenger && (
+        <Alert className={style.infoMelding} variant="info">
+          <BodyLong>{AAPAndDagpengerInfo}</BodyLong>
         </Alert>
       )}
       {showKommendeUtbetalinger && (
