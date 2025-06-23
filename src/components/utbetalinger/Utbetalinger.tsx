@@ -78,7 +78,7 @@ const Utbetalinger = () => {
     : false;
 
   const AAPAndDagpengerInfo: string =
-    'Hvis du sendte meldekort i helgen, vil utbetalingen komme litt senere enn normalt. Du skal likevel ha pengene på konto innen 3 virkedager.';
+    'Hvis du har sendt meldekort i helgen, vil utbetalingen komme én dag senere enn normalt.';
 
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
