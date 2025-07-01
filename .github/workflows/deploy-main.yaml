@@ -68,7 +68,7 @@ jobs:
     steps:
       - uses: 'actions/checkout@v3'
       - name: 'Deploy'
-        uses: 'nais/deploy/actions/deploy@v2'
+        uses: 'k@v2'
         env:
           CLUSTER: ${{ matrix.cluster }}
           RESOURCE: nais/${{ matrix.cluster }}/nais.yaml
