@@ -20,12 +20,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Determine what to do
-        id: changed-files
-        uses: nais/what-changed@main
-        with:
-          files: nais/dev-gcp/nais.yaml
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
