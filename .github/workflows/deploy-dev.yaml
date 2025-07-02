@@ -1,46 +1,45 @@
-name: Build and deploy
-
+name: 'Deploy dev'
 on:
   push:
     branches:
-      - dev-*
+      - 'dev-*'
 
 permissions:
-  contents: read
-  id-token: write
-  actions: read
-  packages: write
+  contents: 'read'
+  id-token: 'write'
+  packages: 'write'
 
 jobs:
-  build_and_deploy:
-    name: Build, push and deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+  build:
+    name: 'build'
+    runs-on: 'ubuntu-latest'
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'actions/setup-node@v4'
         with:
           node-version: 22
           registry-url: 'https://npm.pkg.github.com'
           cache: 'npm'
 
-      - name: Install dependencies
-        if: steps.changed-files.outputs.changed != 'only-inputs'
-        run: npm ci
+      - name: 'Install dependencies'
+        run: 'npm ci'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
-      - name: Build application
-        if: steps.changed-files.outputs.changed != 'only-inputs'
-        run: npm run build
+      # - name: 'run tests'
+      #   run: | 
+      #     npm run mock &
+      #     npm run test
+      #   env:
+      #     ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
+
+      - name: 'Build application'
+        run: 'npm run build'
         env:
           ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
 
-      - name: Upload to cdn
-        if: steps.changed-files.outputs.changed != 'only-inputs'
+      - name: 'Upload to cdn'
         uses: nais/deploy/actions/cdn-upload/v2@master
         with:
           team: min-side
@@ -49,8 +48,7 @@ jobs:
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
-      - name: Build and push image and SBOM to OCI registry
-        if: steps.changed-files.outputs.changed != 'only-inputs'
+      - name: 'Build and push'
         uses: nais/docker-build-push@v0
         id: docker-build-push
         with:
@@ -58,11 +56,20 @@ jobs:
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
-      - name: Deploy to Nais
-        if: steps.changed-files.outputs.changed != 'only-inputs'
-        uses: nais/deploy/actions/deploy@v2
+    outputs:
+      image: ${{ steps.docker-build-push.outputs.image }}
+
+  deploy-dev:
+    runs-on: 'ubuntu-latest'
+    needs: 'build'
+    strategy:
+      matrix:
+        cluster: dev-gcp
+    steps:
+      - uses: 'actions/checkout@v4'
+      - name: 'Deploy to dev'
+        uses: 'nais/deploy/actions/deploy@v2'
         env:
-          CLUSTER: dev-gcp
-          RESOURCE: nais/dev-gcp/nais.yaml
-          WORKLOAD_IMAGE: ${{ steps.docker-build-push.outputs.image }}
-          TELEMETRY: ${{ steps.docker-build-push.outputs.telemetry }}
+          CLUSTER: ${{ matrix.cluster }}
+          RESOURCE: nais/${{ matrix.cluster }}/nais.yaml
+          VAR: image=${{ needs.build.outputs.image }},version=${{ github.sha }}
