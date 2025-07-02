@@ -64,7 +64,7 @@ jobs:
     needs: 'build'
     strategy:
       matrix:
-        cluster: 'dev-gcp'
+        cluster: [dev-gcp]
     steps:
       - uses: 'actions/checkout@v4'
       - name: 'Deploy to dev'
