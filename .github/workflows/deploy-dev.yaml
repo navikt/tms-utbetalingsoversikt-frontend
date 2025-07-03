@@ -15,8 +15,8 @@ jobs:
     runs-on: 'ubuntu-latest'
 
     steps:
-      - uses: 'actions/checkout@v3'
-      - uses: 'actions/setup-node@v3'
+      - uses: 'actions/checkout@v4'
+      - uses: 'actions/setup-node@v4'
         with:
           node-version: 22
           registry-url: 'https://npm.pkg.github.com'
@@ -49,7 +49,7 @@ jobs:
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
       - name: 'Build and push'
-        uses: nais/docker-build-push@main
+        uses: nais/docker-build-push@v0
         id: docker-build-push
         with:
           team: min-side
@@ -66,7 +66,7 @@ jobs:
       matrix:
         cluster: [dev-gcp]
     steps:
-      - uses: 'actions/checkout@v3'
+      - uses: 'actions/checkout@v4'
       - name: 'Deploy to dev'
         uses: 'nais/deploy/actions/deploy@v2'
         env:

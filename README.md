@@ -16,4 +16,4 @@ Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på git
 
 ## For NAV-ansatte
 
-Interne henvendelser kan sendes via Slack i kanalen #team-personbruker.
+Interne henvendelser kan sendes via Slack i kanalen [#team-minside](https://nav-it.slack.com/archives/C0912F59V29).
