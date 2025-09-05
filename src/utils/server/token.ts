@@ -1,13 +1,12 @@
 import { requestOboToken } from '@navikt/oasis';
-import { isLocal, getEnvironment } from '@src/utils/server/environment.ts';
+import { isLocal } from '@src/utils/server/environment.ts';
 import { generateKeyPair, SignJWT } from 'jose';
-import pino from 'pino-http';
+import logger from './logger';
 
 export const getOboToken = async (
   token: string,
   audience: string,
 ): Promise<string> => {
-  const logger = pino().logger;
   const oboResult = await requestOboToken(token, audience);
   if (isLocal) {
     return 'Fake token';

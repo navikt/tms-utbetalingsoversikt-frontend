@@ -25,6 +25,5 @@ test('fomat nav with many mellomnavn', () => {
     mellomnavn: 'Nikolai Mohammed Ali',
     etternavn: 'Nordmann',
   });
-  console.log(navn);
   expect(navn).toEqual('Ola Nikolai Mohammed Ali Nordmann');
 });

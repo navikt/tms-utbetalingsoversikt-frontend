@@ -4,12 +4,11 @@ import { isInternal } from './utils';
 import { isLocal } from '@src/utils/server/urls.ts';
 import { getToken, validateToken } from '@navikt/oasis';
 import { localToken } from '@src/utils/server/token';
-import pino from 'pino-http';
+import logger from '@src/utils/server/logger';
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const token = getToken(context.request.headers);
   const params = encodeURIComponent(context.url.search);
-  const logger = pino().logger;
 
   if (isLocal) {
     context.locals.token = await localToken({ pid: '12345678912' });
@@ -21,7 +20,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   if (!token) {
-    console.info(
+    logger.info(
       'Could not find any bearer token on the request. Redirecting to login.',
     );
     return context.redirect(`${loginUrl}${params}`);
