@@ -3,13 +3,12 @@ import { formatNavn } from './formatNavn.ts';
 import { parseIdportenToken } from '@navikt/oasis';
 import { getOboToken } from '../token.ts';
 import { getEnvironment } from '../environment.ts';
-import pino from 'pino-http';
+import logger from '../logger.ts';
 
 export const fetchNavn = async (token: string, pdlApiUrl: string) => {
   const pdlApiAudience =
     getEnvironment() === 'dev' ? 'dev-fss:pdl:pdl-api' : 'prod-fss:pdl:pdl-api';
   const parsedToken = parseIdportenToken(token);
-  const logger = pino().logger;
 
   if (!parsedToken.ok) {
     logger.error('Could not parse token' + parsedToken.error);
