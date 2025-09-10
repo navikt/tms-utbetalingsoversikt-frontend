@@ -26,7 +26,7 @@
     "@navikt/oasis": "3.8.0",
     "@opentelemetry/sdk-node": "0.202.0",
     "@testing-library/react": "16.3.0",
-    "astro": "5.10.2",
+    "astro": "5.13.5",
     "dayjs": "1.11.13",
     "husky": "9.1.7",
     "jose": "6.0.11",
@@ -47,7 +47,7 @@
     "@types/node": "24.0.8",
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.18",
-    "hono": "4.8.3",
+    "hono": "4.9.0",
     "prettier": "3.6.2",
     "tsx": "4.20.3",
     "typescript": "5.8.3"
