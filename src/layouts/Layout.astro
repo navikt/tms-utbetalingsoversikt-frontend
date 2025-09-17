@@ -1,13 +1,13 @@
 ---
-import { fetchDecoratorReact } from '@navikt/nav-dekoratoren-moduler/ssr';
-import { getDecoratorEnvironment } from '../utils/server/environment';
-import styles from './Layout.module.css';
-import './index.css';
+import { fetchDecoratorReact } from "@navikt/nav-dekoratoren-moduler/ssr";
+import { getDecoratorEnvironment } from "../utils/server/environment";
+import styles from "./Layout.module.css";
+import "./index.css";
 
 const Decorator = await fetchDecoratorReact({
   env: getDecoratorEnvironment(),
   params: {
-    context: 'privatperson',
+    context: "privatperson",
   },
 });
 ---

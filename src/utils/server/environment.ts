@@ -1,17 +1,17 @@
-const isDevelopment = process.env.NAIS_CLUSTER_NAME === 'dev-gcp';
-const isProduction = process.env.NAIS_CLUSTER_NAME === 'prod-gcp';
-export const isLocal = process.env.NODE_ENV === 'development';
+const isDevelopment = process.env.NAIS_CLUSTER_NAME === "dev-gcp";
+const isProduction = process.env.NAIS_CLUSTER_NAME === "prod-gcp";
+export const isLocal = process.env.NODE_ENV === "development";
 
 export const getEnvironment = () => {
   if (isDevelopment) {
-    return 'dev';
+    return "dev";
   }
 
   if (isLocal) {
-    return 'dev';
+    return "dev";
   }
 
-  return 'prod';
+  return "prod";
 };
 
-export const getDecoratorEnvironment = () => (isProduction ? 'prod' : 'dev');
+export const getDecoratorEnvironment = () => (isProduction ? "prod" : "dev");

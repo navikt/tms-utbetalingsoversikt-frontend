@@ -5,5 +5,5 @@ type Navn = {
 };
 
 export const formatNavn = (navn: Navn) => {
-  return `${navn.fornavn} ${navn.mellomnavn ? navn.mellomnavn + ' ' : ''}${navn.etternavn}`;
+  return `${navn.fornavn} ${navn.mellomnavn ? navn.mellomnavn + " " : ""}${navn.etternavn}`;
 };

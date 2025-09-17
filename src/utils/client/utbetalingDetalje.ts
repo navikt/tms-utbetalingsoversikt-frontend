@@ -1,16 +1,22 @@
-import type { UnderYtelseType } from '@src/types/types';
+import type { UnderYtelseType } from "@src/types/types";
 
-const utbetalingerMedSats = ['ARBEIDSAVKLARINGSPENGER', 'DAGPENGER'];
+const utbetalingerMedSats = ["ARBEIDSAVKLARINGSPENGER", "DAGPENGER"];
 
 export const isUtbetalingWithSats = (ytelse: string): boolean => {
   return utbetalingerMedSats.includes(ytelse.toUpperCase());
 };
 
 export function satsDescription(ytelse: UnderYtelseType): string {
-  if (ytelse.satstype == 'Prosent') {
-    return `(${formaterTallTilKomma({ tall: ytelse.antall, maxDesimaler: 4 })} kroner à ${formaterTallUtenDesimaler(ytelse.sats)}%)`;
+  if (ytelse.satstype === "Prosent") {
+    return `(${formaterTallTilKomma({
+      tall: ytelse.antall,
+      maxDesimaler: 4,
+    })} kroner à ${formaterTallUtenDesimaler(ytelse.sats)}%)`;
   } else {
-    return `(${formaterTallTilKomma({ tall: ytelse.antall, maxDesimaler: 4 })} dager à ${formaterTallUtenDesimaler(ytelse.sats)} kroner)`;
+    return `(${formaterTallTilKomma({
+      tall: ytelse.antall,
+      maxDesimaler: 4,
+    })} dager à ${formaterTallUtenDesimaler(ytelse.sats)} kroner)`;
   }
 }
 
@@ -28,21 +34,21 @@ export function formaterTallTilKomma({
   }
 
   return tall
-    ? tall.toLocaleString('no-nb', {
+    ? tall.toLocaleString("no-nb", {
         minimumFractionDigits: minDesimaler,
         maximumFractionDigits: maxDesimaler,
       })
-    : '0';
+    : "0";
 }
 
 export function formaterTallUtenDesimaler(tall: number): string {
-  return tall ? tall.toLocaleString('no-nb') : '0';
+  return tall ? tall.toLocaleString("no-nb") : "0";
 }
 
 export function formaterVekkTommeMeldinger(tekster: { [key: string]: string }) {
   for (const tekstNoekkel in tekster) {
     if (tekster[tekstNoekkel].length === 0) {
-      tekster[tekstNoekkel] = ' ';
+      tekster[tekstNoekkel] = " ";
 
       // Akkurat naa er det kun utbetalinger.info.tekst som er tom.
       // Fjern return hvis flere tekster kan være tomme

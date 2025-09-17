@@ -1,9 +1,9 @@
 ---
-import { BodyShort, Heading } from '@navikt/ds-react';
-import { formatToDetailedDate } from '@src/utils/client/date';
-import { formaterTallUtenDesimaler } from '@src/utils/client/utbetalingDetalje';
-import style from './SummaryPanel.module.css';
-import type { Utbetaling } from '@src/types/types';
+import { BodyShort, Heading } from "@navikt/ds-react";
+import type { Utbetaling } from "@src/types/types";
+import { formatToDetailedDate } from "@src/utils/client/date";
+import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
+import style from "./SummaryPanel.module.css";
 
 interface Props {
   utbetaling: Utbetaling;
@@ -13,8 +13,8 @@ const { utbetaling } = Astro.props;
 
 const { erUtbetalt, ytelseDato, nettoUtbetalt, ytelse } = utbetaling;
 const isUtbetaltText = erUtbetalt
-  ? 'Utbetalt'
-  : 'Forventet overføring til bank';
+  ? "Utbetalt"
+  : "Forventet overføring til bank";
 const sumInNok = `${formaterTallUtenDesimaler(nettoUtbetalt)} kr`;
 ---
 

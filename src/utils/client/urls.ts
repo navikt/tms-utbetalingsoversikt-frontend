@@ -1,122 +1,122 @@
 const isProduction =
-  window.location.href.includes('www.nav.no') ||
-  window.location.href.includes('www.intern.nav.no') ||
-  window.location.href.includes('tjenester.nav.no');
-const isDevelopment = window.location.href.includes('www.intern.dev.nav.no');
-const isAnsatt = window.location.href.includes('www.ansatt.dev.nav.no');
+  window.location.href.includes("www.nav.no") ||
+  window.location.href.includes("www.intern.nav.no") ||
+  window.location.href.includes("tjenester.nav.no");
+const isDevelopment = window.location.href.includes("www.intern.dev.nav.no");
+const isAnsatt = window.location.href.includes("www.ansatt.dev.nav.no");
 
 export const getEnvironment = () => {
   if (isProduction) {
-    return 'production';
+    return "production";
   }
 
   if (isAnsatt) {
-    return 'ansatt';
+    return "ansatt";
   }
 
   if (isDevelopment) {
-    return 'development';
+    return "development";
   }
 
-  return 'local';
+  return "local";
 };
 
 const BASE_URL = {
-  local: 'http://localhost:3000/utbetalingsoversikt/',
-  ansatt: 'https://www.ansatt.dev.nav.no/utbetalingsoversikt',
-  development: 'https://www.intern.dev.nav.no/utbetalingsoversikt',
-  production: 'https://www.nav.no/utbetalingsoversikt',
+  local: "http://localhost:3000/utbetalingsoversikt/",
+  ansatt: "https://www.ansatt.dev.nav.no/utbetalingsoversikt",
+  development: "https://www.intern.dev.nav.no/utbetalingsoversikt",
+  production: "https://www.nav.no/utbetalingsoversikt",
 };
 
 const TELEMETRY_URL = {
-  local: 'http://localhost:3000/collect',
-  development: 'https://telemetry.ekstern.dev.nav.no/collect',
-  ansatt: 'https://telemetry.ekstern.dev.nav.no/collect',
-  production: 'https://telemetry.nav.no/collect',
+  local: "http://localhost:3000/collect",
+  development: "https://telemetry.ekstern.dev.nav.no/collect",
+  ansatt: "https://telemetry.ekstern.dev.nav.no/collect",
+  production: "https://telemetry.nav.no/collect",
 };
 
 const MIN_SIDE_URL = {
-  local: 'http://localhost:3000/minside',
-  ansatt: 'https://www.ansatt.dev.nav.no/minside',
-  development: 'https://www.intern.dev.nav.no/minside',
-  production: 'https://www.nav.no/minside',
+  local: "http://localhost:3000/minside",
+  ansatt: "https://www.ansatt.dev.nav.no/minside",
+  development: "https://www.intern.dev.nav.no/minside",
+  production: "https://www.nav.no/minside",
 };
 
 const UTBETALINGSOVERSIKT_API_URL = {
-  local: 'http://localhost:3000/api',
-  ansatt: 'https://www.ansatt.dev.nav.no/tms-utbetalingsoversikt-api',
-  development: 'https://www.intern.dev.nav.no/tms-utbetalingsoversikt-api',
-  production: 'https://person.nav.no/tms-utbetalingsoversikt-api',
+  local: "http://localhost:3000/api",
+  ansatt: "https://www.ansatt.dev.nav.no/tms-utbetalingsoversikt-api",
+  development: "https://www.intern.dev.nav.no/tms-utbetalingsoversikt-api",
+  production: "https://person.nav.no/tms-utbetalingsoversikt-api",
 };
 
 const SATSERURL = {
-  local: 'http://localhost:3000/satser',
-  ansatt: 'https://www.ansatt.dev.nav.no/satser',
-  development: 'https://www.intern.dev.nav.no/satser',
-  production: 'https://www.nav.no/satser',
+  local: "http://localhost:3000/satser",
+  ansatt: "https://www.ansatt.dev.nav.no/satser",
+  development: "https://www.intern.dev.nav.no/satser",
+  production: "https://www.nav.no/satser",
 };
 
 const UTBETALINGSDATOER_URL = {
-  local: 'http://localhost:3000/utbetalignsdatoer',
-  ansatt: 'https://www.ansatt.dev.nav.no/utbetalingsdatoer',
-  development: 'https://www.intern.dev.nav.no/utbetalingsdatoer',
-  production: 'https://www.nav.no/utbetalingsdatoer',
+  local: "http://localhost:3000/utbetalignsdatoer",
+  ansatt: "https://www.ansatt.dev.nav.no/utbetalingsdatoer",
+  development: "https://www.intern.dev.nav.no/utbetalingsdatoer",
+  production: "https://www.nav.no/utbetalingsdatoer",
 };
 
 const ENDRE_KONTONUMMER_URL = {
-  local: 'http://localhost:3000/kontonummer',
-  ansatt: 'https://www.intern.dev.nav.no/kontonummer',
-  development: 'https://www.intern.dev.nav.no/kontonummer',
-  production: 'https://www.nav.no/kontonummer',
+  local: "http://localhost:3000/kontonummer",
+  ansatt: "https://www.intern.dev.nav.no/kontonummer",
+  development: "https://www.intern.dev.nav.no/kontonummer",
+  production: "https://www.nav.no/kontonummer",
 };
 
 const ENDRE_SKATTEKORT_URL = {
-  local: 'http://localhost:300/skattekort',
-  ansatt: 'https://www.ansatt.dev.nav.no/skattetrekk',
-  development: 'https://www.intern.dev.nav.no/skattetrekk',
-  production: 'https://www.nav.no/skattetrekk',
+  local: "http://localhost:300/skattekort",
+  ansatt: "https://www.ansatt.dev.nav.no/skattetrekk",
+  development: "https://www.intern.dev.nav.no/skattetrekk",
+  production: "https://www.nav.no/skattetrekk",
 };
 
 const SOSIALHJELP_URL = {
-  local: 'https://www.nav.no/sosialhjelp/innsyn/utbetaling',
-  ansatt: 'https://www.intern.dev.nav.no/sosialhjelp/innsyn/utbetaling',
-  development: 'https://www.intern.dev.nav.no/sosialhjelp/innsyn/utbetaling',
-  production: 'https://www.nav.no/sosialhjelp/innsyn/utbetaling',
+  local: "https://www.nav.no/sosialhjelp/innsyn/utbetaling",
+  ansatt: "https://www.intern.dev.nav.no/sosialhjelp/innsyn/utbetaling",
+  development: "https://www.intern.dev.nav.no/sosialhjelp/innsyn/utbetaling",
+  production: "https://www.nav.no/sosialhjelp/innsyn/utbetaling",
 };
 
 const DAGPENGER_URL = {
-  local: 'https://www.nav.no/dagpenger/forskudd/oversikt',
-  ansatt: 'https://www.intern.dev.nav.no/dagpenger/forskudd/oversikt',
-  development: 'https://www.intern.dev.nav.no/dagpenger/forskudd/oversikt',
-  production: 'https://www.nav.no/dagpenger/forskudd/oversikt',
+  local: "https://www.nav.no/dagpenger/forskudd/oversikt",
+  ansatt: "https://www.intern.dev.nav.no/dagpenger/forskudd/oversikt",
+  development: "https://www.intern.dev.nav.no/dagpenger/forskudd/oversikt",
+  production: "https://www.nav.no/dagpenger/forskudd/oversikt",
 };
 
 const ÅRSOPPGAVER_URL = {
-  local: 'https://www.nav.no/dokumentarkiv/tema/STO',
-  ansatt: 'https://intern.dev.nav.no/dokumentarkiv/tema/STO',
-  development: 'https://intern.dev.nav.no/dokumentarkiv/tema/STO',
-  production: 'https://www.nav.no/dokumentarkiv/tema/STO',
+  local: "https://www.nav.no/dokumentarkiv/tema/STO",
+  ansatt: "https://intern.dev.nav.no/dokumentarkiv/tema/STO",
+  development: "https://intern.dev.nav.no/dokumentarkiv/tema/STO",
+  production: "https://www.nav.no/dokumentarkiv/tema/STO",
 };
 
 const OM_UTBETALINGER_URL = {
-  local: 'http://localhost:3000/om-utbetalinger',
-  ansatt: 'https://www.intern.dev.nav.no/utbetalinger',
-  development: 'https://www.intern.dev.nav.no/utbetalinger',
-  production: 'https://www.nav.no/utbetalinger',
+  local: "http://localhost:3000/om-utbetalinger",
+  ansatt: "https://www.intern.dev.nav.no/utbetalinger",
+  development: "https://www.intern.dev.nav.no/utbetalinger",
+  production: "https://www.nav.no/utbetalinger",
 };
 
 const LEGACY_URL = {
-  local: 'http://localhost:3000/utbetalingsoversikt',
-  ansatt: 'https://www.intern.dev.nav.no/utbetalingsoversikt-gammel',
-  development: 'https://www.intern.dev.nav.no/utbetalingsoversikt-gammel',
-  production: 'https://www.nav.no/utbetalingsoversikt-gammel',
+  local: "http://localhost:3000/utbetalingsoversikt",
+  ansatt: "https://www.intern.dev.nav.no/utbetalingsoversikt-gammel",
+  development: "https://www.intern.dev.nav.no/utbetalingsoversikt-gammel",
+  production: "https://www.nav.no/utbetalingsoversikt-gammel",
 };
 
 const IDENT_NAVN_URL = {
-  local: 'http://localhost:4321/api/navn',
-  ansatt: 'https://www.intern.dev.nav.no/utbetalingsoversikt/api/navn',
-  development: 'https://www.intern.dev.nav.no/utbetalingsoversikt/api/navn',
-  production: 'https://www.nav.no/utbetalingsoversikt/api/navn',
+  local: "http://localhost:4321/api/navn",
+  ansatt: "https://www.intern.dev.nav.no/utbetalingsoversikt/api/navn",
+  development: "https://www.intern.dev.nav.no/utbetalingsoversikt/api/navn",
+  production: "https://www.nav.no/utbetalingsoversikt/api/navn",
 };
 
 export const utbetalingerAPIUrl = (period: string) =>
@@ -142,7 +142,7 @@ export const identNavnUrl = IDENT_NAVN_URL[getEnvironment()];
 export const telemetryUrl = TELEMETRY_URL[getEnvironment()];
 
 export const authAndRedirectUrl = () => {
-  return getEnvironment() === 'local'
+  return getEnvironment() === "local"
     ? baseUrl
     : `${loginUrl}?redirect_uri=${baseUrl}`;
 };

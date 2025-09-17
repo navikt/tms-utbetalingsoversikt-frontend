@@ -3,22 +3,22 @@ import {
   DatePicker,
   ErrorMessage,
   useRangeDatepicker,
-} from '@navikt/ds-react';
-import dayjs from 'dayjs';
-import { useState } from 'react';
-import { formatDateToDayjs } from '@src/utils/client/date';
-import style from './Egendefinert.module.css';
-import { setPeriodeFilter, setSelectedPeriode } from '@src/store/filter';
+} from "@navikt/ds-react";
+import { setPeriodeFilter, setSelectedPeriode } from "@src/store/filter";
+import { formatDateToDayjs } from "@src/utils/client/date";
+import dayjs from "dayjs";
+import { useState } from "react";
+import style from "./Egendefinert.module.css";
 
 const EgendefinertPeriode = () => {
-  const [costumDate, setCostumDate] = useState({ fom: '', tom: '' });
+  const [costumDate, setCostumDate] = useState({ fom: "", tom: "" });
   const [invalidInput, setInValidInput] = useState({
     showInvalidMessage: false,
     isInvalid: true,
   });
 
   const { datepickerProps, toInputProps, fromInputProps } = useRangeDatepicker({
-    fromDate: dayjs().subtract(3, 'years').toDate(),
+    fromDate: dayjs().subtract(3, "years").toDate(),
     toDate: dayjs().toDate(),
     onRangeChange: (date) =>
       setCostumDate(formatDateToDayjs(date?.from, date?.to)),
@@ -56,7 +56,7 @@ const EgendefinertPeriode = () => {
         onClick={() =>
           invalidInput.isInvalid
             ? setInValidInput({ ...invalidInput, showInvalidMessage: true })
-            : (setPeriodeFilter(costumDate), setSelectedPeriode('Egendefinert'))
+            : (setPeriodeFilter(costumDate), setSelectedPeriode("Egendefinert"))
         }
       >
         Oppdater

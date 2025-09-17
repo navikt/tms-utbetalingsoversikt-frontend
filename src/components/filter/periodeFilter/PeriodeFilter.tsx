@@ -1,21 +1,21 @@
-import { useStore } from '@nanostores/react';
-import { BodyShort, Chips } from '@navikt/ds-react';
-import { useState } from 'react';
+import { useStore } from "@nanostores/react";
+import { BodyShort, Chips } from "@navikt/ds-react";
 import {
   selctedPeriodeAtom,
   setPeriodeFilter,
   setSelectedPeriode,
   showFilterAtom,
-} from '@src/store/filter';
-import { logEvent } from '@src/utils/client/amplitude';
+} from "@src/store/filter";
+import { logEvent } from "@src/utils/client/amplitude";
 import {
+  type GetDatePeriodType,
   getDateCurrentlyThisYear,
   getDateLastYear,
   getDateThreemonthsBack,
-  type GetDatePeriodType,
-} from '@src/utils/client/date';
-import style from './PeriodeFilter.module.css';
-import EgendefinertPeriode from './egendefinertPeriode/EgendefinertPeriode';
+} from "@src/utils/client/date";
+import { useState } from "react";
+import EgendefinertPeriode from "./egendefinertPeriode/EgendefinertPeriode";
+import style from "./PeriodeFilter.module.css";
 
 type PeriodeOptionsType = {
   label: string;
@@ -23,10 +23,10 @@ type PeriodeOptionsType = {
 };
 
 const periodeOptions: PeriodeOptionsType[] = [
-  { label: 'Siste 3 måneder', dateFunction: getDateThreemonthsBack },
-  { label: 'Hittil i år', dateFunction: getDateCurrentlyThisYear },
-  { label: 'I fjor', dateFunction: getDateLastYear },
-  { label: 'Egendefinert' },
+  { label: "Siste 3 måneder", dateFunction: getDateThreemonthsBack },
+  { label: "Hittil i år", dateFunction: getDateCurrentlyThisYear },
+  { label: "I fjor", dateFunction: getDateLastYear },
+  { label: "Egendefinert" },
 ];
 
 const PeriodeFilter = () => {
@@ -38,9 +38,9 @@ const PeriodeFilter = () => {
     selectedOption: string,
     periodeTomFom?: GetDatePeriodType,
   ) => {
-    logEvent('filter-periode', selectedOption);
+    logEvent("filter-periode", selectedOption);
     setSelected(selectedOption);
-    if (selectedOption !== 'Egendefinert') {
+    if (selectedOption !== "Egendefinert") {
       setSelectedPeriode(selectedOption);
       periodeTomFom && setPeriodeFilter(periodeTomFom());
     }
@@ -65,7 +65,7 @@ const PeriodeFilter = () => {
           </Chips.Toggle>
         ))}
       </Chips>
-      {selected === 'Egendefinert' && <EgendefinertPeriode />}
+      {selected === "Egendefinert" && <EgendefinertPeriode />}
     </div>
   );
 };

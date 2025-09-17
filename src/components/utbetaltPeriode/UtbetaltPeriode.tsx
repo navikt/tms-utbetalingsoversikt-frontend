@@ -1,8 +1,8 @@
-import { BodyShort, Detail } from '@navikt/ds-react';
-import { formaterTallUtenDesimaler } from '@src/utils/client/utbetalingDetalje';
-import style from './UtbetaltPeriode.module.css';
-import type { UtbetalingerIPeriode } from '@src/types/types';
-import CustomHeading from './customHeading/CustomHeading';
+import { BodyShort, Detail } from "@navikt/ds-react";
+import type { UtbetalingerIPeriode } from "@src/types/types";
+import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
+import CustomHeading from "./customHeading/CustomHeading";
+import style from "./UtbetaltPeriode.module.css";
 
 interface PropsType {
   data: UtbetalingerIPeriode;
@@ -24,22 +24,28 @@ const UtbetaltPeriode = ({ data, periode, isPrint }: PropsType) => {
         {periode}
       </TextFieldTypography>
       <ul className={style.list}>
-        {ytelser.map((o, index) => (
+        {ytelser.map((ytelse) => (
           <li
-            key={index}
             className={`${style.ytelseElementsstyle} ${style.listElement}`}
+            key={ytelse.ytelse + ytelse.beløp}
           >
-            <TextFieldTypography>{o.ytelse}</TextFieldTypography>
-            <TextFieldTypography>{`${formaterTallUtenDesimaler(o.beløp)} kr`}</TextFieldTypography>
+            <TextFieldTypography>{ytelse.ytelse}</TextFieldTypography>
+            <TextFieldTypography>{`${formaterTallUtenDesimaler(
+              ytelse.beløp,
+            )} kr`}</TextFieldTypography>
           </li>
         ))}
         <li className={`${style.bruttoElement} ${style.listElement}`}>
           <TextFieldTypography>Brutto</TextFieldTypography>
-          <TextFieldTypography>{`${formaterTallUtenDesimaler(bruttoUtbetalt)} kr`}</TextFieldTypography>
+          <TextFieldTypography>{`${formaterTallUtenDesimaler(
+            bruttoUtbetalt,
+          )} kr`}</TextFieldTypography>
         </li>
         <li className={`${style.trekkElement} ${style.listElement}`}>
           <TextFieldTypography>Trekk</TextFieldTypography>
-          <TextFieldTypography>{`${formaterTallUtenDesimaler(trekk)} kr`}</TextFieldTypography>
+          <TextFieldTypography>{`${formaterTallUtenDesimaler(
+            trekk,
+          )} kr`}</TextFieldTypography>
         </li>
         <li className={`${style.nettoElement} ${style.listElement}`}>
           <TextFieldTypography weight="semibold">
