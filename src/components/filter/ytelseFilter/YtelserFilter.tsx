@@ -1,12 +1,12 @@
-import { useStore } from '@nanostores/react';
-import { BodyShort, Chips } from '@navikt/ds-react';
+import { useStore } from "@nanostores/react";
+import { BodyShort, Chips } from "@navikt/ds-react";
 import {
   showFilterAtom,
   toggleYtelseFilter,
   ytelserFilterAtom,
-} from '@src/store/filter';
-import style from './YtelserFilter.module.css';
-import { logEvent } from '@src/utils/client/amplitude';
+} from "@src/store/filter";
+import { logEvent } from "@src/utils/client/amplitude";
+import style from "./YtelserFilter.module.css";
 
 const YtelserFilter = () => {
   const ytelser = useStore(ytelserFilterAtom);
@@ -14,7 +14,7 @@ const YtelserFilter = () => {
 
   const handleClick = (ytelse: string) => {
     toggleYtelseFilter(ytelse);
-    logEvent('filter-ytelse', ytelse);
+    logEvent("filter-ytelse", ytelse);
   };
 
   return (

@@ -1,5 +1,5 @@
-import type { UtbetalingGroupType } from '@src/types/types';
-import type { SelectedYtelser } from '@src/store/filter';
+import type { SelectedYtelser } from "@src/store/filter";
+import type { UtbetalingGroupType } from "@src/types/types";
 
 const filterUtbetalinger = (
   utbetalingGroups: UtbetalingGroupType[],

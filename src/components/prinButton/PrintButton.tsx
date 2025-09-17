@@ -1,7 +1,7 @@
-import { PrinterSmallIcon } from '@navikt/aksel-icons';
-import { Button } from '@navikt/ds-react';
-import styles from './PrintButton.module.css';
-import { logEvent } from '@src/utils/client/amplitude';
+import { PrinterSmallIcon } from "@navikt/aksel-icons";
+import { Button } from "@navikt/ds-react";
+import { logEvent } from "@src/utils/client/amplitude";
+import styles from "./PrintButton.module.css";
 
 const PrintButton = () => {
   return (
@@ -9,7 +9,7 @@ const PrintButton = () => {
       className={styles.skrivUtButton}
       onClick={() => {
         window.print();
-        logEvent('skriv-ut-utbetaling', 'skriv-ut');
+        logEvent("skriv-ut-utbetaling", "skriv-ut");
       }}
       icon={<PrinterSmallIcon aria-hidden />}
     >

@@ -1,43 +1,43 @@
-import { Heading } from '@navikt/ds-react';
-import style from './Relatertinnhold.module.css';
+import { Heading } from "@navikt/ds-react";
+import { logEvent } from "@src/utils/client/amplitude";
 import {
-  satserUrl,
-  utbetalingsdatoerUrl,
+  dagpengerUrl,
   endreKontonummerUrl,
   endreSkattekortUrl,
-  dagpengerUrl,
-  årsoppgaverUrl,
+  satserUrl,
   sosialhjelpUrl,
-} from '@src/utils/client/urls';
-import { logEvent } from '@src/utils/client/amplitude';
+  utbetalingsdatoerUrl,
+  årsoppgaverUrl,
+} from "@src/utils/client/urls";
+import style from "./Relatertinnhold.module.css";
 
 const relatertInnholdLinks = [
   {
-    title: 'Utbetalingsdatoer',
+    title: "Utbetalingsdatoer",
     href: utbetalingsdatoerUrl,
   },
   {
-    title: 'Sosialhjelp',
+    title: "Sosialhjelp",
     href: sosialhjelpUrl,
   },
   {
-    title: 'Satser',
+    title: "Satser",
     href: satserUrl,
   },
   {
-    title: 'Endre kontonummer',
+    title: "Endre kontonummer",
     href: endreKontonummerUrl,
   },
   {
-    title: 'Forskudd på dagpenger',
+    title: "Forskudd på dagpenger",
     href: dagpengerUrl,
   },
   {
-    title: 'Se årsoppgavene mine',
+    title: "Se årsoppgavene mine",
     href: årsoppgaverUrl,
   },
   {
-    title: 'Endre skattekort',
+    title: "Endre skattekort",
     href: endreSkattekortUrl,
   },
 ];
@@ -54,7 +54,7 @@ const RelatertInnhold = () => {
             <a
               className={style.link}
               onClick={() =>
-                logEvent('relatert-innhold-link', linkObject.title)
+                logEvent("relatert-innhold-link", linkObject.title)
               }
               href={linkObject.href}
             >

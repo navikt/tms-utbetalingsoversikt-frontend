@@ -1,29 +1,29 @@
-import { test, expect } from 'vitest';
-import { formatNavn } from './formatNavn';
+import { expect, test } from "vitest";
+import { formatNavn } from "./formatNavn";
 
-test('fomat navn with mellomnavn', () => {
+test("fomat navn with mellomnavn", () => {
   const navn = formatNavn({
-    fornavn: 'Ola',
-    mellomnavn: 'Normann',
-    etternavn: 'Nordmann',
+    fornavn: "Ola",
+    mellomnavn: "Normann",
+    etternavn: "Nordmann",
   });
-  expect(navn).toEqual('Ola Normann Nordmann');
+  expect(navn).toEqual("Ola Normann Nordmann");
 });
 
-test('fomat navn without mellomnavn', () => {
+test("fomat navn without mellomnavn", () => {
   const navn = formatNavn({
-    fornavn: 'Ola',
+    fornavn: "Ola",
     mellomnavn: null,
-    etternavn: 'Nordmann',
+    etternavn: "Nordmann",
   });
-  expect(navn).toEqual('Ola Nordmann');
+  expect(navn).toEqual("Ola Nordmann");
 });
 
-test('fomat nav with many mellomnavn', () => {
+test("fomat nav with many mellomnavn", () => {
   const navn = formatNavn({
-    fornavn: 'Ola',
-    mellomnavn: 'Nikolai Mohammed Ali',
-    etternavn: 'Nordmann',
+    fornavn: "Ola",
+    mellomnavn: "Nikolai Mohammed Ali",
+    etternavn: "Nordmann",
   });
-  expect(navn).toEqual('Ola Nikolai Mohammed Ali Nordmann');
+  expect(navn).toEqual("Ola Nikolai Mohammed Ali Nordmann");
 });

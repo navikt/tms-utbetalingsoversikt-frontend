@@ -1,22 +1,22 @@
-import { Alert, BodyLong, Heading, Link } from '@navikt/ds-react';
-import { baseUrl } from '@src/utils/client/urls';
-import style from './ErrorPanel.module.css';
-import { logEvent } from '@src/utils/client/amplitude';
+import { Alert, BodyLong, Heading, Link } from "@navikt/ds-react";
+import { logEvent } from "@src/utils/client/amplitude";
+import { baseUrl } from "@src/utils/client/urls";
+import style from "./ErrorPanel.module.css";
 
 const ErrorPanel = ({ isLandingsside }: { isLandingsside: boolean }) => {
   const headingText = isLandingsside
-    ? 'Vi har problemer med å hente inn dine utbetalinger.'
-    : 'Vi har problemer med å hente din utbetaling.';
+    ? "Vi har problemer med å hente inn dine utbetalinger."
+    : "Vi har problemer med å hente din utbetaling.";
 
   const ContentBody = isLandingsside ? (
     <BodyLong>
       Vi beklager ulempene dette medfører. Du kan prøve å endre periode,
       <Link
-        onClick={() => logEvent('error-panel', 'laste inn siden på nytt')}
+        onClick={() => logEvent("error-panel", "laste inn siden på nytt")}
         href={baseUrl}
       >
         laste inn siden på nytt
-      </Link>{' '}
+      </Link>{" "}
       eller prøv igjen senere.
     </BodyLong>
   ) : (

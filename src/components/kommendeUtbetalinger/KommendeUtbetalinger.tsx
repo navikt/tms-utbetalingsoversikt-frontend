@@ -1,7 +1,7 @@
-import { Heading } from '@navikt/ds-react';
-import UtbetalingLinkPanel from '../utbetalinger/utbetalingLinkPanel/UtbetalingLinkPanel';
-import style from './KommendeUtbetalinger.module.css';
-import type { UtbetalingType } from 'src/types/types';
+import { Heading } from "@navikt/ds-react";
+import type { UtbetalingType } from "src/types/types";
+import UtbetalingLinkPanel from "../utbetalinger/utbetalingLinkPanel/UtbetalingLinkPanel";
+import style from "./KommendeUtbetalinger.module.css";
 
 interface Props {
   utbetalinger: UtbetalingType[];
@@ -13,13 +13,13 @@ const KommendeUtbetalinger = ({ utbetalinger }: Props) => {
       <Heading
         level="2"
         size="small"
-        className={'navds-body-short  ' + style.heading}
+        className={"navds-body-short  " + style.heading}
       >
         Neste utbetaling
-      </Heading>{' '}
+      </Heading>{" "}
       <ul className={style.kommendeUtbetlaingList}>
         {utbetalinger.map((u: UtbetalingType, index) => (
-          <li key={index} className={style.kommendeUtbetlaingElement}>
+          <li key={u.id} className={style.kommendeUtbetlaingElement}>
             <UtbetalingLinkPanel
               ytelse={u.ytelse}
               beløp={u.beløp}

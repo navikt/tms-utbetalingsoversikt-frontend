@@ -1,7 +1,7 @@
 ---
-import { Alert, BodyLong, Heading, Link } from '@navikt/ds-react';
-import { baseUrl } from '@src/utils/server/urls';
-import style from './ErrorPanel.module.css';
+import { Alert, BodyLong, Heading, Link } from "@navikt/ds-react";
+import { baseUrl } from "@src/utils/server/urls";
+import style from "./ErrorPanel.module.css";
 
 interface Props {
   isLandingsside: boolean;
@@ -10,8 +10,8 @@ interface Props {
 const { isLandingsside } = Astro.props;
 
 const headingText = isLandingsside
-  ? 'Vi har problemer med å hente inn dine utbetalinger.'
-  : 'Vi har problemer med å hente din utbetaling.';
+  ? "Vi har problemer med å hente inn dine utbetalinger."
+  : "Vi har problemer med å hente din utbetaling.";
 ---
 
 <Alert variant="error" className={style.container}>

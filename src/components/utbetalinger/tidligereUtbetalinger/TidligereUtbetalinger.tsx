@@ -1,9 +1,9 @@
-import { useStore } from '@nanostores/react';
-import { ytelserFilterAtom } from '@src/store/filter';
-import filterUtbetalinger from '@src/utils/client/filterUtbetaling';
-import UtbetalingGroup from './utbetalingGroup/UtbetalingGroup';
-import style from './TidligereUtbetalinger.module.css';
-import type { UtbetalingGroupType } from '@src/types/types';
+import { useStore } from "@nanostores/react";
+import { ytelserFilterAtom } from "@src/store/filter";
+import type { UtbetalingGroupType } from "@src/types/types";
+import filterUtbetalinger from "@src/utils/client/filterUtbetaling";
+import style from "./TidligereUtbetalinger.module.css";
+import UtbetalingGroup from "./utbetalingGroup/UtbetalingGroup";
 
 type props = {
   utbetalingGroups: UtbetalingGroupType[];

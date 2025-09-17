@@ -1,18 +1,18 @@
 ---
-import { Heading } from '@navikt/ds-react';
-import type { Utbetaling, Bruker } from '@src/types/types';
-import style from './UtbetalingPage.module.css';
-import { fetchNavn } from '@src/utils/server/navn/fetchNavn';
-import { fetchUtbetaling } from '@src/utils/server/utbetaling/fetchUtbetaling';
-import { pdlApiUrl } from '@src/utils/server/urls';
-import { formatToDetailedDate } from '@src/utils/client/date';
-import PrintPageHeading from '../printPageHeading/PrintPageHeading.astro';
-import SummaryPanel from './summaryPanel/SummaryPanel.astro';
-import UtbetalingCalculations from './utbetalingCalculations/UtbetalingCalculations.astro';
-import UtbetalingDescription from './utbetalingDescription/UtbetalingDescription.astro';
-import ErrorPanel from '@src/components/errorPanel/ErrorPanel.astro';
-import PrintButton from '@src/components/prinButton/PrintButton';
-import logger from '@src/utils/server/logger';
+import { Heading } from "@navikt/ds-react";
+import ErrorPanel from "@src/components/errorPanel/ErrorPanel.astro";
+import PrintButton from "@src/components/prinButton/PrintButton";
+import type { Bruker, Utbetaling } from "@src/types/types";
+import { formatToDetailedDate } from "@src/utils/client/date";
+import logger from "@src/utils/server/logger";
+import { fetchNavn } from "@src/utils/server/navn/fetchNavn";
+import { pdlApiUrl } from "@src/utils/server/urls";
+import { fetchUtbetaling } from "@src/utils/server/utbetaling/fetchUtbetaling";
+import PrintPageHeading from "../printPageHeading/PrintPageHeading.astro";
+import SummaryPanel from "./summaryPanel/SummaryPanel.astro";
+import style from "./UtbetalingPage.module.css";
+import UtbetalingCalculations from "./utbetalingCalculations/UtbetalingCalculations.astro";
+import UtbetalingDescription from "./utbetalingDescription/UtbetalingDescription.astro";
 
 interface Props {
   id: string;
@@ -26,7 +26,7 @@ let utbetalingFetchError: boolean = false;
 try {
   enkelUtbetaling = await fetchUtbetaling(Astro.locals.token, id);
 } catch (error: any) {
-  logger.error('Fetch failed.', error.message);
+  logger.error("Fetch failed.", error.message);
   utbetalingFetchError = true;
 }
 

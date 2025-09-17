@@ -1,12 +1,12 @@
 ---
-import { Heading } from '@navikt/ds-react';
-import DetaljeElement from '@src/components/utbetalingDetaljeElement/UtbetalingDetaljeElement';
-import type { Trekk, UnderYtelseType, Utbetaling } from '@src/types/types';
+import { Heading } from "@navikt/ds-react";
+import DetaljeElement from "@src/components/utbetalingDetaljeElement/UtbetalingDetaljeElement";
+import type { Trekk, UnderYtelseType, Utbetaling } from "@src/types/types";
 import {
   isUtbetalingWithSats,
   satsDescription,
-} from '@src/utils/client/utbetalingDetalje';
-import style from './UtbetalingCalculations.module.css';
+} from "@src/utils/client/utbetalingDetalje";
+import style from "./UtbetalingCalculations.module.css";
 
 interface Props {
   utbetaling: Utbetaling;
@@ -18,7 +18,7 @@ const hasTrekk = utbetaling?.trekk.length > 0;
 const hasUnderytelser = utbetaling.underytelse.length > 0;
 const showSats = isUtbetalingWithSats(utbetaling.ytelse);
 const showBrutto = hasTrekk && hasUnderytelser;
-const sumUtbetaltLabel = hasUnderytelser ? 'Netto utbetalt' : 'Sum';
+const sumUtbetaltLabel = hasUnderytelser ? "Netto utbetalt" : "Sum";
 ---
 
 {
