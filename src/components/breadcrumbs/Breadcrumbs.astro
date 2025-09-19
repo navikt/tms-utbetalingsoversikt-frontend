@@ -7,7 +7,7 @@ interface Props {
   includeUtbetalinger: boolean;
 }
 
-const includeUtbetalinger = Astro.props;
+const { includeUtbetalinger } = Astro.props;
 ---
 
 <div class={style.container}>

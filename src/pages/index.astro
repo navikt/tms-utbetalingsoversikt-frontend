@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from "@src/components/breadcrumbs/Breadcrumbs.astro";
 import Observability from "@src/components/observability/Observability";
 import Landingsside from "@src/components/pages/landingsside/Landingsside.tsx";
 import Layout from "../layouts/Layout.astro";
@@ -7,6 +8,7 @@ import styles from "../styles/index.module.css";
 
 <Layout title="Utbetalingsoversikt">
   <div class={styles.headingWrapper}>
+    <Breadcrumbs includeUtbetalinger={false} />
     <Landingsside client:only="react" />
   </div>
   <Observability client:only="react" />
