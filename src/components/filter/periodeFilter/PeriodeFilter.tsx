@@ -6,7 +6,7 @@ import {
   setSelectedPeriode,
   showFilterAtom,
 } from "@src/store/filter";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import {
   type GetDatePeriodType,
   getDateCurrentlyThisYear,

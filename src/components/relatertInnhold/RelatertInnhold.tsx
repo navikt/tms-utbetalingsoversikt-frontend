@@ -1,5 +1,5 @@
 import { Heading } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import {
   dagpengerUrl,
   endreKontonummerUrl,

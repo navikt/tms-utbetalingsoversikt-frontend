@@ -1,5 +1,5 @@
 import { Alert, BodyLong, Heading, Link } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import { baseUrl } from "@src/utils/client/urls";
 import style from "./ErrorPanel.module.css";
 
