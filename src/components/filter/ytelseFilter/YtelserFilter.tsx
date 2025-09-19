@@ -5,7 +5,7 @@ import {
   toggleYtelseFilter,
   ytelserFilterAtom,
 } from "@src/store/filter";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import style from "./YtelserFilter.module.css";
 
 const YtelserFilter = () => {

@@ -6,7 +6,7 @@ import {
   setYtelseFilter,
 } from "@src/store/filter";
 import type { UtbetalingerResponse } from "@src/types/types";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import getUniqueYtelser from "@src/utils/client/getUniqueYtelser";
 import { utbetalingerAPIUrl } from "@src/utils/client/urls";
 import dayjs from "dayjs";

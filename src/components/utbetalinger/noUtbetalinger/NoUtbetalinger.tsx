@@ -1,5 +1,5 @@
 import { BodyLong, Heading, Link } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import { omUtbetalinger } from "@src/utils/client/urls";
 import style from "./NoUtbetalinger.module.css";
 

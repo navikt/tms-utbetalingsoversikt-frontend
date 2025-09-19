@@ -1,6 +1,6 @@
 import { PrinterSmallIcon } from "@navikt/aksel-icons";
 import { Button } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import styles from "./PrintButton.module.css";
 
 const PrintButton = () => {

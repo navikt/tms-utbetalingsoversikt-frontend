@@ -1,5 +1,4 @@
 import { Heading } from "@navikt/ds-react";
-import Breadcrumbs from "@src/components/breadcrumbs/Breadcrumbs.tsx";
 import PeriodeFilter from "@src/components/filter/periodeFilter/PeriodeFilter.tsx";
 import ShowFilterButton from "@src/components/filter/showFilterButton/ShowFilterButton.tsx";
 import RelatertInnhold from "@src/components/relatertInnhold/RelatertInnhold.tsx";
@@ -11,7 +10,6 @@ function Landingsside() {
   return (
     <>
       <div id={style.printHide}>
-        <Breadcrumbs showUtbetalinger={false} />
         <Heading className={style.pageTitle} level="1" size="xlarge">
           Utbetalinger
         </Heading>

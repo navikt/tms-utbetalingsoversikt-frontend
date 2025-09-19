@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "@navikt/aksel-icons";
 import { BodyLong, BodyShort, Link } from "@navikt/ds-react";
 import type { UtbetalingType } from "@src/types/types";
-import { logEvent } from "@src/utils/client/amplitude";
+import { logEvent } from "@src/utils/client/analytics";
 import { formatToReadableDate } from "@src/utils/client/date";
 import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
 import style from "./UtbetalingLinkPanel.module.css";
