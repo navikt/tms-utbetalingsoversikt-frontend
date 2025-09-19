@@ -10,7 +10,7 @@ const analyticsLogger = getAnalyticsInstance<ExtendedAmpltitudeEvent>(
   "tms-utbetalingsoversikt",
 );
 
-export const logEvent = async (lenketekst: string, komponent: string) => {
+export const logEvent = async (komponent: string, lenketekst?: string) => {
   await analyticsLogger("navigere", {
     komponent: komponent,
     lenketekst: lenketekst,
