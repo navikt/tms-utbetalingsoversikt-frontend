@@ -4,6 +4,7 @@ import {
   dagpengerUrl,
   endreKontonummerUrl,
   endreSkattekortUrl,
+  frivilligSkattetrekkUrl,
   satserUrl,
   sosialhjelpUrl,
   utbetalingsdatoerUrl,
@@ -13,32 +14,36 @@ import style from "./Relatertinnhold.module.css";
 
 const relatertInnholdLinks = [
   {
-    title: "Utbetalingsdatoer",
-    href: utbetalingsdatoerUrl,
-  },
-  {
     title: "Sosialhjelp",
     href: sosialhjelpUrl,
+  },
+  {
+    title: "Utbetalingsdatoer",
+    href: utbetalingsdatoerUrl,
   },
   {
     title: "Satser",
     href: satserUrl,
   },
   {
-    title: "Endre kontonummer",
-    href: endreKontonummerUrl,
-  },
-  {
-    title: "Forskudd på dagpenger",
-    href: dagpengerUrl,
-  },
-  {
     title: "Se årsoppgavene mine",
     href: årsoppgaverUrl,
   },
   {
+    title: "Endre kontonummer",
+    href: endreKontonummerUrl,
+  },
+  {
     title: "Endre skattekort",
     href: endreSkattekortUrl,
+  },
+  {
+    title: "Frivillig skattetrekk",
+    href: frivilligSkattetrekkUrl,
+  },
+  {
+    title: "Forskudd på dagpenger",
+    href: dagpengerUrl,
   },
 ];
 

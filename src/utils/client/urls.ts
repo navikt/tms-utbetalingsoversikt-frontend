@@ -119,6 +119,13 @@ const IDENT_NAVN_URL = {
   production: "https://www.nav.no/utbetalingsoversikt/api/navn",
 };
 
+const FRIVILLIG_SKATTETREKK_URL = {
+  local: "http://localhost:3000/utbetalinger/frivillig-skattetrekk",
+  ansatt: "https://www.ansatt.dev.nav.no/tjenester/frivillig-skattetrekk/",
+  development: "https://www.intern.dev.nav.no/tjenester/frivillig-skattetrekk/",
+  production: "https://www.nav.no/utbetalinger/frivillig-skattetrekk/",
+};
+
 export const utbetalingerAPIUrl = (period: string) =>
   `${UTBETALINGSOVERSIKT_API_URL[getEnvironment()]}/utbetalinger/alle${period}`;
 
@@ -140,6 +147,8 @@ export const omUtbetalinger = OM_UTBETALINGER_URL[getEnvironment()];
 export const legacyUrl = LEGACY_URL[getEnvironment()];
 export const identNavnUrl = IDENT_NAVN_URL[getEnvironment()];
 export const telemetryUrl = TELEMETRY_URL[getEnvironment()];
+export const frivilligSkattetrekkUrl =
+  FRIVILLIG_SKATTETREKK_URL[getEnvironment()];
 
 export const authAndRedirectUrl = () => {
   return getEnvironment() === "local"
