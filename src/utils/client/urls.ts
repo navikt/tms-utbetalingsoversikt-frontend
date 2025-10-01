@@ -121,8 +121,9 @@ const IDENT_NAVN_URL = {
 
 const FRIVILLIG_SKATTETREKK_URL = {
   local: "http://localhost:3000/utbetalinger/frivillig-skattetrekk",
-  ansatt: "https://www.ansatt.dev.nav.no/tjenester/frivillig-skattetrekk/",
-  development: "https://www.intern.dev.nav.no/tjenester/frivillig-skattetrekk/",
+  ansatt: "https://www.ansatt.dev.nav.no/utbetalinger/frivillig-skattetrekk/",
+  development:
+    "https://www.intern.dev.nav.no/utbetalinger/frivillig-skattetrekk/",
   production: "https://www.nav.no/utbetalinger/frivillig-skattetrekk/",
 };
 
