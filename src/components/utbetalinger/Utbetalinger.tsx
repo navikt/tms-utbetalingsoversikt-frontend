@@ -65,6 +65,19 @@ const Utbetalinger = () => {
     ),
   );
 
+  const hasAAPOrDagpengerOrTiltakspenger = utbetalinger?.tidligere.some(
+    (utbetalingGroup) =>
+      utbetalingGroup.utbetalinger.some(
+        (utbetaling) =>
+          utbetaling.ytelse === "Dagpenger" ||
+          utbetaling.ytelse === "Arbeidsavklaringspenger" ||
+          utbetaling.ytelse === "Tiltakspenger",
+      ),
+  );
+
+  const AAPDagpengerAndTiltakspengerInfo: string =
+    "Hvis du sendte meldekort i helgen, vil utbetalingen komme én dag senere enn normalt.";
+
   const showInfoMelding: boolean = nullYtelser
     ? nullYtelser.includes("Uføretrygd")
     : false;
@@ -78,6 +91,11 @@ const Utbetalinger = () => {
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
           <BodyLong>{infoMeldingTekst}</BodyLong>
+        </Alert>
+      )}
+      {hasAAPOrDagpengerOrTiltakspenger && (
+        <Alert className={style.infoMelding} variant="info">
+          <BodyLong>{AAPDagpengerAndTiltakspengerInfo}</BodyLong>
         </Alert>
       )}
       {showKommendeUtbetalinger && (
