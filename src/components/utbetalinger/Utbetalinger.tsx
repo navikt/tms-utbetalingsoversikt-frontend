@@ -76,7 +76,7 @@ const Utbetalinger = () => {
   );
 
   const AAPDagpengerAndTiltakspengerInfo: string =
-    "Hvis du sendte meldekort i helgen, vil utbetalingen komme én dag senere enn normalt.";
+    "Hvis du sendte meldekort i helgen, kan pengene komme litt senere enn du er vant til. De skal være på kontoen din seinest innen utgangen av onsdag.";
 
   const showInfoMelding: boolean = nullYtelser
     ? nullYtelser.includes("Uføretrygd")
