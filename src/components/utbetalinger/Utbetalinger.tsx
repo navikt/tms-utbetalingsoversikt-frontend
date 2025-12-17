@@ -6,6 +6,7 @@ import {
   setYtelseFilter,
 } from "@src/store/filter";
 import type { UtbetalingerResponse } from "@src/types/types";
+import { addKey } from "@src/utils/client/addKey";
 import { logEvent } from "@src/utils/client/analytics";
 import getUniqueYtelser from "@src/utils/client/getUniqueYtelser";
 import { utbetalingerAPIUrl } from "@src/utils/client/urls";
@@ -30,7 +31,7 @@ const Utbetalinger = () => {
   ).format("DD.MM.YYYY")}`;
 
   const {
-    data: utbetalinger,
+    data: utbetalingerData,
     isLoading,
     error,
   } = useSWR<UtbetalingerResponse>(
@@ -45,6 +46,8 @@ const Utbetalinger = () => {
       onError: () => logEvent("fikk-feilmelding-forside"),
     },
   );
+
+  const utbetalinger = addKey(utbetalingerData);
 
   if (isLoading) {
     return <ContentLoader />;
