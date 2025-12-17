@@ -21,7 +21,7 @@ const UtbetalingGroup = ({ måned, år, utbetalinger }: UtbetalingGroupType) => 
       <ul className={style.utbetalingPeriodList}>
         {utbetalinger.map((utbetaling) => {
           return (
-            <li className={style.utbetalingListElement} key={utbetaling.id}>
+            <li className={style.utbetalingListElement} key={utbetaling.key}>
               <UtbetalingLinkPanel
                 ytelse={utbetaling.ytelse}
                 dato={utbetaling.dato}

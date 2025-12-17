@@ -16,6 +16,7 @@ export type UtbetalingType = {
   beløp: number;
   dato: string;
   ytelse: string;
+  key?: string;
 };
 
 export type UtbetalingGroupType = {
