@@ -75,6 +75,9 @@ const Utbetalinger = () => {
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
 
+  const infoMeldingTekstTo: string =
+    "Venter du på utbetaling av AAP, dagpenger eller sykepenger? Denne uken kan den komme senere enn du er vant til. Den skal være på kontoen din i løpet av mandag 19. januar.";
+
   return (
     <>
       {hasTidligereUtbetalinger && <YtelserFilter />}
@@ -83,6 +86,9 @@ const Utbetalinger = () => {
           <BodyLong>{infoMeldingTekst}</BodyLong>
         </Alert>
       )}
+      <Alert className={style.infoMelding} variant="info">
+        <BodyLong>{infoMeldingTekstTo}</BodyLong>
+      </Alert>
       {showKommendeUtbetalinger && (
         <KommendeUtbetalinger utbetalinger={utbetalinger.neste} />
       )}
