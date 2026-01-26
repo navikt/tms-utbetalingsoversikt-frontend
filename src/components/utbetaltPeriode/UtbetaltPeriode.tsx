@@ -1,7 +1,7 @@
 import { BodyShort, Detail } from "@navikt/ds-react";
 import type { UtbetalingerIPeriode } from "@src/types/types";
 import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
-import CustomHeading from "./customHeading/CustomHeading";
+import UtbetaltIPeriodenHeading from "./customHeading/UtbetaltIPeriodenHeading.tsx";
 import style from "./UtbetaltPeriode.module.css";
 
 interface PropsType {
@@ -19,40 +19,32 @@ const UtbetaltPeriode = ({ data, periode, isPrint }: PropsType) => {
 
   return (
     <div className={style.container}>
-      {<CustomHeading isPrint={isPrint} periode={periode} />}
-      <ul className={style.list}>
+      {<UtbetaltIPeriodenHeading isPrint={isPrint} periode={periode} />}
+      <dl className={`${style.list} ${style.periodeSammendrag}`}>
         {ytelser.map((ytelse) => (
-          <li
-            className={`${style.ytelseElementsstyle} ${style.listElement}`}
-            key={ytelse.ytelse + ytelse.beløp}
-          >
-            <TextFieldTypography>{ytelse.ytelse}</TextFieldTypography>
-            <TextFieldTypography>{`${formaterTallUtenDesimaler(
-              ytelse.beløp,
-            )} kr`}</TextFieldTypography>
-          </li>
+          <>
+            <dt className={`${style.ytelseTittel}`}>{ytelse.ytelse}</dt>
+            <dd className={`${style.ytelseBelop}`}>
+              {`${formaterTallUtenDesimaler(ytelse.beløp)} kr`}
+            </dd>
+          </>
         ))}
-        <li className={`${style.bruttoElement} ${style.listElement}`}>
-          <TextFieldTypography>Brutto</TextFieldTypography>
-          <TextFieldTypography>{`${formaterTallUtenDesimaler(
-            bruttoUtbetalt,
-          )} kr`}</TextFieldTypography>
-        </li>
-        <li className={`${style.trekkElement} ${style.listElement}`}>
-          <TextFieldTypography>Trekk</TextFieldTypography>
-          <TextFieldTypography>{`${formaterTallUtenDesimaler(
-            trekk,
-          )} kr`}</TextFieldTypography>
-        </li>
-        <li className={`${style.nettoElement} ${style.listElement}`}>
-          <TextFieldTypography weight="semibold">
-            Netto utbetalt
-          </TextFieldTypography>
-          <TextFieldTypography weight="semibold">{`${formaterTallUtenDesimaler(
-            nettoUtbetalt,
-          )} kr`}</TextFieldTypography>
-        </li>
-      </ul>
+
+        <dt className={style.ytelseTittel}>Brutto</dt>
+        <dd className={style.ytelseBelop}>
+          {`${formaterTallUtenDesimaler(bruttoUtbetalt)} kr`}
+        </dd>
+
+        <dt className={style.ytelseTittel}>Trekk</dt>
+        <dd className={style.ytelseBelop}>
+          {`${formaterTallUtenDesimaler(trekk)} kr`}
+        </dd>
+
+        <dt className={style.nettoElement}>Netto utbetalt</dt>
+        <dd className={`${style.nettoElement} ${style.ytelseBelop}`}>
+          {`${formaterTallUtenDesimaler(nettoUtbetalt)} kr`}
+        </dd>
+      </dl>
     </div>
   );
 };

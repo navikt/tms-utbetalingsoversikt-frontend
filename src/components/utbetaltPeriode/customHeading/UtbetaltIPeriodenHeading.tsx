@@ -6,7 +6,7 @@ type Props = {
   periode: string;
 };
 
-const CustomHeading = ({ isPrint, periode }: Props) => {
+const UtbetaltIPeriodenHeading = ({ isPrint, periode }: Props) => {
   if (isPrint) {
     return (
       <>
@@ -24,4 +24,4 @@ const CustomHeading = ({ isPrint, periode }: Props) => {
   }
 };
 
-export default CustomHeading;
+export default UtbetaltIPeriodenHeading;

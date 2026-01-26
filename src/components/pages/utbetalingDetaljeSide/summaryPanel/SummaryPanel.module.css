@@ -21,9 +21,9 @@
 
 .belopUtbetalt {
   display: block;
-  font-weight: 600;
-  font-size: 2.5rem;
-  line-height: 3.25rem;
+  font-weight: var(--a-font-weight-bold);
+  font-size: var(--a-font-size-heading-2xlarge);
+  line-height: var(--a-font-line-height-heading-2xlarge);
   letter-spacing: -0.01em;
   text-align: center;
 }

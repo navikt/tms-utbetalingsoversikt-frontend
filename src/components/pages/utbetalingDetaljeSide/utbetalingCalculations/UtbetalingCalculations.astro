@@ -27,7 +27,7 @@ const sumUtbetaltLabel = hasUnderytelser ? "Netto utbetalt" : "Sum";
       <Heading level="2" size="xsmall" className={style.detaljerHeading}>
         Detaljer
       </Heading>
-      <ul class={style.calculationList}>
+      <dl class={style.detaljerListe}>
         {hasUnderytelser &&
           utbetaling.underytelse.map((ytelse: UnderYtelseType) => {
             return (
@@ -60,7 +60,7 @@ const sumUtbetaltLabel = hasUnderytelser ? "Netto utbetalt" : "Sum";
             beløp={utbetaling.nettoUtbetalt}
           />
         }
-      </ul>
+      </dl>
     </div>
   ) : null
 }

@@ -14,15 +14,15 @@ const DetaljeElement = ({
   isSum,
   className,
 }: DetaljeElementProps) => {
-  const containerClassName = `${style.container} ${className && style[className]}`;
+  const commonClasses = `${className && style[className]} ${isSum ? style.sumElement : ""}`;
 
   return (
-    <li key={label + beløp} className={containerClassName}>
-      <BodyShort weight={isSum ? "semibold" : "regular"}>{label}</BodyShort>
-      <BodyShort
-        weight={isSum ? "semibold" : "regular"}
-      >{`${formaterTallUtenDesimaler(beløp)} kr`}</BodyShort>
-    </li>
+    <>
+      <dt className={`${commonClasses} ${style.detaljeTittel}`}>{label}</dt>
+      <dd className={`${commonClasses} ${style.detaljeBelop}`}>
+        {`${formaterTallUtenDesimaler(beløp)} kr`}
+      </dd>
+    </>
   );
 };
 
