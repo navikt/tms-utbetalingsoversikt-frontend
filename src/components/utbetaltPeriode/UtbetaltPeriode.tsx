@@ -19,10 +19,7 @@ const UtbetaltPeriode = ({ data, periode, isPrint }: PropsType) => {
 
   return (
     <div className={style.container}>
-      {<CustomHeading isPrint={isPrint} />}
-      <TextFieldTypography className={style.periodeDate} weight="semibold">
-        {periode}
-      </TextFieldTypography>
+      {<CustomHeading isPrint={isPrint} periode={periode} />}
       <ul className={style.list}>
         {ytelser.map((ytelse) => (
           <li
