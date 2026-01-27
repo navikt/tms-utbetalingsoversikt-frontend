@@ -14,7 +14,7 @@ const UtbetalingGroup = ({ måned, år, utbetalinger }: UtbetalingGroupType) => 
 
   return (
     <div className={style.utbetalingPeriod}>
-      <Heading className={style.utbetalingTitle} level="2" size="xsmall">
+      <Heading className={style.utbetalingTitle} level="3" size="xsmall">
         <span>{`${månedText} ${år}`}</span>
         <span>{formaterTallUtenDesimaler(sumYtelser) + " kr"}</span>
       </Heading>

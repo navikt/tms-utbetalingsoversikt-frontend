@@ -1,5 +1,5 @@
 ---
-import { BodyShort, Heading } from "@navikt/ds-react";
+import { BodyShort } from "@navikt/ds-react";
 import type { Utbetaling } from "@src/types/types";
 import { formatToDetailedDate } from "@src/utils/client/date";
 import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
@@ -21,13 +21,13 @@ const sumInNok = `${formaterTallUtenDesimaler(nettoUtbetalt)} kr`;
 <div
   class={`${style.contentWrapper} ${!erUtbetalt && style.kommendeUtbetalingWrapper}`}
 >
-  <div class={style.beløpOgDatoContainer}>
-    <BodyShort className={style.utbetaltDato}
-      >{`${isUtbetaltText} ${formatToDetailedDate(ytelseDato)}`}</BodyShort
-    >
-    <Heading className={style.belopUtbetaltHeader} level="2" size="xlarge">
-      {sumInNok}
-    </Heading>
+  <div class={style.belopOgDatoContainer}>
+    <BodyShort className={style.utbetaltDato}>
+      {`${isUtbetaltText} ${formatToDetailedDate(ytelseDato)}`}
+      <span class={style.belopUtbetalt}>
+        {sumInNok}
+      </span>
+    </BodyShort>
   </div>
 </div>
 <div class={style.printContent}>

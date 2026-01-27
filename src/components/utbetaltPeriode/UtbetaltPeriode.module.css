@@ -4,6 +4,8 @@
 
 .periodeDate {
   margin-top: 0.75rem;
+  display: block;
+  font-weight: 600;
 }
 
 .list {
@@ -29,11 +31,25 @@
   margin-bottom: 0.56rem;
 }
 
-.trekkElement {
+.periodeSammendrag {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+.ytelseTittel {
   margin-top: 0.5rem;
+  grid-column-start: 1;
+}
+
+.ytelseBelop {
+  margin-left: 0;
+  margin-top: 0.5rem;
+  text-align: right;
+  grid-column-start: 2;
 }
 
 .nettoElement {
+  font-weight: var(--a-font-weight-bold);
   margin-top: 0.5rem;
   padding: 0.5rem 0 0.5rem 0;
   border-top: var(--custom-divider-line);
