@@ -2,6 +2,7 @@ import {
   Button,
   DatePicker,
   ErrorMessage,
+  type RangeValidationT,
   useRangeDatepicker,
 } from "@navikt/ds-react";
 import { setPeriodeFilter, setSelectedPeriode } from "@src/store/filter";
@@ -10,11 +11,56 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import style from "./Egendefinert.module.css";
 
+enum DatePickerState {
+  ValidRange,
+  InvalidRange,
+  BothDatesMissing,
+  FromDateMissing,
+  ToDateMissing,
+}
+
+const parseDatePickerState = (data: RangeValidationT): DatePickerState => {
+  if (data.from.isEmpty && data.to.isEmpty) {
+    return DatePickerState.BothDatesMissing;
+  } else if (data.from.isEmpty) {
+    return DatePickerState.FromDateMissing;
+  } else if (data.to.isEmpty) {
+    return DatePickerState.ToDateMissing;
+  } else {
+    const isInvalid =
+      data.from.isInvalid ||
+      data.from.isAfter ||
+      data.from.isBefore ||
+      data.to.isInvalid ||
+      data.to.isAfter ||
+      data.to.isBefore;
+
+    return isInvalid
+      ? DatePickerState.InvalidRange
+      : DatePickerState.ValidRange;
+  }
+};
+
+const explainError = (error: DatePickerState): string => {
+  switch (error) {
+    case DatePickerState.BothDatesMissing:
+      return "Vennligst velg datoer for egendefinert periode.";
+    case DatePickerState.FromDateMissing:
+      return "Vennligst velg startdato for egendefinert periode.";
+    case DatePickerState.ToDateMissing:
+      return "Vennligst velg sluttdato for egendefinert periode.";
+    case DatePickerState.InvalidRange:
+      return "Oppgitte datoer må være innenfor de siste 3 årene.";
+    case DatePickerState.ValidRange:
+      return "";
+  }
+};
+
 const EgendefinertPeriode = () => {
   const [costumDate, setCostumDate] = useState({ fom: "", tom: "" });
   const [invalidInput, setInValidInput] = useState({
     showInvalidMessage: false,
-    isInvalid: true,
+    datePickerState: DatePickerState.BothDatesMissing,
   });
 
   const { datepickerProps, toInputProps, fromInputProps } = useRangeDatepicker({
@@ -25,15 +71,7 @@ const EgendefinertPeriode = () => {
     onValidate: (data) =>
       setInValidInput({
         showInvalidMessage: false,
-        isInvalid:
-          data.from.isEmpty ||
-          data.from.isInvalid ||
-          data.from.isBefore ||
-          data.from.isAfter ||
-          data.to.isEmpty ||
-          data.to.isInvalid ||
-          data.to.isBefore ||
-          data.to.isAfter,
+        datePickerState: parseDatePickerState(data),
       }),
   });
 
@@ -47,16 +85,16 @@ const EgendefinertPeriode = () => {
       </DatePicker>
       {invalidInput.showInvalidMessage && (
         <ErrorMessage className={style.invalidDateMessage}>
-          Oppgitt dato må være innenfor de siste 3 årene.
+          {explainError(invalidInput.datePickerState)}
         </ErrorMessage>
       )}
       <Button
         id={style.oppdaterButton}
         size="small"
         onClick={() =>
-          invalidInput.isInvalid
-            ? setInValidInput({ ...invalidInput, showInvalidMessage: true })
-            : (setPeriodeFilter(costumDate), setSelectedPeriode("Egendefinert"))
+          invalidInput.datePickerState === DatePickerState.ValidRange
+            ? (setPeriodeFilter(costumDate), setSelectedPeriode("Egendefinert"))
+            : setInValidInput({ ...invalidInput, showInvalidMessage: true })
         }
       >
         Oppdater
