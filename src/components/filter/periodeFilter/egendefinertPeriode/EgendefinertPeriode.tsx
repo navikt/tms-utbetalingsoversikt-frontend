@@ -52,7 +52,7 @@ const explainError = (error: DatePickerState): string => {
     case DatePickerState.InvalidRange:
       return "Oppgitte datoer må være innenfor de siste 3 årene.";
     case DatePickerState.ValidRange:
-      return "";
+      return " ";
   }
 };
 
