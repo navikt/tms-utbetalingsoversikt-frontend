@@ -1,11 +1,23 @@
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.5rem 0 0.5rem 0;
+.bruttoElement {
+  margin-bottom: 1.5rem;
+}
+
+.detaljeTittel {
+  grid-column-start: 1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: var(--custom-divider-line);
 }
 
-.bruttoElement {
-  margin-bottom: 1.5rem;
+.detaljeBelop {
+  grid-column-start: 2;
+  text-align: right;
+  margin-left: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: var(--custom-divider-line);
+}
+
+.sumElement {
+  font-weight: var(--a-font-weight-bold);
 }

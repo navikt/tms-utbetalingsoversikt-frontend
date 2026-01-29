@@ -4,8 +4,10 @@
   border-bottom: var(--custom-divider-line);
 }
 
-.calculationList {
-  list-style: none;
+.detaljerListe {
+  display: grid;
+  grid-template-columns: max-content auto;
+  border-bottom: var(--custom-divider-line);
   margin: 0;
   padding: 0;
 }
