@@ -1,4 +1,5 @@
 import {
+  BodyShort,
   Button,
   DatePicker,
   ErrorMessage,
@@ -78,9 +79,37 @@ const EgendefinertPeriode = () => {
   return (
     <>
       <DatePicker className={style.datePicker} {...datepickerProps}>
-        <div className={style.datePicketInputs}>
-          <DatePicker.Input {...fromInputProps} size="small" label="Fra" />
-          <DatePicker.Input {...toInputProps} size="small" label="Til" />
+        <div className={style.datePickerInputs}>
+          <DatePicker.Input
+            {...fromInputProps}
+            size="small"
+            label="Fra"
+            description={
+              <>
+                <BodyShort size="small" aria-hidden>
+                  Format: dd.mm.åååå
+                </BodyShort>
+                <BodyShort size="small" className="sr-only">
+                  Format: dd punktum mm punktum åååå
+                </BodyShort>
+              </>
+            }
+          />
+          <DatePicker.Input
+            {...toInputProps}
+            size="small"
+            label="Til"
+            description={
+              <>
+                <BodyShort size="small" aria-hidden>
+                  Format: dd.mm.åååå
+                </BodyShort>
+                <BodyShort size="small" className="sr-only">
+                  Format: dd punktum mm punktum åååå
+                </BodyShort>
+              </>
+            }
+          />
         </div>
       </DatePicker>
       {invalidInput.showInvalidMessage && (
