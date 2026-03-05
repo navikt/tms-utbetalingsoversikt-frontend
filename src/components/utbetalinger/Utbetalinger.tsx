@@ -68,13 +68,15 @@ const Utbetalinger = () => {
     ),
   );
 
+  const infoMeldingTekstTo: string =
+    "Venter du på utbetaling i dag, torsdag 5.mars? Torsdagens utbetalinger er dessverre forsinket. Vi vil sende pengene til din konto så snart som mulig.";
+
   const showInfoMelding: boolean = nullYtelser
     ? nullYtelser.includes("Uføretrygd")
     : false;
 
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
-
 
   return (
     <>
@@ -84,6 +86,9 @@ const Utbetalinger = () => {
           <BodyLong>{infoMeldingTekst}</BodyLong>
         </Alert>
       )}
+      <Alert className={style.infoMelding} variant="info">
+        <BodyLong>{infoMeldingTekstTo}</BodyLong>
+      </Alert>
       {showKommendeUtbetalinger && (
         <KommendeUtbetalinger utbetalinger={utbetalinger.neste} />
       )}
