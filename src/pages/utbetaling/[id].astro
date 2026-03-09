@@ -8,7 +8,7 @@ import Layout from "@src/layouts/Layout.astro";
 const { id } = Astro.params;
 ---
 
-<Layout>
+<Layout title="Utbetaling - nav.no">
   <Breadcrumbs includeUtbetalinger={true} />
   <UtbetalingPage server:defer id={id as string}>
     <div slot="fallback">

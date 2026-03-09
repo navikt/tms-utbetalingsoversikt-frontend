@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import styles from "../styles/index.module.css";
 ---
 
-<Layout title="Utbetalingsoversikt">
+<Layout>
   <div class={styles.headingWrapper}>
     <Breadcrumbs includeUtbetalinger={false} />
     <Landingsside client:only="react" />
