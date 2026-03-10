@@ -27,6 +27,26 @@ body {
   margin: 0 auto 0 auto;
 }
 
+.skipLink {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  transform: translateY(-150%);
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  background: var(--a-bg-default);
+  color: var(--a-text-default);
+  border: 2px solid var(--a-border-strong);
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.skipLink:focus {
+  transform: translateY(0.5rem);
+  outline: 3px solid var(--a-border-focus);
+  outline-offset: 2px;
+}
+
 @media (max-width: 648px) {
   .container {
     padding: 0 0.5rem;

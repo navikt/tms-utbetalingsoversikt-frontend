@@ -39,9 +39,10 @@ console.log(title);
     <Decorator.HeadAssets />
   </head>
   <body class="page-wrapper">
+    <a class={styles.skipLink} href="#main-content">Hopp til hovedinnhold</a>
     <Decorator.Header />
     <div class={styles.pageWrapper}>
-      <main class={styles.pageContainer}>
+      <main id="main-content" tabindex="-1" class={styles.pageContainer}>
         <slot />
       </main>
     </div>
