@@ -4,10 +4,10 @@ Frontend for den innloggede utbetalingsoversikten for eksterne brukere.
 
 # Kom i gang
 
-1. Installer dependencies med npm run install
-2. Bygg tms-utkast-frontend ved å kjøre npm run build
-3. Start hono mockserver med npm run mock
-4. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre npm run dev i et nytt terminalvindu
+1. Installer dependencies med `pnpm install`
+2. Bygg appen ved å kjøre `pnpm run build`
+3. Start hono mockserver med `pnpm run mock`
+4. Med mockserver kjørende i egen terminal, start appen lokalt ved å kjøre `pnpm run dev` i et nytt terminalvindu
 5. Appen nås på http://localhost:4321/utbetalingsoversikt
 
 # Henvendelser
