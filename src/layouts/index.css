@@ -1,10 +1,10 @@
 :root {
-  --custom-divider-line: 1px solid var(--a-border-divider);
+  --custom-divider-line: 1px solid var(--ax-border-neutral-subtle);
 }
 
 @media print {
   :root {
-    --custom-divider-line: 0.5px solid var(--a-border-default);
+    --custom-divider-line: 0.5px solid var(--ax-border-neutral);
   }
   .decorator-wrapper,
   #decorator-header,
