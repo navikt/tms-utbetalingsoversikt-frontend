@@ -25,7 +25,7 @@
     "@navikt/oasis": "3.8.0",
     "@opentelemetry/sdk-node": "0.205.0",
     "@testing-library/react": "16.3.0",
-    "astro": "5.13.7",
+    "astro": "6.1.6",
     "dayjs": "1.11.18",
     "husky": "9.1.7",
     "jose": "6.1.0",
