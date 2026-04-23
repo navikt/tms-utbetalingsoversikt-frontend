@@ -31,7 +31,7 @@
 }
 
 .utbetalingElementDato {
-  color: var(--a-grayalpha-600);
+  color: var(--ax-text-neutral-subtle);
 }
 
 @media print {
