@@ -1,0 +1,41 @@
+---
+import { BodyLong, Heading, Link } from "@navikt/ds-react";
+import styles from "./PageHeader.module.css";
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  breadcrumbItems: BreadcrumbItem[];
+}
+
+const { title, description, breadcrumbItems } = Astro.props;
+---
+
+<div class={styles.pageHeader}>
+  <nav aria-label="Brødsmuler" class={styles.breadcrumb}>
+    <ol class={styles.breadcrumbList}>
+      {
+        breadcrumbItems.map(({ href, label }) => (
+          <li class={styles.breadcrumbItem}>
+            <Link href={href}>{label}</Link>
+          </li>
+        ))
+      }
+    </ol>
+  </nav>
+  <Heading size="large" level="1">
+    {title}
+  </Heading>
+  {
+    description && (
+      <BodyLong className={styles.description} size="large">
+        {description}
+      </BodyLong>
+    )
+  }
+</div>

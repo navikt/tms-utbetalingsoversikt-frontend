@@ -1,0 +1,48 @@
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 632px;
+  margin: 0 auto;
+}
+
+.pageHeader h1 {
+  color: var(--ax-text-neutral);
+  margin-bottom: 10px;
+}
+
+.breadcrumb {
+  margin: 2rem 0;
+}
+
+.breadcrumbList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbItem:not(:last-child)::after {
+  content: "/";
+  color: var(--ax-text-neutral-subtle);
+}
+
+.description {
+  color: var(--ax-text-neutral);
+}
+
+@media print {
+  .pageHeader {
+    display: none;
+  }
+}

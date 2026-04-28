@@ -7,10 +7,11 @@ export const getOboToken = async (
   token: string,
   audience: string,
 ): Promise<string> => {
-  const oboResult = await requestOboToken(token, audience);
   if (isLocal) {
     return "Fake token";
   }
+
+  const oboResult = await requestOboToken(token, audience);
 
   if (!oboResult.ok) {
     logger.error("Error getting access token: " + oboResult.error);

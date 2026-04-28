@@ -1,5 +1,4 @@
 ---
-import Breadcrumbs from "@src/components/breadcrumbs/Breadcrumbs.astro";
 import Observability from "@src/components/observability/Observability";
 import UtbetalingPage from "@src/components/pages/utbetalingDetaljeSide/UtbetalingPage.astro";
 import UtbetalingPageSkeleton from "@src/components/pages/utbetalingDetaljeSide/UtbetalingPageSkeleton.astro";
@@ -9,7 +8,6 @@ const { id } = Astro.params;
 ---
 
 <Layout title="Utbetaling - nav.no">
-  <Breadcrumbs includeUtbetalinger={true} />
   <UtbetalingPage server:defer id={id as string}>
     <div slot="fallback">
       <UtbetalingPageSkeleton />

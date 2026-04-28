@@ -1,15 +1,16 @@
 ---
-import Breadcrumbs from "@src/components/breadcrumbs/Breadcrumbs.astro";
 import Observability from "@src/components/observability/Observability";
+import PageHeader from "@src/components/pageHeader/PageHeader.astro";
 import Landingsside from "@src/components/pages/landingsside/Landingsside.tsx";
+import { minSideUrl } from "@src/utils/server/urls";
 import Layout from "../layouts/Layout.astro";
-import styles from "../styles/index.module.css";
 ---
 
 <Layout>
-  <div class={styles.headingWrapper}>
-    <Breadcrumbs includeUtbetalinger={false} />
-    <Landingsside client:only="react" />
-  </div>
+  <PageHeader
+    title="Utbetalinger"
+    breadcrumbItems={[{ label: "Min side", href: minSideUrl }]}
+  />
+  <Landingsside client:only="react" />
   <Observability client:only="react" />
 </Layout>

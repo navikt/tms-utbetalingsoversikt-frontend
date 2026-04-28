@@ -1,4 +1,3 @@
-import { Heading } from "@navikt/ds-react";
 import PeriodeFilter from "@src/components/filter/periodeFilter/PeriodeFilter.tsx";
 import ShowFilterButton from "@src/components/filter/showFilterButton/ShowFilterButton.tsx";
 import RelatertInnhold from "@src/components/relatertInnhold/RelatertInnhold.tsx";
@@ -10,9 +9,6 @@ function Landingsside() {
   return (
     <>
       <div id={style.printHide}>
-        <Heading className={style.pageTitle} level="1" size="xlarge">
-          Utbetalinger
-        </Heading>
         <div className={style.pageBody}>
           <ShowFilterButton />
           <PeriodeFilter />
