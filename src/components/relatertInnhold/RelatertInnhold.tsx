@@ -1,4 +1,4 @@
-import { Heading } from "@navikt/ds-react";
+import { Heading, Link } from "@navikt/ds-react";
 import { logEvent } from "@src/utils/client/analytics";
 import {
   dagpengerUrl,
@@ -56,15 +56,14 @@ const RelatertInnhold = () => {
       <ul className={style.linkList}>
         {relatertInnholdLinks.map((linkObject) => (
           <li key={linkObject.title}>
-            <a
-              className={style.link}
+            <Link
               onClick={() =>
                 logEvent("relatert-innhold-link", linkObject.title)
               }
               href={linkObject.href}
             >
               {linkObject.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
