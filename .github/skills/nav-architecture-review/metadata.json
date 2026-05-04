@@ -2,7 +2,10 @@
   "description": "Generer Architecture Decision Records (ADR) med flerperspektiv-review tilpasset Nav",
   "domain": "general",
   "tags": ["architecture", "adr", "review", "planning", "nav-pilot"],
-  "references": ["references/adr-template.md", "references/nav-principles.md"],
+  "references": [
+    "references/adr-template.md",
+    "references/nav-principles.md"
+  ],
   "examples": [
     {
       "prompt": "Generer en ADR for å bytte fra REST til Kafka for vedtakshendelser",

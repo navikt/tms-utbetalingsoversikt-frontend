@@ -1,15 +1,7 @@
 {
   "description": "Arkitekturplanlegging med beslutningstrær for auth, kommunikasjon, database, Nais-konfigurasjon og moderniseringsmønstre",
   "domain": "general",
-  "tags": [
-    "planning",
-    "architecture",
-    "scaffold",
-    "nais",
-    "nav-pilot",
-    "modernization",
-    "migration"
-  ],
+  "tags": ["planning", "architecture", "scaffold", "nais", "nav-pilot", "modernization", "migration"],
   "references": [
     "references/decision-trees.md",
     "references/documentation-templates.md",

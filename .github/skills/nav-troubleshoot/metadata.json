@@ -2,7 +2,9 @@
   "description": "Strukturerte diagnostiske trær for vanlige Nav-plattformproblemer — pod-krasj, auth-feil, Kafka-lag og databaseproblemer",
   "domain": "platform",
   "tags": ["troubleshooting", "diagnostics", "nais", "kubernetes", "nav-pilot"],
-  "references": ["references/diagnostic-trees.md"],
+  "references": [
+    "references/diagnostic-trees.md"
+  ],
   "examples": [
     {
       "prompt": "Poden min krasjer med CrashLoopBackOff i dev-gcp, hjelp meg feilsøke",
