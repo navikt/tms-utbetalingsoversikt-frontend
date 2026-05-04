@@ -1,13 +1,6 @@
 {
   "domain": "general",
-  "tags": [
-    "norsk",
-    "teknisk-skriving",
-    "redigering",
-    "språk",
-    "klarspråk",
-    "ai-markører"
-  ],
+  "tags": ["norsk", "teknisk-skriving", "redigering", "språk", "klarspråk", "ai-markører"],
   "examples": [
     {
       "prompt": "@forfatter Sjekk feilmeldingene og hjelpetekstene i denne React-komponenten for klarspråk",

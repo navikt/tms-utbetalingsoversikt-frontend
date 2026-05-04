@@ -1,0 +1,51 @@
+{
+  "up_to_date": false,
+  "source": "bb25c0e",
+  "updates": [
+    {
+      "path": ".github/agents/forfatter.agent.md",
+      "current_hash": "f638bd5c234f329b",
+      "source_hash": "4e55f4d189619dcb"
+    },
+    {
+      "path": ".github/agents/forfatter.metadata.json",
+      "current_hash": "ce31f1d45e1343be",
+      "source_hash": "415648fcdc323588"
+    },
+    {
+      "path": ".github/agents/nav-pilot.agent.md",
+      "current_hash": "3179adb5db9ae3af",
+      "source_hash": "8384742b958b4b84"
+    },
+    {
+      "path": ".github/skills/web-design-reviewer/",
+      "current_hash": "2decd7bf3ef38b2d",
+      "source_hash": "07b2096b77bf5ae3"
+    },
+    {
+      "path": ".github/skills/nav-plan/",
+      "current_hash": "58aa9f2f6d29bbab",
+      "source_hash": "0849265460ea23e2"
+    },
+    {
+      "path": ".github/skills/nav-architecture-review/",
+      "current_hash": "70c5b8e5113f476b",
+      "source_hash": "4618dec566442509"
+    },
+    {
+      "path": ".github/skills/nav-troubleshoot/",
+      "current_hash": "eaa12e312a8da2e4",
+      "source_hash": "ce043cf29ce427b1"
+    },
+    {
+      "path": ".github/prompts/aksel-component.prompt.md",
+      "current_hash": "9da00ddfc10aefc4",
+      "source_hash": "9119d15db318622d"
+    },
+    {
+      "path": ".github/prompts/nais-manifest.prompt.md",
+      "current_hash": "7b1e6ac5b4115c3f",
+      "source_hash": "a7564098ae008cce"
+    }
+  ]
+}

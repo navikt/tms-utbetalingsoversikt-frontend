@@ -1,8 +1,8 @@
 {
   "collection": "frontend",
-  "version": "2026.04.20-194821-8b2cb9f",
+  "version": "2026.04.30-090824-bb25c0e",
   "scope": "repo",
-  "source_sha": "8b2cb9f",
+  "source_sha": "bb25c0e",
   "installed_at": "2026-04-24T09:20:00Z",
   "files": [
     {
@@ -23,7 +23,7 @@
     },
     {
       "path": ".github/agents/forfatter.agent.md",
-      "hash": "f638bd5c234f329b"
+      "hash": "4e55f4d189619dcb"
     },
     {
       "path": ".github/agents/forfatter.metadata.json",
@@ -31,7 +31,7 @@
     },
     {
       "path": ".github/agents/nav-pilot.agent.md",
-      "hash": "3179adb5db9ae3af"
+      "hash": "8384742b958b4b84"
     },
     {
       "path": ".github/agents/nav-pilot.metadata.json",
@@ -87,11 +87,11 @@
     },
     {
       "path": ".github/prompts/aksel-component.prompt.md",
-      "hash": "9da00ddfc10aefc4"
+      "hash": "9119d15db318622d"
     },
     {
       "path": ".github/prompts/nais-manifest.prompt.md",
-      "hash": "7b1e6ac5b4115c3f"
+      "hash": "a7564098ae008cce"
     }
   ]
 }
