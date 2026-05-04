@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { Alert, BodyLong, Heading } from "@navikt/ds-react";
+import { Alert, BodyLong, BodyShort } from "@navikt/ds-react";
 import {
   periodeFilterAtom,
   selctedPeriodeAtom,
@@ -88,15 +88,16 @@ const Utbetalinger = () => {
       )}
       {
         <>
-          <Heading
-            level="2"
+          <BodyShort
+            as="h2"
             size="small"
-            className={`navds-body-short ${style.tidligereUtbetalingerHeading}`}
+            weight="semibold"
+            className={style.tidligereUtbetalingerHeading}
           >
             {utbetalingerPeriod === "Egendefinert"
               ? utbetalingerPeriodDato
               : utbetalingerPeriod}
-          </Heading>
+          </BodyShort>
           {hasTidligereUtbetalinger ? (
             <>
               {" "}

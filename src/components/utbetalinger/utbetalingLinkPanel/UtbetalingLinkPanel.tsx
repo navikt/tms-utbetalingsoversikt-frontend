@@ -1,5 +1,4 @@
-import { ChevronRightIcon } from "@navikt/aksel-icons";
-import { BodyLong, BodyShort, Link } from "@navikt/ds-react";
+import { BodyLong, BodyShort, LinkPanel } from "@navikt/ds-react";
 import type { UtbetalingType } from "@src/types/types";
 import { logEvent } from "@src/utils/client/analytics";
 import { formatToReadableDate } from "@src/utils/client/date";
@@ -19,8 +18,8 @@ const UtbetalingLinkPanel = ({
     ? style.nesteUtbetalingLink
     : style.tidligereUtbetalingLink;
   return (
-    <Link
-      className={"navds-panel navds-link-panel " + linkClassName}
+    <LinkPanel
+      className={linkClassName}
       href={`/utbetalingsoversikt/utbetaling/${id}`}
       onClick={() =>
         logEvent(
@@ -42,12 +41,8 @@ const UtbetalingLinkPanel = ({
           weight="semibold"
           className={style.betalingDato}
         >{`${formaterTallUtenDesimaler(beløp)} kr`}</BodyShort>
-        <ChevronRightIcon
-          aria-hidden="true"
-          className="navds-link-panel__chevron chevronRight"
-        />
       </div>
-    </Link>
+    </LinkPanel>
   );
 };
 
