@@ -2,6 +2,15 @@
 .nesteUtbetalingLink {
   padding-top: 1rem;
   padding-bottom: 0.75rem;
+  border-color: transparent;
+}
+
+.tidligereUtbetalingLink :global(.aksel-link-panel__content),
+.nesteUtbetalingLink :global(.aksel-link-panel__content) {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
 }
 
 .tidligereUtbetalingLink {
@@ -17,6 +26,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 .nesteUtbetalingLink:hover {
