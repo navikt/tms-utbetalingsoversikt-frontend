@@ -1,12 +1,12 @@
 ---
-import { Heading } from "@navikt/ds-react";
 import ErrorPanel from "@src/components/errorPanel/ErrorPanel.astro";
+import PageHeader from "@src/components/pageHeader/PageHeader.astro";
 import PrintButton from "@src/components/prinButton/PrintButton";
 import type { Bruker, Utbetaling } from "@src/types/types";
 import { formatToDetailedDate } from "@src/utils/client/date";
 import logger from "@src/utils/server/logger";
 import { fetchNavn } from "@src/utils/server/navn/fetchNavn";
-import { pdlApiUrl } from "@src/utils/server/urls";
+import { minSideUrl, pdlApiUrl } from "@src/utils/server/urls";
 import { fetchUtbetaling } from "@src/utils/server/utbetaling/fetchUtbetaling";
 import PrintPageHeading from "../printPageHeading/PrintPageHeading.astro";
 import SummaryPanel from "./summaryPanel/SummaryPanel.astro";
@@ -22,6 +22,7 @@ const { id } = Astro.props;
 
 let enkelUtbetaling: Utbetaling | null = null;
 let utbetalingFetchError: boolean = false;
+let bruker: Bruker = { navn: null, ident: null };
 
 try {
   enkelUtbetaling = await fetchUtbetaling(Astro.locals.token, id);
@@ -30,16 +31,24 @@ try {
   utbetalingFetchError = true;
 }
 
-const bruker: Bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
+try {
+  bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
+} catch (error: any) {
+  logger.error("Could not fetch user info.", error.message);
+}
 ---
 
 {
   enkelUtbetaling && !utbetalingFetchError ? (
     <>
       <PrintPageHeading bruker={bruker} />
-      <Heading level="1" size="xlarge" className={style.pageTitle}>
-        {enkelUtbetaling.ytelse}
-      </Heading>
+      <PageHeader
+        title={enkelUtbetaling.ytelse}
+        breadcrumbItems={[
+          { label: "Min side", href: minSideUrl },
+          { label: "Utbetalinger", href: "/utbetalingsoversikt" },
+        ]}
+      />
       <SummaryPanel utbetaling={enkelUtbetaling} />
       <div class={style.detailsContainer}>
         <UtbetalingCalculations utbetaling={enkelUtbetaling} />

@@ -6,9 +6,6 @@
 }
 
 @media print {
-  .pageTitle {
-    display: none;
-  }
   .detailsContainer {
     padding: 0;
   }
