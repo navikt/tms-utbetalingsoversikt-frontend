@@ -23,7 +23,7 @@
     "@navikt/ds-react": "8.10.1",
     "@navikt/nav-dekoratoren-moduler": "3.4.0",
     "@navikt/oasis": "3.8.0",
-    "@opentelemetry/sdk-node": "0.205.0",
+    "@opentelemetry/sdk-node": "0.217.0",
     "@testing-library/react": "16.3.0",
     "astro": "5.13.7",
     "dayjs": "1.11.18",
