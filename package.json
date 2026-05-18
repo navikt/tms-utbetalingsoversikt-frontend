@@ -14,9 +14,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
+    "@astrojs/check": "0.9.9",
     "@astrojs/node": "9.4.3",
-    "@astrojs/react": "4.3.1",
+    "@astrojs/react": "5.0.4",
     "@grafana/faro-web-sdk": "1.19.0",
     "@nanostores/react": "github:nanostores/react",
     "@navikt/aksel-icons": "8.10.1",
