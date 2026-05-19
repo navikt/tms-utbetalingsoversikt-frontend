@@ -1,7 +1,6 @@
 import { Heading, Link } from "@navikt/ds-react";
 import { logEvent } from "@src/utils/client/analytics";
 import {
-  dagpengerUrl,
   endreKontonummerUrl,
   endreSkattekortUrl,
   frivilligSkattetrekkUrl,
@@ -40,10 +39,6 @@ const relatertInnholdLinks = [
   {
     title: "Frivillig skattetrekk",
     href: frivilligSkattetrekkUrl,
-  },
-  {
-    title: "Forskudd på dagpenger",
-    href: dagpengerUrl,
   },
 ];
 
