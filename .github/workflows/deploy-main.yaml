@@ -31,12 +31,19 @@ jobs:
         env:
             NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
-      # - name: 'run tests'
-      #   run: |
-      #     pnpm run mock &
-      #     pnpm run test
-      #   env:
-      #     ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
+      - name: 'Run unit tests'
+        run: 'pnpm run test'
+        env:
+          ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
+
+      - name: 'Install Playwright browsers'
+        run: 'pnpm exec playwright install --with-deps chromium'
+
+      - name: 'Run E2E tests'
+        run: 'pnpm run test:e2e'
+        env:
+          CI: 'true'
+          ASTRO_KEY: ${{ secrets.ASTRO_KEY }}
 
       - name: 'Build application'
         run: 'pnpm run build'
