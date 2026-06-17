@@ -16,9 +16,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "@astrojs/node": "9.4.3",
-    "@astrojs/react": "4.3.1",
+    "@astrojs/check": "0.9.9",
+    "@astrojs/node": "10.1.4",
+    "@astrojs/react": "5.0.7",
     "@grafana/faro-web-sdk": "1.19.0",
     "@nanostores/react": "github:nanostores/react",
     "@navikt/aksel-icons": "8.10.1",
@@ -26,7 +26,7 @@
     "@navikt/nav-dekoratoren-moduler": "3.4.0",
     "@navikt/oasis": "3.8.0",
     "@opentelemetry/sdk-node": "0.217.0",
-    "astro": "5.13.7",
+    "astro": "6.4.5",
     "dayjs": "1.11.20",
     "husky": "9.1.7",
     "jose": "6.2.3",
