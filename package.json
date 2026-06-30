@@ -16,17 +16,17 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "@astrojs/node": "9.4.3",
-    "@astrojs/react": "4.3.1",
+    "@astrojs/check": "0.9.9",
+    "@astrojs/node": "11.0.0",
+    "@astrojs/react": "6.0.0",
     "@grafana/faro-web-sdk": "1.19.0",
-    "@nanostores/react": "github:nanostores/react",
+    "@nanostores/react": "1.1.0",
     "@navikt/aksel-icons": "8.10.1",
     "@navikt/ds-react": "8.10.1",
     "@navikt/nav-dekoratoren-moduler": "3.4.0",
     "@navikt/oasis": "3.8.0",
     "@opentelemetry/sdk-node": "0.217.0",
-    "astro": "5.13.7",
+    "astro": "7.0.3",
     "dayjs": "1.11.20",
     "husky": "9.1.7",
     "jose": "6.2.3",
@@ -36,8 +36,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swr": "2.4.1",
-    "vitest": "3.2.4",
-    "vitest-axe": "0.1.0"
+    "vitest": "4.1.8"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.3",
@@ -50,7 +49,7 @@
     "@types/node": "24.5.0",
     "@types/react": "18.3.28",
     "@types/react-dom": "18.3.7",
-    "@vitest/coverage-v8": "3.2.4",
+    "@vitest/coverage-v8": "4.1.8",
     "hono": "4.9.7",
     "jsdom": "29.1.1",
     "lint-staged": "16.1.6",
