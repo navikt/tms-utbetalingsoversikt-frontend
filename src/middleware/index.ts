@@ -1,5 +1,4 @@
 import { getToken, validateToken } from "@navikt/oasis";
-import logger from "@src/utils/server/logger";
 import { localToken } from "@src/utils/server/token";
 import { isLocal } from "@src/utils/server/urls.ts";
 import { defineMiddleware } from "astro/middleware";
@@ -20,7 +19,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   if (!token) {
-    logger.info(
+    context.logger.info(
       "Could not find any bearer token on the request. Redirecting to login.",
     );
     return context.redirect(`${loginUrl}${params}`);
@@ -32,7 +31,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     const error = new Error(
       `Invalid JWT token found (cause: ${validation.errorType} ${validation.error}, redirecting to login.`,
     );
-    logger.error(error);
+    context.logger.error(error.message);
     return context.redirect(`${loginUrl}${params}`);
   }
 
