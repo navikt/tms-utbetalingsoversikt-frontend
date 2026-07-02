@@ -14,6 +14,9 @@ export default defineConfig({
       "https://cdn.nav.no/min-side/tms-utbetalingsoversikt-frontend",
   },
   integrations: [react()],
+  logger: {
+    entrypoint: "@navikt/astro-logger",
+  },
   output: "server",
   adapter: node({
     mode: "standalone",

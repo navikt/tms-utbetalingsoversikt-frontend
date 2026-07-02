@@ -4,7 +4,6 @@ import PageHeader from "@src/components/pageHeader/PageHeader.astro";
 import PrintButton from "@src/components/prinButton/PrintButton";
 import type { Bruker, Utbetaling } from "@src/types/types";
 import { formatToDetailedDate } from "@src/utils/client/date";
-import logger from "@src/utils/server/logger";
 import { fetchNavn } from "@src/utils/server/navn/fetchNavn";
 import { minSideUrl, pdlApiUrl } from "@src/utils/server/urls";
 import { fetchUtbetaling } from "@src/utils/server/utbetaling/fetchUtbetaling";
@@ -25,16 +24,16 @@ let utbetalingFetchError: boolean = false;
 let bruker: Bruker = { navn: null, ident: null };
 
 try {
-  enkelUtbetaling = await fetchUtbetaling(Astro.locals.token, id);
+  enkelUtbetaling = await fetchUtbetaling(Astro.locals.token, id, Astro.logger);
 } catch (error: any) {
-  logger.error("Fetch failed.", error.message);
+  Astro.logger.error("Fetch failed. " + error.message);
   utbetalingFetchError = true;
 }
 
 try {
-  bruker = await fetchNavn(Astro.locals.token, pdlApiUrl);
+  bruker = await fetchNavn(Astro.locals.token, pdlApiUrl, Astro.logger);
 } catch (error: any) {
-  logger.error("Could not fetch user info.", error.message);
+  Astro.logger.error("Could not fetch user info. " + error.message);
 }
 ---
 
