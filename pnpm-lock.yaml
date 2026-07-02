@@ -80,7 +80,7 @@ importers:
         version: 2.4.15
       '@hono/node-server':
         specifier: 1.19.3
-        version: 1.19.3(hono@4.9.7)
+        version: 1.19.3(hono@4.12.25)
       '@playwright/test':
         specifier: 1.60.0
         version: 1.60.0
@@ -106,8 +106,8 @@ importers:
         specifier: 4.1.8
         version: 4.1.8(vitest@4.1.8)
       hono:
-        specifier: 4.9.7
-        version: 4.9.7
+        specifier: 4.12.25
+        version: 4.12.25
       jsdom:
         specifier: 29.1.1
         version: 29.1.1
@@ -1099,9 +1099,6 @@ packages:
       '@types/react': ^17.0.30 || ^18 || ^19
       react: ^17 || ^18 || ^19
       react-dom: ^17 || ^18 || ^19
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
 
   '@navikt/ds-tokens@8.10.1':
     resolution: {integrity: sha512-uP8DlbPzDgHtBgPuSx7jovAp4ONOSWprc9cwbFahx0MPm4/ldutydDvnGTVMrvww8ftjUFSDti07vodxHPFfaw==, tarball: https://npm.pkg.github.com/download/@navikt/ds-tokens/8.10.1/e0e93219aede2463946851b272b809f17b813fa9}
@@ -1114,9 +1111,6 @@ packages:
       html-react-parser: '>=5.x'
       jsdom: '>=16.x'
       react: '>=17.x'
-    peerDependenciesMeta:
-      react:
-        optional: true
 
   '@navikt/oasis@3.8.0':
     resolution: {integrity: sha512-5CDsv3wop9eIw2YNBCJRr0w6PwwkoTiHzZQXn1+5YZnsksCkHJAFsfKSbRle6zgsD+XRBnc/TPOP0nvNly7NWg==, tarball: https://npm.pkg.github.com/download/@navikt/oasis/3.8.0/fc6862d934adfbefa382220614af18160688cd1e}
@@ -2140,8 +2134,8 @@ packages:
   hastscript@9.0.1:
     resolution: {integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==}
 
-  hono@4.9.7:
-    resolution: {integrity: sha512-t4Te6ERzIaC48W3x4hJmBwgNlLhmiEdEE5ViYb02ffw4ignHNHa5IBtPjmbKstmtKa8X6C35iWwK4HaqvrzG9w==}
+  hono@4.12.25:
+    resolution: {integrity: sha512-2NFaIyNVgJmBs/ecmtGzlmluTFs5cHEWGTdu0t1HBwYzoGXOL5nUQBRMXsXWla5i4KkG//QMzVP88m1+I3fdAQ==}
     engines: {node: '>=16.9.0'}
 
   html-dom-parser@7.0.1:
@@ -4057,9 +4051,9 @@ snapshots:
       ua-parser-js: 1.0.41
       web-vitals: 4.2.4
 
-  '@hono/node-server@1.19.3(hono@4.9.7)':
+  '@hono/node-server@1.19.3(hono@4.12.25)':
     dependencies:
-      hono: 4.9.7
+      hono: 4.12.25
 
   '@img/colour@1.1.0':
     optional: true
@@ -4203,12 +4197,11 @@ snapshots:
       '@floating-ui/react-dom': 2.1.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@navikt/aksel-icons': 8.10.1
       '@navikt/ds-tokens': 8.10.1
+      '@types/react': 18.3.28
       date-fns: 4.1.0
       react: 18.2.0
       react-day-picker: 9.14.0(react@18.2.0)
       react-dom: 18.2.0(react@18.2.0)
-    optionalDependencies:
-      '@types/react': 18.3.28
 
   '@navikt/ds-tokens@8.10.1': {}
 
@@ -4218,7 +4211,6 @@ snapshots:
       html-react-parser: 6.0.1(@types/react@18.3.28)(react@18.2.0)
       js-cookie: 3.0.5
       jsdom: 29.1.1
-    optionalDependencies:
       react: 18.2.0
 
   '@navikt/oasis@3.8.0':
@@ -5278,7 +5270,7 @@ snapshots:
       property-information: 7.1.0
       space-separated-tokens: 2.0.2
 
-  hono@4.9.7: {}
+  hono@4.12.25: {}
 
   html-dom-parser@7.0.1:
     dependencies:
