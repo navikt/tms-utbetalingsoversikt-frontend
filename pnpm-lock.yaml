@@ -79,8 +79,8 @@ importers:
         specifier: 2.5.1
         version: 2.5.1
       '@hono/node-server':
-        specifier: 1.19.3
-        version: 1.19.3(hono@4.12.27)
+        specifier: 2.0.6
+        version: 2.0.6(hono@4.12.27)
       '@playwright/test':
         specifier: 1.61.1
         version: 1.61.1
@@ -731,9 +731,9 @@ packages:
   '@grafana/faro-web-sdk@1.19.0':
     resolution: {integrity: sha512-3u74mV2uBWqoF6WBx71p0vtkaS1Z0QbGoZ8tuX5yiYnIybqnhKdGkApFUi7q5se0tMPIeJdMVoRFdLU8f9hfAw==}
 
-  '@hono/node-server@1.19.3':
-    resolution: {integrity: sha512-Fjyxfux0rMPXMSob79OmddfpK5ArJa2xLkLCV+zamHkbeXQtSNKOi0keiBKyHZ/hCRKjigjmKGp4AJnDFq8PUw==}
-    engines: {node: '>=18.14.1'}
+  '@hono/node-server@2.0.6':
+    resolution: {integrity: sha512-7DeRlKG57JDBNZ5Qj2jwVdgwQy4b0tLubRLl3zCf91/rCf9i7p1V5FtW/yWibm1uUHE493ts9ZXH/7g/LQWl+g==}
+    engines: {node: '>=20'}
     peerDependencies:
       hono: ^4
 
@@ -3775,7 +3775,7 @@ snapshots:
       ua-parser-js: 1.0.41
       web-vitals: 4.2.4
 
-  '@hono/node-server@1.19.3(hono@4.12.27)':
+  '@hono/node-server@2.0.6(hono@4.12.27)':
     dependencies:
       hono: 4.12.27
 
