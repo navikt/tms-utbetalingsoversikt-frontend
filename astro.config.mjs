@@ -13,6 +13,11 @@ export default defineConfig({
     assetsPrefix:
       "https://cdn.nav.no/min-side/tms-utbetalingsoversikt-frontend",
   },
+  vite: {
+    build: {
+      sourcemap: true,
+    },
+  },
   integrations: [react()],
   logger: {
     entrypoint: "@navikt/astro-logger",
