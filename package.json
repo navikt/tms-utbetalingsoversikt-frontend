@@ -22,6 +22,7 @@
     "@grafana/faro-web-sdk": "1.19.0",
     "@nanostores/react": "1.1.0",
     "@navikt/aksel-icons": "8.10.1",
+    "@navikt/astro-auth": "1.0.7",
     "@navikt/astro-logger": "1.0.0",
     "@navikt/ds-react": "8.10.1",
     "@navikt/nav-dekoratoren-moduler": "3.4.0",
