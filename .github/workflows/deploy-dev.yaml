@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'dev-*'
+      - 'sasoria-*'
 
 permissions:
   contents: 'read'
