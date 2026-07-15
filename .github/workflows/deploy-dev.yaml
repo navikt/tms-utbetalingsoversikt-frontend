@@ -1,8 +1,10 @@
 name: 'Deploy dev'
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'dev-*'
+      - 'sasoria-*'
 
 permissions:
   contents: 'read'
