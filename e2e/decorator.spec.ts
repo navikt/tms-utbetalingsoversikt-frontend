@@ -11,7 +11,7 @@ test.describe("Dekoratør", () => {
     await utbetalinger.goto();
 
     await expect(
-      page.locator('head link[rel="stylesheet"][href*="decorator"]').first(),
+      page.locator('head link[rel="stylesheet"][href*="dekoratoren"]').first(),
     ).toBeAttached();
   });
 
