@@ -81,9 +81,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.5.1
         version: 2.5.1
-      '@hono/node-server':
-        specifier: 1.19.3
-        version: 1.19.3(hono@4.12.27)
+      '@navikt/astro-mocks':
+        specifier: 0.1.5
+        version: 0.1.5(astro@7.0.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@24.5.0)(rollup@4.60.2)(tsx@4.22.4)(yaml@2.9.0))
       '@playwright/test':
         specifier: 1.61.1
         version: 1.61.1
@@ -108,18 +108,12 @@ importers:
       '@vitest/coverage-v8':
         specifier: 4.1.9
         version: 4.1.9(vitest@4.1.9)
-      hono:
-        specifier: 4.12.27
-        version: 4.12.27
       jsdom:
         specifier: 29.1.1
         version: 29.1.1
       lint-staged:
         specifier: 16.1.6
         version: 16.1.6
-      tsx:
-        specifier: 4.22.4
-        version: 4.22.4
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -746,12 +740,6 @@ packages:
   '@grafana/faro-web-sdk@1.19.0':
     resolution: {integrity: sha512-3u74mV2uBWqoF6WBx71p0vtkaS1Z0QbGoZ8tuX5yiYnIybqnhKdGkApFUi7q5se0tMPIeJdMVoRFdLU8f9hfAw==}
 
-  '@hono/node-server@1.19.3':
-    resolution: {integrity: sha512-Fjyxfux0rMPXMSob79OmddfpK5ArJa2xLkLCV+zamHkbeXQtSNKOi0keiBKyHZ/hCRKjigjmKGp4AJnDFq8PUw==}
-    engines: {node: '>=18.14.1'}
-    peerDependencies:
-      hono: ^4
-
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
     engines: {node: '>=18'}
@@ -949,6 +937,12 @@ packages:
     peerDependencies:
       astro: ^7.0.0
       pino: 8 || 9 || 10
+
+  '@navikt/astro-mocks@0.1.5':
+    resolution: {integrity: sha512-7DY6/3u+pzzy+tDYOBPmN3KlgWJvE0zt+rvogGWHJXR74baO3q8/miPtaWrmEKCdrcIyBwj/Ad/txMKVJbDt6A==, tarball: https://npm.pkg.github.com/download/@navikt/astro-mocks/0.1.5/a9f20f2806c944e69db9f79ab06e675dbc6cfed0}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      astro: '>=4.0.0'
 
   '@navikt/ds-react@8.10.1':
     resolution: {integrity: sha512-mOw1RnwhiBUm9IR0APRxhy36++XPkcIRIOFqBDnFd08Sgqff9BLop7ln9sJYSPWRD0ceZ9j40nVm4p6Eylx9zw==, tarball: https://npm.pkg.github.com/download/@navikt/ds-react/8.10.1/d948b1c7a3593452a2fb1262c011a028f076115f}
@@ -2002,10 +1996,6 @@ packages:
 
   hastscript@9.0.1:
     resolution: {integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==}
-
-  hono@4.12.27:
-    resolution: {integrity: sha512-1yrb/+w6HWQJrUCLkJ2IF5jNIPvvFkblV5RNOYl6bV+OA6p9GLcMpHFFGTosSvHvcAUibuUukRqhlYI4z32C7Q==}
-    engines: {node: '>=16.9.0'}
 
   html-dom-parser@7.0.1:
     resolution: {integrity: sha512-loRBDTCY/05/jAC63J1X9ID+xjRucmpLkIcQO0IRbOubBo5ucnpUpyXXob9UMXOskMZlu7KPsDP/2KOMelzJNA==}
@@ -3849,10 +3839,6 @@ snapshots:
       ua-parser-js: 1.0.41
       web-vitals: 4.2.4
 
-  '@hono/node-server@1.19.3(hono@4.12.27)':
-    dependencies:
-      hono: 4.12.27
-
   '@img/colour@1.1.0':
     optional: true
 
@@ -3993,6 +3979,10 @@ snapshots:
       '@opentelemetry/api': 1.9.1
       astro: 7.0.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@24.5.0)(rollup@4.60.2)(tsx@4.22.4)(yaml@2.9.0)
       pino: 9.9.5
+
+  '@navikt/astro-mocks@0.1.5(astro@7.0.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@24.5.0)(rollup@4.60.2)(tsx@4.22.4)(yaml@2.9.0))':
+    dependencies:
+      astro: 7.0.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@24.5.0)(rollup@4.60.2)(tsx@4.22.4)(yaml@2.9.0)
 
   '@navikt/ds-react@8.10.1(@types/react@18.3.28)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
@@ -5055,8 +5045,6 @@ snapshots:
       property-information: 7.1.0
       space-separated-tokens: 2.0.2
 
-  hono@4.12.27: {}
-
   html-dom-parser@7.0.1:
     dependencies:
       domhandler: 6.0.1
@@ -5946,6 +5934,7 @@ snapshots:
       esbuild: 0.28.1
     optionalDependencies:
       fsevents: 2.3.3
+    optional: true
 
   typesafe-path@0.2.2: {}
 

@@ -22,56 +22,56 @@ export const getEnvironment = () => {
 };
 
 const BASE_URL = {
-  local: "http://localhost:3000/utbetalingsoversikt/",
+  local: "http://localhost:4321/utbetalingsoversikt/",
   ansatt: "https://www.ansatt.dev.nav.no/utbetalingsoversikt",
   development: "https://www.intern.dev.nav.no/utbetalingsoversikt",
   production: "https://www.nav.no/utbetalingsoversikt",
 };
 
 const TELEMETRY_URL = {
-  local: "http://localhost:3000/collect",
+  local: "http://localhost:4321/collect",
   development: "https://telemetry.ekstern.dev.nav.no/collect",
   ansatt: "https://telemetry.ekstern.dev.nav.no/collect",
   production: "https://telemetry.nav.no/collect",
 };
 
 const MIN_SIDE_URL = {
-  local: "http://localhost:3000/minside",
+  local: "http://localhost:4321/minside",
   ansatt: "https://www.ansatt.dev.nav.no/minside",
   development: "https://www.intern.dev.nav.no/minside",
   production: "https://www.nav.no/minside",
 };
 
 const UTBETALINGSOVERSIKT_API_URL = {
-  local: "http://localhost:3000/api",
+  local: "http://localhost:4321/api",
   ansatt: "https://www.ansatt.dev.nav.no/tms-utbetalingsoversikt-api",
   development: "https://www.intern.dev.nav.no/tms-utbetalingsoversikt-api",
   production: "https://person.nav.no/tms-utbetalingsoversikt-api",
 };
 
 const SATSERURL = {
-  local: "http://localhost:3000/satser",
+  local: "http://localhost:4321/satser",
   ansatt: "https://www.ansatt.dev.nav.no/satser",
   development: "https://www.intern.dev.nav.no/satser",
   production: "https://www.nav.no/satser",
 };
 
 const UTBETALINGSDATOER_URL = {
-  local: "http://localhost:3000/utbetalignsdatoer",
+  local: "http://localhost:4321/utbetalingsdatoer",
   ansatt: "https://www.ansatt.dev.nav.no/utbetalingsdatoer",
   development: "https://www.intern.dev.nav.no/utbetalingsdatoer",
   production: "https://www.nav.no/utbetalingsdatoer",
 };
 
 const ENDRE_KONTONUMMER_URL = {
-  local: "http://localhost:3000/kontonummer",
+  local: "http://localhost:4321/kontonummer",
   ansatt: "https://www.intern.dev.nav.no/kontonummer",
   development: "https://www.intern.dev.nav.no/kontonummer",
   production: "https://www.nav.no/kontonummer",
 };
 
 const ENDRE_SKATTEKORT_URL = {
-  local: "http://localhost:300/skattekort",
+  local: "http://localhost:4321/skattekort",
   ansatt: "https://www.ansatt.dev.nav.no/skattetrekk",
   development: "https://www.intern.dev.nav.no/skattetrekk",
   production: "https://www.nav.no/skattetrekk",
@@ -92,14 +92,14 @@ const ÅRSOPPGAVER_URL = {
 };
 
 const OM_UTBETALINGER_URL = {
-  local: "http://localhost:3000/om-utbetalinger",
+  local: "http://localhost:4321/om-utbetalinger",
   ansatt: "https://www.intern.dev.nav.no/utbetalinger",
   development: "https://www.intern.dev.nav.no/utbetalinger",
   production: "https://www.nav.no/utbetalinger",
 };
 
 const LEGACY_URL = {
-  local: "http://localhost:3000/utbetalingsoversikt",
+  local: "http://localhost:4321/utbetalingsoversikt",
   ansatt: "https://www.intern.dev.nav.no/utbetalingsoversikt-gammel",
   development: "https://www.intern.dev.nav.no/utbetalingsoversikt-gammel",
   production: "https://www.nav.no/utbetalingsoversikt-gammel",
@@ -113,7 +113,7 @@ const IDENT_NAVN_URL = {
 };
 
 const FRIVILLIG_SKATTETREKK_URL = {
-  local: "http://localhost:3000/utbetalinger/frivillig-skattetrekk",
+  local: "http://localhost:4321/utbetalinger/frivillig-skattetrekk",
   ansatt: "https://www.ansatt.dev.nav.no/utbetalinger/frivillig-skattetrekk/",
   development:
     "https://www.intern.dev.nav.no/utbetalinger/frivillig-skattetrekk/",

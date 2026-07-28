@@ -16,14 +16,14 @@ export const getEnvironment = () => {
 type EnvUrl = { development: string; production: string; local: string };
 
 const MIN_SIDE_URL = {
-  local: "http://localhost:3000/minside",
+  local: "http://localhost:4321/minside",
   ansatt: "https://www.ansatt.dev.nav.no/minside",
   development: "https://www.intern.dev.nav.no/minside",
   production: "https://www.nav.no/minside",
 };
 
 const UTBETALINGSOVERSIKT_API_URL = {
-  local: "http://localhost:3000/api",
+  local: "http://localhost:4321/api",
   ansatt: "http://tms-utbetalingsoversikt-api/tms-utbetalingsoversikt-api",
   development: "http://tms-utbetalingsoversikt-api/tms-utbetalingsoversikt-api",
   production: "http://tms-utbetalingsoversikt-api/tms-utbetalingsoversikt-api",
@@ -54,7 +54,7 @@ const ERROR_REPORTING_URL = {
 };
 
 const PDL_API_URL = {
-  local: "http://localhost:3000/api/navn",
+  local: "http://localhost:4321/api/navn",
   development: "https://pdl-api.dev-fss-pub.nais.io/graphql",
   production: "https://pdl-api.prod-fss-pub.nais.io/graphql",
   ansatt: "https://pdl-api.dev-fss-pub.nais.io/graphql",
