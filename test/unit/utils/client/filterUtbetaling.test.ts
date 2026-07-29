@@ -1,6 +1,6 @@
 import type { UtbetalingGroupType, UtbetalingType } from "@src/types/types";
 import { describe, expect, it } from "vitest";
-import filterUtbetalinger from "./filterUtbetaling";
+import filterUtbetalinger from "@src/utils/client/filterUtbetaling";
 
 const utbetaling = (ytelse: string, id: string): UtbetalingType => ({
   id,

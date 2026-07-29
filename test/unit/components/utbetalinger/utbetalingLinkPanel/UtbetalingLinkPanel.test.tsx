@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import UtbetalingLinkPanel from "./UtbetalingLinkPanel";
+import UtbetalingLinkPanel from "@src/components/utbetalinger/utbetalingLinkPanel/UtbetalingLinkPanel";
 
 const logEvent = vi.fn();
 vi.mock("@src/utils/client/analytics", () => ({

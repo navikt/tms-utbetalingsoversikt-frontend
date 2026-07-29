@@ -5,7 +5,7 @@ import {
   getDateLastYear,
   getDateThreemonthsBack,
   getMonth,
-} from "./date";
+} from "@src/utils/client/date";
 
 describe("getMonth", () => {
   it("should return the capitalised month name", () => {

@@ -7,7 +7,7 @@ import {
   toggleShowFilter,
   toggleYtelseFilter,
   ytelserFilterAtom,
-} from "./filter";
+} from "@src/store/filter";
 
 describe("filter store", () => {
   beforeEach(() => {
