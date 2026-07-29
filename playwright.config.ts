@@ -5,7 +5,8 @@ const origin = `http://localhost:${PORT}`;
 const baseURL = `${origin}/utbetalingsoversikt`;
 
 export default defineConfig({
-  testDir: "./e2e",
+  testDir: "./test/integration",
+  testMatch: "**/*.spec.ts",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

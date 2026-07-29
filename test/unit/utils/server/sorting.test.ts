@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { sortByOpprettet, type UtkastElement } from "./sorting";
+import { sortByOpprettet, type UtkastElement } from "@src/utils/server/sorting";
 
 const makeUtkast = (
   opprettet: string,

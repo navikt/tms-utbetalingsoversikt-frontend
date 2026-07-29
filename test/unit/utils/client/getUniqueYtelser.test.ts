@@ -1,6 +1,6 @@
 import type { Ytelse } from "@src/types/types";
 import { describe, expect, it } from "vitest";
-import getUniqueytelser from "./getUniqueYtelser";
+import getUniqueytelser from "@src/utils/client/getUniqueYtelser";
 
 const ytelse = (navn: string): Ytelse => ({ ytelse: navn, beløp: 0 });
 

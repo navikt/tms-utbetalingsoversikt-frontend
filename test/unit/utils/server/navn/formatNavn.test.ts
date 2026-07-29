@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatNavn } from "./formatNavn";
+import { formatNavn } from "@src/utils/server/navn/formatNavn";
 
 describe("formatNavn", () => {
   it("should join first and last name when there is no middle name", () => {

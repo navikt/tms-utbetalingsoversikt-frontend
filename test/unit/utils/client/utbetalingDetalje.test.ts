@@ -6,7 +6,7 @@ import {
   formaterVekkTommeMeldinger,
   isUtbetalingWithSats,
   satsDescription,
-} from "./utbetalingDetalje";
+} from "@src/utils/client/utbetalingDetalje";
 
 describe("isUtbetalingWithSats", () => {
   it("should match ytelser with sats regardless of casing", () => {
