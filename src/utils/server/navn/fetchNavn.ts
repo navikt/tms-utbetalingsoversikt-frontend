@@ -1,6 +1,6 @@
 import { parseIdportenToken } from "@navikt/oasis";
 import type { Bruker, PDLType } from "@src/types/types";
-import type { APIContext } from "astro";
+import type { AstroRuntimeLogger } from "astro";
 import { getEnvironment } from "../environment.ts";
 import { getOboToken } from "../token.ts";
 import { formatNavn } from "./formatNavn.ts";
@@ -8,7 +8,7 @@ import { formatNavn } from "./formatNavn.ts";
 export const fetchNavn = async (
   token: string,
   pdlApiUrl: string,
-  logger: APIContext["logger"],
+  logger: AstroRuntimeLogger,
 ) => {
   const pdlApiAudience =
     getEnvironment() === "dev" ? "dev-fss:pdl:pdl-api" : "prod-fss:pdl:pdl-api";
