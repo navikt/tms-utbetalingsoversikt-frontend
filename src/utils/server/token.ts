@@ -1,12 +1,12 @@
 import { requestOboToken } from "@navikt/oasis";
 import { isLocal } from "@src/utils/server/environment.ts";
-import type { APIContext } from "astro";
+import type { AstroRuntimeLogger } from "astro";
 import { generateKeyPair, SignJWT } from "jose";
 
 export const getOboToken = async (
   token: string,
   audience: string,
-  logger: APIContext["logger"],
+  logger: AstroRuntimeLogger,
 ): Promise<string> => {
   if (isLocal) {
     return "Fake token";

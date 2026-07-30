@@ -1,12 +1,12 @@
 import type { Utbetaling } from "@src/types/types";
 import { getOboToken } from "@src/utils/server/token";
 import { enkelUtbetalingApiUrl } from "@src/utils/server/urls";
-import type { APIContext } from "astro";
+import type { AstroRuntimeLogger } from "astro";
 
 export const fetchUtbetaling = async (
   token: string,
   id: string,
-  logger: APIContext["logger"],
+  logger: AstroRuntimeLogger,
 ): Promise<Utbetaling> => {
   const utbetalingsApiAudience = `${process.env.NAIS_CLUSTER_NAME}:min-side:tms-utbetalingsoversikt-api`;
 
