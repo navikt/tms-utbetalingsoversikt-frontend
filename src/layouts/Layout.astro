@@ -1,4 +1,5 @@
 ---
+import { renderNaisMetaTags } from "@nais/apm";
 import { fetchDecoratorHtml } from "@navikt/nav-dekoratoren-moduler/ssr";
 import { getDecoratorEnvironment } from "../utils/server/environment";
 import styles from "./Layout.module.css";
@@ -36,6 +37,7 @@ const {
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <Fragment set:html={renderNaisMetaTags()} />
     <title>{title}</title>
     <link
       rel="preload"

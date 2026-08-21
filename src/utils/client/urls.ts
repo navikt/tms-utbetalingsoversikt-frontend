@@ -28,13 +28,6 @@ const BASE_URL = {
   production: "https://www.nav.no/utbetalingsoversikt",
 };
 
-const TELEMETRY_URL = {
-  local: "http://localhost:4321/collect",
-  development: "https://telemetry.ekstern.dev.nav.no/collect",
-  ansatt: "https://telemetry.ekstern.dev.nav.no/collect",
-  production: "https://telemetry.nav.no/collect",
-};
-
 const MIN_SIDE_URL = {
   local: "http://localhost:4321/minside",
   ansatt: "https://www.ansatt.dev.nav.no/minside",
@@ -139,7 +132,6 @@ export const minSideUrl = MIN_SIDE_URL[getEnvironment()];
 export const omUtbetalinger = OM_UTBETALINGER_URL[getEnvironment()];
 export const legacyUrl = LEGACY_URL[getEnvironment()];
 export const identNavnUrl = IDENT_NAVN_URL[getEnvironment()];
-export const telemetryUrl = TELEMETRY_URL[getEnvironment()];
 export const frivilligSkattetrekkUrl =
   FRIVILLIG_SKATTETREKK_URL[getEnvironment()];
 
