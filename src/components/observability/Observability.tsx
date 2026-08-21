@@ -1,7 +1,14 @@
-import { useFaro } from "@src/hooks/useFaro.ts";
+import { init } from "@nais/apm";
+import { useEffect } from "react";
 
 const Observability = () => {
-  useFaro();
+  useEffect(() => {
+    init({
+      app: "tms-utbetalingsoversikt-frontend",
+      namespace: "min-side",
+      tracing: true,
+    });
+  }, []);
 
   return null;
 };

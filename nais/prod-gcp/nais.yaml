@@ -6,6 +6,9 @@ metadata:
   labels:
     team: min-side
 spec:
+  frontend:
+    generatedConfig:
+      mountPath: /usr/src/app/nais.js
   observability:
     autoInstrumentation:
       enabled: true
