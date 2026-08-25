@@ -17,6 +17,23 @@ Frontend for utbetalingsoversikten på innloggede sider på nav.no. Her kan pers
 
 Appen er bygget med Astro, React og Aksel. Brukeren autentiseres med ID-porten. Appen bruker TokenX til å hente utbetalingsdetaljer og personens navn fra bakenforliggende tjenester.
 
+## Arkitektur
+
+```mermaid
+flowchart LR
+    bruker["Innbygger\n(nettleser)"]
+    frontend["tms-utbetalingsoversikt-frontend\n(Astro SSR og React)"]
+    backend["tms-utbetalingsoversikt-api"]
+    pdl["pdl-api\n(GraphQL)"]
+
+    bruker -->|ID-porten-innlogging| frontend
+    bruker -->|Utbetalingsoversikt| backend
+    frontend -->|TokenX OBO-token for detaljer| backend
+    frontend -->|TokenX OBO-token for navn| pdl
+```
+
+Oversikten hentes fra `tms-utbetalingsoversikt-api` i nettleseren. Detaljsider rendres på serveren, der brukerens token veksles til et on-behalf-of-token via TokenX før appen kaller utbetalings-API-et og PDL.
+
 ## Miljøer
 
 - [Produksjon](https://www.nav.no/utbetalingsoversikt)
