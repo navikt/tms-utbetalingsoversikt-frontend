@@ -1,8 +1,8 @@
 {
   "collection": "frontend",
-  "version": "2026.08.06-131157-11ad3c7",
+  "version": "2026.08.23-185231-f8613ae",
   "scope": "repo",
-  "source_sha": "11ad3c7",
+  "source_sha": "f8613ae",
   "installed_at": "2026-04-24T09:20:00Z",
   "files": [
     {
@@ -31,7 +31,7 @@
     },
     {
       "path": ".github/agents/nav-pilot.agent.md",
-      "hash": "09c7351bf3ceb03b"
+      "hash": "c026ac85182629e4"
     },
     {
       "path": ".github/agents/nav-pilot.metadata.json",
