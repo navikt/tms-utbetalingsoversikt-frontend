@@ -1,8 +1,8 @@
 {
   "collection": "frontend",
-  "version": "2026.08.23-185231-f8613ae",
+  "version": "2026.08.31-071248-161c849",
   "scope": "repo",
-  "source_sha": "f8613ae",
+  "source_sha": "161c849",
   "installed_at": "2026-04-24T09:20:00Z",
   "files": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "path": ".github/agents/aksel.agent.md",
-      "hash": "d190246642818387"
+      "hash": "a85a02b7740368a9"
     },
     {
       "path": ".github/agents/aksel.metadata.json",
@@ -23,7 +23,7 @@
     },
     {
       "path": ".github/agents/forfatter.agent.md",
-      "hash": "3dd47103e9bf04a8"
+      "hash": "2529faa6918e3520"
     },
     {
       "path": ".github/agents/forfatter.metadata.json",
@@ -31,7 +31,7 @@
     },
     {
       "path": ".github/agents/nav-pilot.agent.md",
-      "hash": "c026ac85182629e4"
+      "hash": "f381cdcba7fcb644"
     },
     {
       "path": ".github/agents/nav-pilot.metadata.json",
@@ -51,7 +51,7 @@
     },
     {
       "path": ".github/skills/nav-plan/",
-      "hash": "0a160744cf2b4e82"
+      "hash": "db7618d269cd2f07"
     },
     {
       "path": ".github/skills/nav-deep-interview/",
