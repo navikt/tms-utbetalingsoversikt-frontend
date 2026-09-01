@@ -75,28 +75,12 @@ const Utbetalinger = () => {
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
 
-  const hasAAPOrDagpenger = utbetalinger?.tidligere.some((utbetalingGroup) =>
-    utbetalingGroup.utbetalinger.some(
-      (utbetaling) =>
-        utbetaling.ytelse === "Dagpenger" ||
-        utbetaling.ytelse === "Arbeidsavklaringspenger",
-    ),
-  );
-
-  const infoMeldingTekstTo: string =
-    "Sendte du meldekort i helgen og venter du på utbetaling? Denne uken kan den komme senere enn du er vant til. Den skal være på kontoen din i løpet av tirsdag.";
-
   return (
     <>
       {hasTidligereUtbetalinger && <YtelserFilter />}
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
           <BodyLong>{infoMeldingTekst}</BodyLong>
-        </Alert>
-      )}
-      {hasAAPOrDagpenger && (
-        <Alert className={style.infoMelding} variant="info">
-          <BodyLong>{infoMeldingTekstTo}</BodyLong>
         </Alert>
       )}
       {showKommendeUtbetalinger && (
