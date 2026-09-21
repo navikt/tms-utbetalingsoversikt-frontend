@@ -1,14 +1,14 @@
 {
-  "collection": "frontend",
-  "version": "2026.09.14-065538-661d4c8",
+  "collection": "nav-pilot",
+  "version": "2026.09.18-103546-54547e2",
   "scope": "repo",
-  "source_sha": "661d4c83072bdc8ac7b9bcd8350ff6fc7b00d1d9",
+  "source_sha": "9cce8a10dc30ad4b85434a2e0ab17bd8ddb9caa9",
   "installed_at": "2026-04-24T09:20:00Z",
   "files": [
     {
       "path": ".github/agents/accessibility.agent.md",
-      "hash": "db12f2f3d0734ca4",
-      "revision": "661d4c83072bdc8ac7b9bcd8350ff6fc7b00d1d9"
+      "hash": "4ad090f6791eb845",
+      "revision": "9cce8a10dc30ad4b85434a2e0ab17bd8ddb9caa9"
     },
     {
       "path": ".github/agents/accessibility.metadata.json",
@@ -16,34 +16,78 @@
     },
     {
       "path": ".github/agents/aksel.agent.md",
-      "hash": "0740ec796a3f3273",
-      "revision": "661d4c83072bdc8ac7b9bcd8350ff6fc7b00d1d9"
+      "hash": "eb6688100005e57f",
+      "revision": "9cce8a10dc30ad4b85434a2e0ab17bd8ddb9caa9"
     },
     {
       "path": ".github/agents/aksel.metadata.json",
       "hash": "f81b02c28e251a4f"
     },
     {
+      "path": ".github/agents/code-review.agent.md",
+      "hash": "10ce155690b4c835"
+    },
+    {
       "path": ".github/agents/forfatter.agent.md",
-      "hash": "7df851588f045edd",
-      "revision": "661d4c83072bdc8ac7b9bcd8350ff6fc7b00d1d9"
+      "hash": "7647c85972f59fa7",
+      "revision": "9cce8a10dc30ad4b85434a2e0ab17bd8ddb9caa9"
     },
     {
       "path": ".github/agents/forfatter.metadata.json",
       "hash": "415648fcdc323588"
     },
     {
+      "path": ".github/agents/kafka.agent.md",
+      "hash": "f74565e00c5d0515"
+    },
+    {
+      "path": ".github/agents/nav-pilot-opus.agent.md",
+      "hash": "9ce0afc59f0a1912"
+    },
+    {
       "path": ".github/agents/nav-pilot.agent.md",
-      "hash": "3daddec881b7d2a8",
-      "revision": "661d4c83072bdc8ac7b9bcd8350ff6fc7b00d1d9"
+      "hash": "edcfcf867dd98045",
+      "revision": "9cce8a10dc30ad4b85434a2e0ab17bd8ddb9caa9"
     },
     {
       "path": ".github/agents/nav-pilot.metadata.json",
       "hash": "a2346eca6efdb9f5"
     },
     {
+      "path": ".github/agents/research.agent.md",
+      "hash": "b68b9c9b82f12c02"
+    },
+    {
+      "path": ".github/agents/rust.agent.md",
+      "hash": "8ee97a471ec8b560"
+    },
+    {
+      "path": ".github/agents/security-champion.agent.md",
+      "hash": "2c3200cf23251a70"
+    },
+    {
+      "path": ".github/hooks/ask-first-aria.py",
+      "hash": "95dccc70382812d5"
+    },
+    {
+      "path": ".github/hooks/gh-poll-gate.py",
+      "hash": "7b144af18aef7c2f"
+    },
+    {
+      "path": ".github/hooks/klarsprak-gate.py",
+      "hash": "d72e6fc1bb74f3f2"
+    },
+    {
       "path": ".github/instructions/accessibility.instructions.md",
       "hash": "986ef7aa27d8a1d9"
+    },
+    {
+      "path": ".github/instructions/database.instructions.md",
+      "hash": "9fc5267c1dc9dd01"
+    },
+    {
+      "path": ".github/instructions/deliberate-ai-use.instructions.md",
+      "hash": "68b3ca596e278482"
     },
     {
       "path": ".github/instructions/docker.instructions.md",
@@ -52,6 +96,38 @@
     {
       "path": ".github/instructions/github-actions.instructions.md",
       "hash": "bbef6f3e56b8b3b3"
+    },
+    {
+      "path": ".github/instructions/golang.instructions.md",
+      "hash": "b7bdff62f6964099"
+    },
+    {
+      "path": ".github/instructions/kotlin.instructions.md",
+      "hash": "b5a426974a5e4ab6"
+    },
+    {
+      "path": ".github/instructions/nextjs-aksel.instructions.md",
+      "hash": "75e0932dfe465508"
+    },
+    {
+      "path": ".github/instructions/norwegian-text.instructions.md",
+      "hash": "ae153e646c932a28"
+    },
+    {
+      "path": ".github/instructions/output-style.instructions.md",
+      "hash": "919ebcfd22f06b2e"
+    },
+    {
+      "path": ".github/instructions/performance.instructions.md",
+      "hash": "74be7b9e34c1681e"
+    },
+    {
+      "path": ".github/instructions/security-owasp.instructions.md",
+      "hash": "3388700634dd315d"
+    },
+    {
+      "path": ".github/instructions/testing-kotlin.instructions.md",
+      "hash": "183e7a28acecdbb5"
     },
     {
       "path": ".github/instructions/testing-typescript.instructions.md",
@@ -71,16 +147,73 @@
       "revision": "661d4c83072bdc8ac7b9bcd8350ff6fc7b00d1d9"
     },
     {
+      "path": ".github/skills/ai-news-research/",
+      "hash": "16f2d476983b8ba0"
+    },
+    {
+      "path": ".github/skills/aksel-builder/",
+      "hash": "3075f3a92c2eb6fc"
+    },
+    {
       "path": ".github/skills/aksel-spacing/",
       "hash": "177594fc5ae8d7e3"
     },
     {
+      "path": ".github/skills/api-design/",
+      "hash": "a353aded69a4bd4c"
+    },
+    {
+      "path": ".github/skills/conventional-commit/",
+      "hash": "0c21beaedabd1e39"
+    },
+    {
+      "path": ".github/skills/flyway-migration/",
+      "hash": "ebb952121b180fac"
+    },
+    {
+      "path": ".github/skills/jackson-3-migration/",
+      "hash": "9b4932b7b9d4a076"
+    },
+    {
+      "path": ".github/skills/java-to-kotlin/",
+      "hash": "52cd8180b93a846b"
+    },
+    {
+      "path": ".github/skills/kafka/",
+      "hash": "312ab4de91a246fa"
+    },
+    {
+      "path": ".github/skills/klarsprak/",
+      "hash": "c54427bb60f1c6e1"
+    },
+    {
+      "path": ".github/skills/kotlin-app-config/",
+      "hash": "9168a07cc0b620c3"
+    },
+    {
+      "path": ".github/skills/ktor-scaffold/",
+      "hash": "68b1ffff9f769c0a"
+    },
+    {
+      "path": ".github/skills/nais/",
+      "hash": "b0b94d480fbdb4c6"
+    },
+    {
       "path": ".github/skills/nav-architecture-review/",
-      "hash": "4618dec566442509"
+      "hash": "0aa50579f690c3a1",
+      "revision": "9cce8a10dc30ad4b85434a2e0ab17bd8ddb9caa9"
+    },
+    {
+      "path": ".github/skills/nav-auth/",
+      "hash": "581809ed36d9a6d6"
     },
     {
       "path": ".github/skills/nav-deep-interview/",
       "hash": "eeb3399ecd4e352c"
+    },
+    {
+      "path": ".github/skills/nav-dekoratoren/",
+      "hash": "fd8cf68c2c9bfbc5"
     },
     {
       "path": ".github/skills/nav-plan/",
@@ -92,12 +225,61 @@
       "hash": "e9900d58d91ee0ee"
     },
     {
+      "path": ".github/skills/observability-debugging/",
+      "hash": "d09dd467d7ce45a7"
+    },
+    {
+      "path": ".github/skills/observability-setup/",
+      "hash": "b16ee0c748b966bf"
+    },
+    {
       "path": ".github/skills/playwright-testing/",
       "hash": "5c618cd99c79df64"
     },
     {
+      "path": ".github/skills/postgresql-review/",
+      "hash": "f02cbccffe761446"
+    },
+    {
+      "path": ".github/skills/readme-review/",
+      "hash": "25d4486ea4843915"
+    },
+    {
+      "path": ".github/skills/rust-development/",
+      "hash": "e809030f7e8253ea"
+    },
+    {
+      "path": ".github/skills/security-owasp/",
+      "hash": "b909907ae0e18174"
+    },
+    {
+      "path": ".github/skills/security-review/",
+      "hash": "ad8fffb201f42a39"
+    },
+    {
+      "path": ".github/skills/spring-boot-scaffold/",
+      "hash": "c789e103015478c7"
+    },
+    {
+      "path": ".github/skills/terse-mode/",
+      "hash": "d28a057d860494bb"
+    },
+    {
+      "path": ".github/skills/threat-model/",
+      "hash": "8fd0fa04afd9b093"
+    },
+    {
+      "path": ".github/skills/tokenx-auth/",
+      "hash": "7afa1c42b4e8e859"
+    },
+    {
       "path": ".github/skills/web-design-reviewer/",
-      "hash": "07b2096b77bf5ae3"
+      "hash": "870a23c81c5528c2",
+      "revision": "9cce8a10dc30ad4b85434a2e0ab17bd8ddb9caa9"
+    },
+    {
+      "path": ".github/skills/workstation-security/",
+      "hash": "93d7292e18b1b82d"
     }
   ]
 }
