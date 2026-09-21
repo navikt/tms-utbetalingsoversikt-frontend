@@ -9,6 +9,7 @@ import type { UtbetalingerResponse } from "@src/types/types";
 import { addKey } from "@src/utils/client/addKey";
 import { logEvent } from "@src/utils/client/analytics";
 import getUniqueYtelser from "@src/utils/client/getUniqueYtelser";
+import hasPensjonsytelse from "@src/utils/client/hasPensjonsytelse";
 import { utbetalingerAPIUrl } from "@src/utils/client/urls";
 import dayjs from "dayjs";
 import useSWR from "swr";
@@ -75,12 +76,22 @@ const Utbetalinger = () => {
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
 
+  const showPensjonMelding = hasPensjonsytelse(utbetalinger?.tidligere);
+
+  const infoMeldingPensjon: string =
+    "Har du spørsmål om pensjonsutbetalingen din? Minstepensjonister som har fått etterbetaling tidligere i september, fikk utbetaling med sitt nye faste beløp i forrige uke. Har du tjenestepensjon som skal samordnes med det nye beløpet ditt, får du etterbetalingen din og nytt fast beløp senere i høst når samordningen er gjennomført.";
+
   return (
     <>
       {hasTidligereUtbetalinger && <YtelserFilter />}
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
           <BodyLong>{infoMeldingTekst}</BodyLong>
+        </Alert>
+      )}
+      {showPensjonMelding && (
+        <Alert className={style.infoMelding} variant="info">
+          <BodyLong>{infoMeldingPensjon}</BodyLong>
         </Alert>
       )}
       {showKommendeUtbetalinger && (
