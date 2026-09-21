@@ -79,7 +79,7 @@ const Utbetalinger = () => {
   const showPensjonMelding = hasPensjonsytelse(utbetalinger?.tidligere);
 
   const infoMeldingPensjon: string =
-    "Har du spørsmål om pensjonsutbetalingen din? Minstepensjonister som har fått etterbetaling tidligere i september, fikk utbetaling med sitt nye faste beløp i forrige uke. Har du tjenestepensjon som skal samordnes med det nye beløpet ditt, får du etterbetalingen din og nytt fast beløp senere i høst når samordningen er gjennomført.";
+    "Minstepensjonister som har fått etterbetaling tidligere i september, fikk utbetaling med sitt nye faste beløp i forrige uke. Har du tjenestepensjon som skal samordnes med det nye beløpet ditt, får du etterbetalingen din og nytt fast beløp senere i høst når samordningen er gjennomført.";
 
   return (
     <>
