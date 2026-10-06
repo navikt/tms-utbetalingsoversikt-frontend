@@ -36,8 +36,8 @@ importers:
         specifier: 8.16.2
         version: 8.16.2(@types/react@18.3.28)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@navikt/nav-dekoratoren-moduler':
-        specifier: 3.4.0
-        version: 3.4.0(csp-header@6.3.1)(html-react-parser@6.1.7(@types/react@18.3.28)(react@18.2.0))(jsdom@30.0.1)(react@18.2.0)
+        specifier: 4.5.0
+        version: 4.5.0(html-react-parser@6.1.7(@types/react@18.3.28)(react@18.2.0))(react@18.2.0)
       '@navikt/oasis':
         specifier: 3.8.0
         version: 3.8.0
@@ -925,6 +925,10 @@ packages:
   '@navikt/aksel-icons@8.16.2':
     resolution: {integrity: sha512-d2GWooeIEJYq8NYJIJJhMo84Vac6SyCvLJDFWG6RSj8vcgFanQMnKAram1zd48UO/rjuuZZk99p4UZt4jsD0RA==, tarball: https://npm.pkg.github.com/download/@navikt/aksel-icons/8.16.2/8873ba72cb6d59c80e864fb04cf43ca0731dbfa5}
 
+  '@navikt/analytics-types@0.0.9':
+    resolution: {integrity: sha512-bopCvqEogyFcmrJiBxK/Mr25d6yPKF7GR36MGrJqiHCPJYf1rDu6lK4cpooTG4Q//D/1xTkHRom8ZH5BI6dTew==, tarball: https://npm.pkg.github.com/download/@navikt/analytics-types/0.0.9/5919241a6dbb782eb101fff3234ce5c36d16e942}
+    engines: {node: '>=20.0.0', npm: '>=9.0.0'}
+
   '@navikt/astro-auth@1.0.8':
     resolution: {integrity: sha512-3fFP6ql+8lKnKM2RwbJw7uisAk9ctIdTVOSQlJfI5C3e3OTe/PluMk6uvkKaQbzp3Cu+QcuBKIn/A56//4atfw==, tarball: https://npm.pkg.github.com/download/@navikt/astro-auth/1.0.8/7dc3fc8e67b508b96f742697e6258238d082aa48}
     engines: {node: ^20.19.0 || >= 22.12.0 || 24.x}
@@ -954,13 +958,11 @@ packages:
   '@navikt/ds-tokens@8.16.2':
     resolution: {integrity: sha512-WXtLRb034uUN1SUBEg+AYUrAu0zm+P0xuUheIWABEDpWnVGmfXDng7lIW5JDFbut3rQIa1xfzvUfeL3ghc4eng==, tarball: https://npm.pkg.github.com/download/@navikt/ds-tokens/8.16.2/a22ed996203e7730664ed43d7025c68609c937a8}
 
-  '@navikt/nav-dekoratoren-moduler@3.4.0':
-    resolution: {integrity: sha512-dAD2TDjadqt7kdR8pZ421q6lqqfnFfNg8AuRpWFQ7Bd3lML29/oipe/d+g/vQwaLH4aVTDIpGX8nVrR/g2NXfA==, tarball: https://npm.pkg.github.com/download/@navikt/nav-dekoratoren-moduler/3.4.0/e368316e1b7d6e0fb7f15fbd087c34400a7208f3}
-    engines: {node: '>=18'}
+  '@navikt/nav-dekoratoren-moduler@4.5.0':
+    resolution: {integrity: sha512-0eTtpgk+kOGjxncAA5PT2+yLPIobPdvIMVJzWDVdlZmuKUGG1NMoom8DYtnCPkro3Mw+dZeoFJ0TVY+4F57J5Q==, tarball: https://npm.pkg.github.com/download/@navikt/nav-dekoratoren-moduler/4.5.0/e3c7d8e6e3f2efd2fb46952564e6c9c47ca200ad}
+    engines: {node: 24.x}
     peerDependencies:
-      csp-header: '>=5.x'
       html-react-parser: '>=5.x'
-      jsdom: '>=16.x'
       react: '>=17.x'
 
   '@navikt/oasis@3.8.0':
@@ -1559,8 +1561,8 @@ packages:
   crossws@0.3.5:
     resolution: {integrity: sha512-ojKiDvcmByhwa8YYqbQI/hg7MEU0NC03+pSdEq4ZUnZR9xXpwk7E43SMNGkn+JxJGPFtNvQ48+vV2p+P1ml5PA==}
 
-  csp-header@6.3.1:
-    resolution: {integrity: sha512-ykcqGMOGP/uU7RLXDD83k2Ge5Stgc/N3qgKgSN+dATDlNgLHnIoI1IdZBjOskD5Ev1RSKTabLdIETJ6VzXTmvA==}
+  csp-header@6.4.0:
+    resolution: {integrity: sha512-9YEpW20tPtKzVouyAxNtXqSE4EGaTd4ZiT1n/FbUQ5xhmFkPCjC3Db/gHDbesryQoO/TigBAUCqgKypOHviRgQ==}
     engines: {node: '>=18'}
 
   css-select@6.0.0:
@@ -3817,6 +3819,8 @@ snapshots:
 
   '@navikt/aksel-icons@8.16.2': {}
 
+  '@navikt/analytics-types@0.0.9': {}
+
   '@navikt/astro-auth@1.0.8(astro@7.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.5.0)(yaml@2.9.0))':
     dependencies:
       '@navikt/oasis': 4.1.4
@@ -3846,12 +3850,12 @@ snapshots:
 
   '@navikt/ds-tokens@8.16.2': {}
 
-  '@navikt/nav-dekoratoren-moduler@3.4.0(csp-header@6.3.1)(html-react-parser@6.1.7(@types/react@18.3.28)(react@18.2.0))(jsdom@30.0.1)(react@18.2.0)':
+  '@navikt/nav-dekoratoren-moduler@4.5.0(html-react-parser@6.1.7(@types/react@18.3.28)(react@18.2.0))(react@18.2.0)':
     dependencies:
-      csp-header: 6.3.1
+      '@navikt/analytics-types': 0.0.9
+      csp-header: 6.4.0
       html-react-parser: 6.1.7(@types/react@18.3.28)(react@18.2.0)
       js-cookie: 3.0.8
-      jsdom: 30.0.1
       react: 18.2.0
 
   '@navikt/oasis@3.8.0':
@@ -4508,7 +4512,7 @@ snapshots:
     dependencies:
       uncrypto: 0.1.3
 
-  csp-header@6.3.1: {}
+  csp-header@6.4.0: {}
 
   css-select@6.0.0:
     dependencies:
