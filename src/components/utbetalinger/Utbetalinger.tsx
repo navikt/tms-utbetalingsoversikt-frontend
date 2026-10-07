@@ -7,7 +7,7 @@ import {
 } from "@src/store/filter";
 import type { UtbetalingerResponse } from "@src/types/types";
 import { addKey } from "@src/utils/client/addKey";
-import { logEvent } from "@src/utils/client/analytics";
+import { logFeilmeldingForside } from "@src/utils/client/analytics";
 import getUniqueYtelser from "@src/utils/client/getUniqueYtelser";
 import { utbetalingerAPIUrl } from "@src/utils/client/urls";
 import dayjs from "dayjs";
@@ -43,7 +43,7 @@ const Utbetalinger = () => {
     fetcher,
     {
       shouldRetryOnError: false,
-      onError: () => logEvent("fikk-feilmelding-forside"),
+      onError: () => logFeilmeldingForside(),
     },
   );
 

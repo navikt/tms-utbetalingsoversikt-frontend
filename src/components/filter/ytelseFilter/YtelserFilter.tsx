@@ -5,7 +5,7 @@ import {
   toggleYtelseFilter,
   ytelserFilterAtom,
 } from "@src/store/filter";
-import { logEvent } from "@src/utils/client/analytics";
+import { logFiltervalg } from "@src/utils/client/analytics";
 import style from "./YtelserFilter.module.css";
 
 const YtelserFilter = () => {
@@ -14,7 +14,11 @@ const YtelserFilter = () => {
 
   const handleClick = (ytelse: string) => {
     toggleYtelseFilter(ytelse);
-    logEvent("filter-ytelse", ytelse);
+    logFiltervalg({
+      kategori: "ytelse",
+      filternavn: ytelse,
+      komponentId: "filter-ytelse",
+    });
   };
 
   return (

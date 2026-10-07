@@ -6,7 +6,7 @@ import {
   setSelectedPeriode,
   showFilterAtom,
 } from "@src/store/filter";
-import { logEvent } from "@src/utils/client/analytics";
+import { logFiltervalg } from "@src/utils/client/analytics";
 import {
   type GetDatePeriodType,
   getDateCurrentlyThisYear,
@@ -38,7 +38,11 @@ const PeriodeFilter = () => {
     selectedOption: string,
     periodeTomFom?: GetDatePeriodType,
   ) => {
-    logEvent("filter-periode", selectedOption);
+    logFiltervalg({
+      kategori: "periode",
+      filternavn: selectedOption,
+      komponentId: "filter-periode",
+    });
     setSelected(selectedOption);
     if (selectedOption !== "Egendefinert") {
       setSelectedPeriode(selectedOption);

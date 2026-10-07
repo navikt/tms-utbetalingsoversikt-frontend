@@ -1,10 +1,10 @@
+import NoUtbetalinger from "@src/components/utbetalinger/noUtbetalinger/NoUtbetalinger";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import NoUtbetalinger from "@src/components/utbetalinger/noUtbetalinger/NoUtbetalinger";
 
-const logEvent = vi.fn();
+const logNavigere = vi.fn();
 vi.mock("@src/utils/client/analytics", () => ({
-  logEvent: (...args: unknown[]) => logEvent(...args),
+  logNavigere: (...args: unknown[]) => logNavigere(...args),
 }));
 
 vi.mock("@src/utils/client/urls", () => ({
@@ -12,7 +12,7 @@ vi.mock("@src/utils/client/urls", () => ({
 }));
 
 afterEach(() => {
-  logEvent.mockReset();
+  logNavigere.mockReset();
 });
 
 describe("NoUtbetalinger", () => {
@@ -39,6 +39,10 @@ describe("NoUtbetalinger", () => {
 
     fireEvent.click(screen.getByRole("link", { name: "mer om utbetalinger" }));
 
-    expect(logEvent).toHaveBeenCalledWith("mer-om-utbetalig-link");
+    expect(logNavigere).toHaveBeenCalledWith({
+      lenketekst: "mer om utbetalinger",
+      destinasjon: "https://nav.no/om-utbetalinger",
+      komponentId: "mer-om-utbetalig-link",
+    });
   });
 });

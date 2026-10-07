@@ -1,5 +1,5 @@
 import { Heading, Link } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/analytics";
+import { logNavigere } from "@src/utils/client/analytics";
 import {
   endreKontonummerUrl,
   endreSkattekortUrl,
@@ -53,7 +53,11 @@ const RelatertInnhold = () => {
           <li key={linkObject.title}>
             <Link
               onClick={() =>
-                logEvent("relatert-innhold-link", linkObject.title)
+                logNavigere({
+                  lenketekst: linkObject.title,
+                  destinasjon: linkObject.href,
+                  komponentId: "relatert-innhold-link",
+                })
               }
               href={linkObject.href}
             >
