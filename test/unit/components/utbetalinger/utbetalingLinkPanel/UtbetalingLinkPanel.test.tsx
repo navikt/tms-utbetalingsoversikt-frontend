@@ -1,10 +1,10 @@
+import UtbetalingLinkPanel from "@src/components/utbetalinger/utbetalingLinkPanel/UtbetalingLinkPanel";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import UtbetalingLinkPanel from "@src/components/utbetalinger/utbetalingLinkPanel/UtbetalingLinkPanel";
 
-const logEvent = vi.fn();
+const logNavigere = vi.fn();
 vi.mock("@src/utils/client/analytics", () => ({
-  logEvent: (...args: unknown[]) => logEvent(...args),
+  logNavigere: (...args: unknown[]) => logNavigere(...args),
 }));
 
 const baseProps = {
@@ -15,7 +15,7 @@ const baseProps = {
 };
 
 afterEach(() => {
-  logEvent.mockReset();
+  logNavigere.mockReset();
 });
 
 describe("UtbetalingLinkPanel", () => {
@@ -41,7 +41,12 @@ describe("UtbetalingLinkPanel", () => {
 
     fireEvent.click(screen.getByRole("link"));
 
-    expect(logEvent).toHaveBeenCalledWith("utbetaling-link-panel", "kommende");
+    expect(logNavigere).toHaveBeenCalledWith({
+      lenketekst: "Dagpenger",
+      destinasjon: "/utbetalingsoversikt/utbetaling/ut-123",
+      komponentId: "utbetaling-link-panel",
+      lenkegruppe: "kommende",
+    });
   });
 
   it("should log a 'tidligere' analytics event for a past payment", () => {
@@ -49,6 +54,11 @@ describe("UtbetalingLinkPanel", () => {
 
     fireEvent.click(screen.getByRole("link"));
 
-    expect(logEvent).toHaveBeenCalledWith("utbetaling-link-panel", "tidligere");
+    expect(logNavigere).toHaveBeenCalledWith({
+      lenketekst: "Dagpenger",
+      destinasjon: "/utbetalingsoversikt/utbetaling/ut-123",
+      komponentId: "utbetaling-link-panel",
+      lenkegruppe: "tidligere",
+    });
   });
 });

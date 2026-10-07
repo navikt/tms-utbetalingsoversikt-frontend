@@ -1,6 +1,6 @@
 import { BodyLong, BodyShort, LinkPanel } from "@navikt/ds-react";
 import type { UtbetalingType } from "@src/types/types";
-import { logEvent } from "@src/utils/client/analytics";
+import { logNavigere } from "@src/utils/client/analytics";
 import { formatToReadableDate } from "@src/utils/client/date";
 import { formaterTallUtenDesimaler } from "@src/utils/client/utbetalingDetalje";
 import style from "./UtbetalingLinkPanel.module.css";
@@ -17,15 +17,18 @@ const UtbetalingLinkPanel = ({
   const linkClassName = nesteUtbetaling
     ? style.nesteUtbetalingLink
     : style.tidligereUtbetalingLink;
+  const href = `/utbetalingsoversikt/utbetaling/${id}`;
   return (
     <LinkPanel
       className={linkClassName}
-      href={`/utbetalingsoversikt/utbetaling/${id}`}
+      href={href}
       onClick={() =>
-        logEvent(
-          "utbetaling-link-panel",
-          nesteUtbetaling ? "kommende" : "tidligere",
-        )
+        logNavigere({
+          lenketekst: ytelse,
+          destinasjon: href,
+          komponentId: "utbetaling-link-panel",
+          lenkegruppe: nesteUtbetaling ? "kommende" : "tidligere",
+        })
       }
     >
       <div className={style.betalingLeft}>

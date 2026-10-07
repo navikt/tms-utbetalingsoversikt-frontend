@@ -1,6 +1,6 @@
 import { PrinterSmallIcon } from "@navikt/aksel-icons";
 import { Button } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/analytics";
+import { logKnappKlikket } from "@src/utils/client/analytics";
 import styles from "./PrintButton.module.css";
 
 const PrintButton = () => {
@@ -9,7 +9,10 @@ const PrintButton = () => {
       className={styles.skrivUtButton}
       onClick={() => {
         window.print();
-        logEvent("skriv-ut-utbetaling", "skriv-ut");
+        logKnappKlikket({
+          tekst: "Skriv ut",
+          komponentId: "skriv-ut-utbetaling",
+        });
       }}
       icon={<PrinterSmallIcon aria-hidden />}
     >

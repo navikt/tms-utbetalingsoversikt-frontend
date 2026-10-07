@@ -1,5 +1,5 @@
 import { BodyLong, Heading, Link } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/analytics";
+import { logNavigere } from "@src/utils/client/analytics";
 import { omUtbetalinger } from "@src/utils/client/urls";
 import style from "./NoUtbetalinger.module.css";
 
@@ -12,7 +12,13 @@ const NoUtbetalinger = () => {
       <BodyLong>
         Prøv å endre periode eller se{" "}
         <Link
-          onClick={() => logEvent("mer-om-utbetalig-link")}
+          onClick={() =>
+            logNavigere({
+              lenketekst: "mer om utbetalinger",
+              destinasjon: omUtbetalinger,
+              komponentId: "mer-om-utbetalig-link",
+            })
+          }
           href={omUtbetalinger}
         >
           mer om utbetalinger

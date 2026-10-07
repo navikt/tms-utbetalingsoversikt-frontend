@@ -1,5 +1,5 @@
 import { Alert, BodyLong, Heading, Link } from "@navikt/ds-react";
-import { logEvent } from "@src/utils/client/analytics";
+import { logNavigere } from "@src/utils/client/analytics";
 import { baseUrl } from "@src/utils/client/urls";
 import style from "./ErrorPanel.module.css";
 
@@ -12,7 +12,13 @@ const ErrorPanel = ({ isLandingsside }: { isLandingsside: boolean }) => {
     <BodyLong>
       Vi beklager ulempene dette medfører. Du kan prøve å endre periode,
       <Link
-        onClick={() => logEvent("error-panel", "laste inn siden på nytt")}
+        onClick={() =>
+          logNavigere({
+            lenketekst: "laste inn siden på nytt",
+            destinasjon: baseUrl,
+            komponentId: "error-panel",
+          })
+        }
         href={baseUrl}
       >
         laste inn siden på nytt
