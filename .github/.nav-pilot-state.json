@@ -1,8 +1,8 @@
 {
   "collection": "nav-pilot",
-  "version": "2026.10.31-184428-db7a33c",
+  "version": "2026.11.04-221952-0b85e3a",
   "scope": "repo",
-  "source_sha": "7ec5c7eeeaad2be053002d24884f6810f057b2fe",
+  "source_sha": "1d1eb5a69d6ee01c495f2d93725381d4db188885",
   "installed_at": "2026-04-24T09:20:00Z",
   "files": [
     {
@@ -49,8 +49,8 @@
     },
     {
       "path": ".github/agents/nav-pilot.agent.md",
-      "hash": "3cabc463ebd2b54c",
-      "revision": "7ec5c7eeeaad2be053002d24884f6810f057b2fe"
+      "hash": "a6d797b0efe8bbfb",
+      "revision": "1d1eb5a69d6ee01c495f2d93725381d4db188885"
     },
     {
       "path": ".github/agents/nav-pilot.metadata.json",
@@ -72,7 +72,8 @@
     },
     {
       "path": ".github/agents/worker.agent.md",
-      "hash": "8ca54845d3fa2a73"
+      "hash": "996f5200ede57ba8",
+      "revision": "1d1eb5a69d6ee01c495f2d93725381d4db188885"
     },
     {
       "path": ".github/hooks/ask-first-aria.py",
@@ -90,6 +91,10 @@
       "path": ".github/instructions/accessibility.instructions.md",
       "hash": "c3715d3fc2782a5b",
       "revision": "ca96b9428d1580bdef8d75e0c56249193f8c45e0"
+    },
+    {
+      "path": ".github/instructions/cplt-sandbox.instructions.md",
+      "hash": "444dc0451f868f73"
     },
     {
       "path": ".github/instructions/database.instructions.md",
@@ -284,6 +289,10 @@
       "path": ".github/skills/readme-review/",
       "hash": "5037548d384639b6",
       "revision": "7ec5c7eeeaad2be053002d24884f6810f057b2fe"
+    },
+    {
+      "path": ".github/skills/repo-pii-audit/",
+      "hash": "6e3eb9adae55c238"
     },
     {
       "path": ".github/skills/rust-development/",
