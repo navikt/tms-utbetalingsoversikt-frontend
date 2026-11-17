@@ -15,6 +15,8 @@ jobs:
       pull-requests: write
     name: Dependabot Auto-merge
     uses: navikt/tms-deploy/.github/workflows/dependabot-automerge.yaml@main
+    with:
+      merge-queue: "auto"
     secrets:
       APP_ID: ${{ vars.APP_CLIENT_ID }}
       PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
