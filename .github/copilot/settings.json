@@ -1,0 +1,14 @@
+{
+  "extraKnownMarketplaces": {
+    "min-side": {
+      "source": {
+        "source": "github",
+        "repo": "navikt/tms-copilot"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "frontend@min-side": true,
+    "workflow@min-side": true
+  }
+}
