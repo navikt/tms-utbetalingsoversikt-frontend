@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - 'main'
+  workflow_dispatch:
+  schedule:
+    # Every monday at 07:00 UTC, to pick up the latest base image.
+    - cron: '0 7 * * 1'
 
 permissions:
   contents: 'read'
