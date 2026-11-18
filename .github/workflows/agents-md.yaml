@@ -1,0 +1,5 @@
+name: AGENTS.md
+on: pull_request
+jobs:
+  agents-md:
+    uses: navikt/tms-copilot/.github/workflows/agents-md-check.yml@main
