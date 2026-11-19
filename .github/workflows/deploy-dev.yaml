@@ -13,7 +13,7 @@ permissions:
   packages: 'write'
 
 jobs:
-  build-and-deploy:
+  ci:
     uses: 'navikt/tms-deploy/.github/workflows/astro-deploy-v1.yaml@main'
     with:
       app-name: 'tms-utbetalingsoversikt-frontend'
