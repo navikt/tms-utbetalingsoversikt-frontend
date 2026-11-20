@@ -26,7 +26,7 @@
     "@navikt/astro-logger": "1.0.0",
     "@navikt/ds-react": "8.22.1",
     "@navikt/nav-dekoratoren-moduler": "4.5.3",
-    "@navikt/oasis": "3.8.0",
+    "@navikt/oasis": "4.2.2",
     "astro": "7.4.7",
     "dayjs": "1.11.23",
     "husky": "9.1.7",
