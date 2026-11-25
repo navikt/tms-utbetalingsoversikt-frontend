@@ -75,20 +75,12 @@ const Utbetalinger = () => {
   const infoMeldingTekst: string =
     'På grunn av en teknisk feil, kan det hende du ser flere utbetalinger på "0 kr", i tillegg til den vanlige utbetalingen din. Dette påvirker ikke utbetalingen din. Vi beklager feilen.';
 
-  const infoMeldingOmSenUtbetaling: string =
-  "Venter du på utbetaling i dag? Den kan komme noe senere enn du er vant til. Pengene skal være på kontoen din i løpet av tre virkedager.";
-  
   return (
     <>
       {hasTidligereUtbetalinger && <YtelserFilter />}
       {showInfoMelding && (
         <Alert className={style.infoMelding} variant="info">
           <BodyLong>{infoMeldingTekst}</BodyLong>
-        </Alert>
-      )}
-      {(showKommendeUtbetalinger || hasTidligereUtbetalinger) && (
-        <Alert className={style.infoMelding} variant="info">
-          <BodyLong>{infoMeldingOmSenUtbetaling}</BodyLong>
         </Alert>
       )}
       {showKommendeUtbetalinger && (
